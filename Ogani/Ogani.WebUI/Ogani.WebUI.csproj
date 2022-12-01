@@ -10,6 +10,7 @@
     <None Remove="Views\" />
     <None Remove="Views\Shared\" />
     <None Remove="AppCode\" />
+    <None Remove="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -23,10 +24,7 @@
     <Folder Include="wwwroot\uploads\" />
     <Folder Include="wwwroot\uploads\images\" />
     <Folder Include="wwwroot\uploads\videos\" />
-    <Folder Include="wwwroot\assets\css\" />
-    <Folder Include="wwwroot\assets\js\" />
-    <Folder Include="wwwroot\assets\imgs\" />
-    <Folder Include="wwwroot\assets\sounds\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
@@ -35,9 +33,5 @@
     <Content Remove="wwwroot\uploads\" />
     <Content Remove="wwwroot\uploads\images\" />
     <Content Remove="wwwroot\uploads\videos\" />
-    <Content Remove="wwwroot\assets\css\" />
-    <Content Remove="wwwroot\assets\js\" />
-    <Content Remove="wwwroot\assets\imgs\" />
-    <Content Remove="wwwroot\assets\sounds\" />
   </ItemGroup>
 </Project>
