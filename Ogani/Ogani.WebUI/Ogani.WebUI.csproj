@@ -12,6 +12,7 @@
     <None Remove="AppCode\" />
     <None Remove="Views\Home\" />
     <None Remove="Views\Shop\" />
+    <None Remove="Views\Blog\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -27,6 +28,7 @@
     <Folder Include="wwwroot\uploads\videos\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Shop\" />
+    <Folder Include="Views\Blog\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
