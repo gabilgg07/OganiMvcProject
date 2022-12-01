@@ -18,8 +18,26 @@
     <Folder Include="wwwroot\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="AppCode\" />
+    <Folder Include="wwwroot\assets\" />
+    <Folder Include="wwwroot\libs\" />
+    <Folder Include="wwwroot\uploads\" />
+    <Folder Include="wwwroot\uploads\images\" />
+    <Folder Include="wwwroot\uploads\videos\" />
+    <Folder Include="wwwroot\assets\css\" />
+    <Folder Include="wwwroot\assets\js\" />
+    <Folder Include="wwwroot\assets\imgs\" />
+    <Folder Include="wwwroot\assets\sounds\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\assets\" />
+    <Content Remove="wwwroot\libs\" />
+    <Content Remove="wwwroot\uploads\" />
+    <Content Remove="wwwroot\uploads\images\" />
+    <Content Remove="wwwroot\uploads\videos\" />
+    <Content Remove="wwwroot\assets\css\" />
+    <Content Remove="wwwroot\assets\js\" />
+    <Content Remove="wwwroot\assets\imgs\" />
+    <Content Remove="wwwroot\assets\sounds\" />
   </ItemGroup>
 </Project>
