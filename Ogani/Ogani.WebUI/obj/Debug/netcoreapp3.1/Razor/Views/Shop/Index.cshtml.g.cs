@@ -12,8 +12,15 @@ namespace Ogani.WebUI.Views.Shop
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 2 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.Models.Entity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"69836b7a82a6ff15fc15383f21528a0fc0428549", @"/Views/Shop/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3997699f7cadb07df9a2e1fe601c68bb43dab17e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a89a98e261c88b19f8eb839873589ad3c1edf0d1", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shop_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -85,7 +92,7 @@ namespace Ogani.WebUI.Views.Shop
                 <div class=""hero-search"">
                     <div class=""hero-search-form"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69836b7a82a6ff15fc15383f21528a0fc04285495220", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69836b7a82a6ff15fc15383f21528a0fc04285495433", async() => {
                 WriteLiteral(@"
                             <div class=""hero-search-categories"">
                                 All Categories
@@ -463,7 +470,7 @@ namespace Ogani.WebUI.Views.Shop
                                 <span>Sort By</span>
                                 <select>
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69836b7a82a6ff15fc15383f21528a0fc042854927311", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69836b7a82a6ff15fc15383f21528a0fc042854927524", async() => {
                 WriteLiteral("Default");
             }
             );
@@ -479,7 +486,7 @@ namespace Ogani.WebUI.Views.Shop
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69836b7a82a6ff15fc15383f21528a0fc042854928490", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69836b7a82a6ff15fc15383f21528a0fc042854928703", async() => {
                 WriteLiteral("Default");
             }
             );

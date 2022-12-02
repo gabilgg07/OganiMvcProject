@@ -12,8 +12,15 @@ namespace Ogani.WebUI.Views.Shop
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 2 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.Models.Entity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3242b0374b5632f87b794b1b555b6b9dcd564397", @"/Views/Shop/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3997699f7cadb07df9a2e1fe601c68bb43dab17e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a89a98e261c88b19f8eb839873589ad3c1edf0d1", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shop_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -85,7 +92,7 @@ namespace Ogani.WebUI.Views.Shop
                 <div class=""hero-search"">
                     <div class=""hero-search-form"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3242b0374b5632f87b794b1b555b6b9dcd5643974846", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3242b0374b5632f87b794b1b555b6b9dcd5643975059", async() => {
                 WriteLiteral(@"
                             <div class=""hero-search-categories"">
                                 All Categories

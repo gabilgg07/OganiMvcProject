@@ -12,8 +12,15 @@ namespace Ogani.WebUI.Views.Blog
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 2 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.Models.Entity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"487a6099f0ef86748eda7373a87e9c6265a8660f", @"/Views/Blog/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3997699f7cadb07df9a2e1fe601c68bb43dab17e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a89a98e261c88b19f8eb839873589ad3c1edf0d1", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Blog_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -83,7 +90,7 @@ namespace Ogani.WebUI.Views.Blog
                 <div class=""hero-search"">
                     <div class=""hero-search-form"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "487a6099f0ef86748eda7373a87e9c6265a8660f4813", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "487a6099f0ef86748eda7373a87e9c6265a8660f5026", async() => {
                 WriteLiteral(@"
                             <div class=""hero-search-categories"">
                                 All Categories
@@ -150,7 +157,7 @@ namespace Ogani.WebUI.Views.Blog
                 <div class=""blog-sidebar"">
                     <div class=""blog-sidebar-search"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "487a6099f0ef86748eda7373a87e9c6265a8660f7999", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "487a6099f0ef86748eda7373a87e9c6265a8660f8212", async() => {
                 WriteLiteral("\n                            <input type=\"text\" placeholder=\"Search...\">\n                            <button type=\"submit\"><span class=\"icon_search\"></span></button>\n                        ");
             }
             );

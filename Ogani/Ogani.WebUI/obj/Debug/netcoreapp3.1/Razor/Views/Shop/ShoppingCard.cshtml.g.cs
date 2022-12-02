@@ -12,8 +12,15 @@ namespace Ogani.WebUI.Views.Shop
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 2 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.Models.Entity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ce909e4074ac84831ccd6f0ec203a6accb29d76e", @"/Views/Shop/ShoppingCard.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3997699f7cadb07df9a2e1fe601c68bb43dab17e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a89a98e261c88b19f8eb839873589ad3c1edf0d1", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shop_ShoppingCard : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -86,7 +93,7 @@ namespace Ogani.WebUI.Views.Shop
                 <div class=""hero-search"">
                     <div class=""hero-search-form"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ce909e4074ac84831ccd6f0ec203a6accb29d76e4885", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ce909e4074ac84831ccd6f0ec203a6accb29d76e5098", async() => {
                 WriteLiteral(@"
                             <div class=""hero-search-categories"">
                                 All Categories
@@ -255,7 +262,7 @@ namespace Ogani.WebUI.Views.Shop
                     <div class=""shoping-discount"">
                         <h5>Discount Codes</h5>
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ce909e4074ac84831ccd6f0ec203a6accb29d76e13210", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ce909e4074ac84831ccd6f0ec203a6accb29d76e13423", async() => {
                 WriteLiteral("\n                            <input type=\"text\" placeholder=\"Enter your coupon code\">\n                            <button type=\"submit\" class=\"site-btn\">APPLY COUPON</button>\n                        ");
             }
             );
