@@ -13,6 +13,13 @@
     <None Remove="Views\Home\" />
     <None Remove="Views\Shop\" />
     <None Remove="Views\Blog\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="Models\Entity\" />
+    <None Remove="Models\DataContext\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -29,6 +36,8 @@
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Shop\" />
     <Folder Include="Views\Blog\" />
+    <Folder Include="Models\Entity\" />
+    <Folder Include="Models\DataContext\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
@@ -37,5 +46,18 @@
     <Content Remove="wwwroot\uploads\" />
     <Content Remove="wwwroot\uploads\images\" />
     <Content Remove="wwwroot\uploads\videos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.31" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.31">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.31" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.31">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 </Project>

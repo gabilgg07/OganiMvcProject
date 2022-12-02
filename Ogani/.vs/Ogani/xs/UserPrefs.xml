@@ -1,4 +1,45 @@
 ﻿<Properties StartupConfiguration="{320C438B-BE71-483D-8985-3514117EA629}|Default">
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Ogani.WebUI FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Ogani.WebUI/appsettings.json">
+    <Files>
+      <File FileName="Ogani.WebUI/Views/Shared/_Layout.cshtml" />
+      <File FileName="Ogani.WebUI/Startup.cs" />
+      <File FileName="Ogani.WebUI/Controllers/HomeController.cs" />
+      <File FileName="Ogani.WebUI/Views/Home/Index.cshtml" />
+      <File FileName="Ogani.WebUI/Views/Home/Contact.cshtml" />
+      <File FileName="Ogani.WebUI/Views/Shared/_Navbar.cshtml" />
+      <File FileName="Ogani.WebUI/Controllers/BlogController.cs" />
+      <File FileName="Ogani.WebUI/Views/Blog/Index.cshtml" />
+      <File FileName="Ogani.WebUI/Views/Blog/Details.cshtml" />
+      <File FileName="Ogani.WebUI/Models/DataContext/OganiDbContext.cs" Line="14" Column="50" />
+      <File FileName="Ogani.WebUI/appsettings.json" Line="19" Column="2" />
+      <File FileName="Ogani.WebUI/Models/Entity/Category.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Ogani" expanded="True">
+            <Node name="Ogani.WebUI" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="DataContext" expanded="True" />
+                <Node name="Entity" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Blog" expanded="True" />
+                <Node name="Shared" expanded="True" />
+                <Node name="Shop" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Ogani.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
