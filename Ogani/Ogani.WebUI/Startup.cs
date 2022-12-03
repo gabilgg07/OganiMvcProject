@@ -28,7 +28,8 @@ namespace Ogani.WebUI
 
             services.AddDbContext<OganiDbContext>(cfg =>
             {
-                cfg.UseSqlServer(Configuration.GetConnectionString("cString"));
+                //cfg.UseSqlServer(Configuration.GetConnectionString("cString"));
+                cfg.UseMySql(Configuration.GetConnectionString("cStringMySql"));
             });
         }
 
@@ -38,6 +39,8 @@ namespace Ogani.WebUI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.Seed();
 
             app.UseRouting();
 
