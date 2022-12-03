@@ -12,6 +12,12 @@ namespace Ogani.WebUI.Models.DataContext
 		}
 
 		public DbSet<Category> Categories { get; set; }
-	}
+
+		public DbSet<ProductUnit> ProductUnits { get; set; }
+
+		public DbSet<Product> Products { get; set; }
+
+		public DbSet<ProductImage> ProductImages { get; set; }
+    }
 }
 
