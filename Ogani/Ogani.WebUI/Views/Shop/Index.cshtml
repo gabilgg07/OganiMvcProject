@@ -389,11 +389,11 @@
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
-                                            <a class="product-item-details-link" asp-controller="shop" asp-action="details" asp-route-id="@item.Id"></a>
+                                            <a class="product-item-details-link" asp-action="details" asp-route-id="@item.Id"></a>
                                         </div>
                                     <div class="product-item-text">
-                                        <h6><a asp-controller="shop" asp-action="details" asp-route-id="@item.Id">@item.Name</a></h6>
-                                        <h5>$@item.Price.ToString("#.##")</h5>
+                                        <h6><a asp-action="details" asp-route-id="@item.Id">@item.Name</a></h6>
+                                        <h5>$@item.Price.ToString("0.##")</h5>
                                     </div>
                                 </div>
                             </div>

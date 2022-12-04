@@ -81,12 +81,12 @@
             <div class="col-lg-6 col-md-6">
                 <div class="product-details-pic">
                     <div class="product-details-pic-item">
-                        <img class="product-details-pic-item--large" src="assets/img/product/details/@Model.Images.FirstOrDefault(i => i.IsMain)?.ImagePath" alt="">
+                        <img class="product-details-pic-item--large" src="~/uploads/images/products/@Model.Images?.FirstOrDefault(i => i.IsMain)?.ImagePath" alt="@Model.Name">
                     </div>
                     <div class="product-details-pic-slider owl-carousel">
-                        @foreach (var img in Model.Images.Where(i => !i.IsMain))
+                        @foreach (var img in Model.Images?.Where(i => !i.IsMain))
                         {
-                            <img src="assets/img/product/details/@img.ImagePath" alt="">
+                            <img src="~/uploads/images/products/@img.ImagePath" alt="@Model.Name">
                         }
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                         <i class="fa fa-star-half-o"></i>
                         <span>(18 reviews)</span>
                     </div>
-                    <div class="product-details-price">$@Model.Price</div>
+                    <div class="product-details-price">$@Model.Price.ToString("0.##")</div>
                     <p>
                         @Model.ShortDescription
                     </p>
@@ -118,7 +118,7 @@
                     <ul>
                         <li><b>Availability</b> <span>In Stock</span></li>
                         <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                        <li><b>Weight</b> <span>@Model.Weight @Model.Unit.Name</span></li>
+                        <li><b>Weight</b> <span>@Model.Weight.ToString("0.##") @Model.Unit.Name</span></li>
                         <li>
                             <b>Share on</b>
                             <div class="share">
