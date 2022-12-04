@@ -1,4 +1,4 @@
-﻿
+﻿@model Product
 @{
     ViewBag.Title = "Details";
 }
@@ -81,19 +81,19 @@
             <div class="col-lg-6 col-md-6">
                 <div class="product-details-pic">
                     <div class="product-details-pic-item">
-                        <img class="product-details-pic-item--large" src="assets/img/product/details/product-details-1.jpg" alt="">
+                        <img class="product-details-pic-item--large" src="assets/img/product/details/@Model.Images.FirstOrDefault(i => i.IsMain)?.ImagePath" alt="">
                     </div>
                     <div class="product-details-pic-slider owl-carousel">
-                        <img data-imgbigurl="assets/img/product/details/product-details-2.jpg" src="assets/img/product/details/thumb-1.jpg" alt="">
-                        <img data-imgbigurl="assets/img/product/details/product-details-3.jpg" src="assets/img/product/details/thumb-2.jpg" alt="">
-                        <img data-imgbigurl="assets/img/product/details/product-details-5.jpg" src="assets/img/product/details/thumb-3.jpg" alt="">
-                        <img data-imgbigurl="assets/img/product/details/product-details-4.jpg" src="assets/img/product/details/thumb-4.jpg" alt="">
+                        @foreach (var img in Model.Images.Where(i => !i.IsMain))
+                        {
+                            <img src="assets/img/product/details/@img.ImagePath" alt="">
+                        }
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="product-details-text">
-                    <h3>Vetgetable’s Package</h3>
+                    <h3>@Model.Name</h3>
                     <div class="product-details-rating">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -102,11 +102,9 @@
                         <i class="fa fa-star-half-o"></i>
                         <span>(18 reviews)</span>
                     </div>
-                    <div class="product-details-price">$50.00</div>
+                    <div class="product-details-price">$@Model.Price</div>
                     <p>
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
-                        vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
-                        quam vehicula elementum sed sit amet dui. Proin eget tortor risus.
+                        @Model.ShortDescription
                     </p>
                     <div class="product-details-quantity">
                         <div class="quantity">
@@ -120,7 +118,7 @@
                     <ul>
                         <li><b>Availability</b> <span>In Stock</span></li>
                         <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                        <li><b>Weight</b> <span>0.5 kg</span></li>
+                        <li><b>Weight</b> <span>@Model.Weight @Model.Unit.Name</span></li>
                         <li>
                             <b>Share on</b>
                             <div class="share">
@@ -149,72 +147,17 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product-details-tab-desc">
-                                <h6>Products Infomation</h6>
-                                <p>
-                                    Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                                    Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Vivamus
-                                    suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam
-                                    vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada.
-                                    Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat,
-                                    accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a
-                                    pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula
-                                    elementum sed sit amet dui. Vestibulum ante ipsum primis in faucibus orci luctus
-                                    et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam
-                                    vel, ullamcorper sit amet ligula. Proin eget tortor risus.
-                                </p>
-                                <p>
-                                    Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem
-                                    ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet
-                                    elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum
-                                    porta. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus
-                                    nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                                    Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed
-                                    porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum
-                                    sed sit amet dui. Proin eget tortor risus.
-                                </p>
+                                @Html.Raw(Model.Description)
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-2" role="tabpanel">
                             <div class="product-details-tab-desc">
-                                <h6>Products Infomation</h6>
-                                <p>
-                                    Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                                    Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus.
-                                    Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam
-                                    sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo
-                                    eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.
-                                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent
-                                    sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac
-                                    diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ante
-                                    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                                    Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                                    Proin eget tortor risus.
-                                </p>
-                                <p>
-                                    Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem
-                                    ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet
-                                    elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum
-                                    porta. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus
-                                    nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                                </p>
+                                @Html.Raw(Model.Information)
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-3" role="tabpanel">
                             <div class="product-details-tab-desc">
-                                <h6>Products Infomation</h6>
-                                <p>
-                                    Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                                    Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus.
-                                    Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam
-                                    sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo
-                                    eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.
-                                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent
-                                    sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac
-                                    diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ante
-                                    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                                    Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                                    Proin eget tortor risus.
-                                </p>
+                                @Html.Raw(Model.Reviews)
                             </div>
                         </div>
                     </div>
