@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Ogani.WebUI.Models.DataContext;
+using Ogani.WebUI.Models.Entity;
 
 namespace Ogani.WebUI.Controllers
 {
@@ -24,6 +25,20 @@ namespace Ogani.WebUI.Controllers
         public IActionResult Contact()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Contact(ContactPost cPost)
+        {
+            if (ModelState.IsValid)
+            {
+                db.ContactPosts.Add(cPost);
+                db.SaveChanges();
+
+                return RedirectToAction(nameof(Contact));
+            }
+
+            return View(cPost);
         }
     }
 }
