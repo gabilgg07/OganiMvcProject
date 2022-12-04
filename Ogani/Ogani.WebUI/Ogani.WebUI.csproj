@@ -21,6 +21,9 @@
     <None Remove="Models\Entity\" />
     <None Remove="Models\DataContext\" />
     <None Remove="Pomelo.EntityFrameworkCore.MySql" />
+    <None Remove="AppCode\ViewComponents\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -39,6 +42,9 @@
     <Folder Include="Views\Blog\" />
     <Folder Include="Models\Entity\" />
     <Folder Include="Models\DataContext\" />
+    <Folder Include="AppCode\ViewComponents\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

@@ -18,8 +18,7 @@ namespace Ogani.WebUI.Controllers
 
         public IActionResult Index()
         {
-            var categories = db.Categories.ToList();
-            return View(categories);
+            return View();
         }
 
         public IActionResult Contact()
