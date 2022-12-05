@@ -1457,6 +1457,60 @@ ol {
     font-weight: 700;
   }
 }
+ul {
+  &.pagination {
+    position: relative;
+    padding-top: 10px;
+    & > li {
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.disabled {
+        pointer-events: none;
+        background-color: #8787872e;
+        & > a {
+          color: #c3c0c0;
+        }
+      }
+      & > a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #b2b2b2;
+        font-size: 14px;
+        color: #b2b2b2;
+        font-weight: 700;
+        line-height: 28px;
+        text-align: center;
+        transition: all, 0.3s;
+        &:hover {
+          background: #7fad39;
+          border-color: #7fad39;
+          color: #fff;
+        }
+      }
+      &.active {
+        & > a {
+          background: #b3df73;
+          border-color: #91c14a;
+          color: #fff;
+          pointer-events: none;
+        }
+      }
+    }
+    &:before {
+      position: absolute;
+      left: 0;
+      top: -29px;
+      height: 1px;
+      width: 100%;
+      background: #000;
+      opacity: 0.1;
+      content: "";
+    }
+  }
+}
 .product-pagination {
   padding-top: 10px;
   a {
@@ -1470,10 +1524,6 @@ ol {
     line-height: 28px;
     text-align: center;
     margin-right: 16px;
-    -webkit-transition: all, 0.3s;
-    -moz-transition: all, 0.3s;
-    -ms-transition: all, 0.3s;
-    -o-transition: all, 0.3s;
     transition: all, 0.3s;
     &.active {
       background: #b3df73;
@@ -1492,7 +1542,6 @@ ol {
 }
 .blog-pagination {
   padding-top: 10px;
-  padding-top: 5px;
   position: relative;
   a {
     display: inline-block;
@@ -1505,10 +1554,6 @@ ol {
     line-height: 28px;
     text-align: center;
     margin-right: 16px;
-    -webkit-transition: all, 0.3s;
-    -moz-transition: all, 0.3s;
-    -ms-transition: all, 0.3s;
-    -o-transition: all, 0.3s;
     transition: all, 0.3s;
     &:hover {
       background: #7fad39;

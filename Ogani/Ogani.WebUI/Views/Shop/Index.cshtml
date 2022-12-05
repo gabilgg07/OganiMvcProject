@@ -1,4 +1,4 @@
-﻿@model PagedModel
+﻿@model PagedViewModel<Product>
 @{
     ViewBag.Title = "Index";
 }
@@ -356,7 +356,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach (var item in Model.Products)
+                    @foreach (var item in Model.Items)
                         {
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product-item">

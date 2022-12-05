@@ -8,9 +8,10 @@ using Ogani.WebUI.Models.Entity;
 
 namespace Ogani.WebUI.Models.ViewModel
 {
-	public class PagedModel
+	public class PagedModel<T>
+		 where T : class
 	{
-		public List<Product> Products { get; set; }
+		public List<T> Items { get; set; }
 
 		public int PageIndex { get; set; }
 
@@ -18,9 +19,9 @@ namespace Ogani.WebUI.Models.ViewModel
 
 		public int TotalCount { get; set; }
 
-        public PagedModel(IQueryable<Product> query, int pageIndex, int pageSize)
+        public PagedModel(IQueryable<T> query, int pageIndex, int pageSize)
 		{
-			this.Products = query.Skip((pageIndex - 1) * pageSize)
+			this.Items = query.Skip((pageIndex - 1) * pageSize)
 				.Take(pageSize)
 				.ToList();
 

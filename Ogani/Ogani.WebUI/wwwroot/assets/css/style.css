@@ -1431,6 +1431,58 @@ ol {
   font-weight: 700;
 }
 
+ul.pagination {
+  position: relative;
+  padding-top: 10px;
+}
+ul.pagination > li {
+  margin-right: 16px;
+}
+ul.pagination > li:last-child {
+  margin-right: 0;
+}
+ul.pagination > li.disabled {
+  pointer-events: none;
+  background-color: rgba(135, 135, 135, 0.1803921569);
+}
+ul.pagination > li.disabled > a {
+  color: #c3c0c0;
+}
+ul.pagination > li > a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #b2b2b2;
+  font-size: 14px;
+  color: #b2b2b2;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  -webkit-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+ul.pagination > li > a:hover {
+  background: #7fad39;
+  border-color: #7fad39;
+  color: #fff;
+}
+ul.pagination > li.active > a {
+  background: #b3df73;
+  border-color: #91c14a;
+  color: #fff;
+  pointer-events: none;
+}
+ul.pagination:before {
+  position: absolute;
+  left: 0;
+  top: -29px;
+  height: 1px;
+  width: 100%;
+  background: #000;
+  opacity: 0.1;
+  content: "";
+}
+
 .product-pagination {
   padding-top: 10px;
 }
@@ -1464,7 +1516,6 @@ ol {
 
 .blog-pagination {
   padding-top: 10px;
-  padding-top: 5px;
   position: relative;
 }
 .blog-pagination a {

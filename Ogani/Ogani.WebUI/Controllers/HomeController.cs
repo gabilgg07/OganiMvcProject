@@ -35,6 +35,8 @@ namespace Ogani.WebUI.Controllers
                 db.ContactPosts.Add(cPost);
                 db.SaveChanges();
 
+                TempData["PostMessage"] = "Sualınız müvəffəqiyyətlə göndərildi";
+
                 return RedirectToAction(nameof(Contact));
             }
 

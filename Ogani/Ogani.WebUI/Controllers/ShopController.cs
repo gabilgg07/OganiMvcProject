@@ -34,7 +34,7 @@ namespace Ogani.WebUI.Controllers
                 .Include(p => p.Images)
                 .AsQueryable();
 
-            var pagedModel = new PagedModel(query, pageIndex, pageSize);
+            var pagedModel = new PagedViewModel<Product>(query, pageIndex, pageSize);
 
             return View(pagedModel);
         }

@@ -115,6 +115,16 @@
 
 <div class="contact-form spad">
     <div class="container">
+        @if (TempData["PostMessage"] != null)
+        {
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="alert alert-success" role="alert">
+                        @TempData["PostMessage"]
+                    </div>
+                </div>
+            </div>
+        }
         <div class="row">
             <div class="col-lg-12">
                 <div class="contact-form-title">
@@ -125,12 +135,15 @@
         <form method="post">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
+                    <span class="text-danger" asp-validation-for="FullName"></span>
                     <input type="text" placeholder="Your name" asp-for="FullName">
                 </div>
                 <div class="col-lg-6 col-md-6">
+                    <span class="text-danger" asp-validation-for="Email"></span>
                     <input type="email" placeholder="Your Email" asp-for="Email">
                 </div>
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12">
+                    <span class="text-danger" asp-validation-for="Message"></span>
                     <textarea placeholder="Your message" asp-for="Message"></textarea>
                     <button type="submit" class="site-btn">SEND MESSAGE</button>
                 </div>
