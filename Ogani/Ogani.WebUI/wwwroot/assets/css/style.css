@@ -1448,6 +1448,11 @@ ol {
   -webkit-transition: all, 0.3s;
   transition: all, 0.3s;
 }
+.product-pagination a.active {
+  background: #b3df73;
+  border-color: #91c14a;
+  color: #fff;
+}
 .product-pagination a:hover {
   background: #7fad39;
   border-color: #7fad39;

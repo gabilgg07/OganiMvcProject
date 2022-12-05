@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Product>
+﻿@model PagedModel
 @{
     ViewBag.Title = "Index";
 }
@@ -51,7 +51,7 @@
                 <div class="breadcrumb-text">
                     <h2>Organi Shop</h2>
                     <div class="breadcrumb-option">
-                        <a href="index-2.html">Home</a>
+                        <a asp-controller="home" asp-action="index">Home</a>
                         <span>Shop</span>
                     </div>
                 </div>
@@ -344,7 +344,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="filter-found">
-                                <h6><span>@Model.Count()</span> Products found</h6>
+                                <h6><span>@Model.TotalCount</span> Products found</h6>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-3">
@@ -356,7 +356,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.Products)
                         {
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product-item">
@@ -376,12 +376,7 @@
                             </div>
                         }
                 </div>
-                <div class="product-pagination">
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                </div>
+               @Model.GetPagination(Url,"Index")
             </div>
         </div>
     </div>

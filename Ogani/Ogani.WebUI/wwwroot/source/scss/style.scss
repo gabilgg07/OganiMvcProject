@@ -1475,6 +1475,11 @@ ol {
     -ms-transition: all, 0.3s;
     -o-transition: all, 0.3s;
     transition: all, 0.3s;
+    &.active {
+      background: #b3df73;
+      border-color: #91c14a;
+      color: #fff;
+    }
     &:hover {
       background: #7fad39;
       border-color: #7fad39;

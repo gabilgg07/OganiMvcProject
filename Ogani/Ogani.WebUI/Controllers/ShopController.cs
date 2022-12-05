@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Ogani.WebUI.Models.DataContext;
 using Ogani.WebUI.Models.Entity;
+using Ogani.WebUI.Models.ViewModel;
 
 namespace Ogani.WebUI.Controllers
 {
@@ -18,15 +19,24 @@ namespace Ogani.WebUI.Controllers
             this.db = db;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int pageIndex = 1, int pageSize = 3)
         {
             // lazy loading
             //List<Product> products = db.Products.ToList();
-            List<Product> products = db.Products
-                .Include(p => p.Images)
-                .ToList();
 
-            return View(products);
+            //List<Product> products = db.Products
+            //    .Include(p => p.Images)
+            //    .Skip((pageIndex-1)*pageSize)
+            //    .Take(pageSize)
+            //    .ToList();
+
+            var query = db.Products
+                .Include(p => p.Images)
+                .AsQueryable();
+
+            var pagedModel = new PagedModel(query, pageIndex, pageSize);
+
+            return View(pagedModel);
         }
 
         public IActionResult Details(int id)
