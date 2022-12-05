@@ -26,8 +26,15 @@ using Ogani.WebUI.Models.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.AppCode.Types;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"83a330745dc1257e259be370d6d6c6f6a6518a9c", @"/Views/Shared/_Layout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"397dd3552672b938e82e1d2b5bc222493ece87a9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5840e127a9373479531cdda5245c36c5bc4cc528", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -68,7 +75,7 @@ using Ogani.WebUI.Models.ViewModel;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\n<!DOCTYPE html>\n<html lang=\"az\">\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a330745dc1257e259be370d6d6c6f6a6518a9c5660", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a330745dc1257e259be370d6d6c6f6a6518a9c5873", async() => {
                 WriteLiteral(@"
     <meta charset=""UTF-8"">
     <meta name=""description"" content=""Ogani Template"">
@@ -84,7 +91,7 @@ using Ogani.WebUI.Models.ViewModel;
 #line hidden
 #nullable disable
                 WriteLiteral("</title>\n\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("base", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "83a330745dc1257e259be370d6d6c6f6a6518a9c6501", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("base", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "83a330745dc1257e259be370d6d6c6f6a6518a9c6714", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -122,9 +129,9 @@ using Ogani.WebUI.Models.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a330745dc1257e259be370d6d6c6f6a6518a9c9150", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a330745dc1257e259be370d6d6c6f6a6518a9c9363", async() => {
                 WriteLiteral("\n\n    <div id=\"preloder\">\n        <div class=\"loader\"></div>\n    </div>\n\n    <div class=\"humberger-menu-overlay\"></div>\n    <div class=\"humberger-menu-wrapper\">\n        <div class=\"humberger-menu-logo\">\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a330745dc1257e259be370d6d6c6f6a6518a9c9636", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a330745dc1257e259be370d6d6c6f6a6518a9c9849", async() => {
                     WriteLiteral("<img src=\"assets/img/logo.png\"");
                     BeginWriteAttribute("alt", " alt=\"", 1521, "\"", 1527, 0);
                     EndWriteAttribute();
@@ -172,7 +179,7 @@ using Ogani.WebUI.Models.ViewModel;
         </div>
         <nav class=""humberger-menu-nav mobile-menu"">
             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "83a330745dc1257e259be370d6d6c6f6a6518a9c12391", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "83a330745dc1257e259be370d6d6c6f6a6518a9c12604", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -254,7 +261,7 @@ using Ogani.WebUI.Models.ViewModel;
                 BeginWriteAttribute("alt", " alt=\"", 5508, "\"", 5514, 0);
                 EndWriteAttribute();
                 WriteLiteral("></a>\n                    </div>\n                </div>\n                <div class=\"col-lg-6\">\n                    <nav class=\"header-menu\">\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "83a330745dc1257e259be370d6d6c6f6a6518a9c17146", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "83a330745dc1257e259be370d6d6c6f6a6518a9c17359", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -304,7 +311,7 @@ Write(RenderBody());
                     <div class=""footer-about"">
                         <div class=""footer-about-logo"">
                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a330745dc1257e259be370d6d6c6f6a6518a9c19548", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a330745dc1257e259be370d6d6c6f6a6518a9c19761", async() => {
                     WriteLiteral("<img src=\"assets/img/logo.png\"");
                     BeginWriteAttribute("alt", " alt=\"", 6766, "\"", 6772, 0);
                     EndWriteAttribute();
@@ -360,7 +367,7 @@ Write(RenderBody());
                         <h6>Join Our Newsletter Now</h6>
                         <p>Get E-mail updates about our latest shop and special offers.</p>
                         ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a330745dc1257e259be370d6d6c6f6a6518a9c23083", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83a330745dc1257e259be370d6d6c6f6a6518a9c23296", async() => {
                     WriteLiteral("\n                            <input type=\"text\" placeholder=\"Enter your mail\">\n                            <button type=\"submit\" class=\"site-btn\">Subscribe</button>\n                        ");
                 }
                 );

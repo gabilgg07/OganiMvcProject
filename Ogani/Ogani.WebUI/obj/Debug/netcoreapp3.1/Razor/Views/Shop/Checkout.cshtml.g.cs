@@ -26,8 +26,15 @@ using Ogani.WebUI.Models.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.AppCode.Types;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7c0270edc3a92fe8d6cba738ac5b56b08c2d5a85", @"/Views/Shop/Checkout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"397dd3552672b938e82e1d2b5bc222493ece87a9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5840e127a9373479531cdda5245c36c5bc4cc528", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shop_Checkout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -87,7 +94,7 @@ using Ogani.WebUI.Models.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("\n                </div>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"hero-search\">\n                    <div class=\"hero-search-form\">\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c0270edc3a92fe8d6cba738ac5b56b08c2d5a854801", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c0270edc3a92fe8d6cba738ac5b56b08c2d5a855014", async() => {
                 WriteLiteral(@"
                             <div class=""hero-search-categories"">
                                 All Categories
@@ -158,7 +165,7 @@ using Ogani.WebUI.Models.ViewModel;
         <div class=""checkout-form"">
             <h4>Billing Details</h4>
             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c0270edc3a92fe8d6cba738ac5b56b08c2d5a858051", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c0270edc3a92fe8d6cba738ac5b56b08c2d5a858264", async() => {
                 WriteLiteral(@"
                 <div class=""row"">
                     <div class=""col-lg-8 col-md-6"">

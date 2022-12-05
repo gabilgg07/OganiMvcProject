@@ -26,8 +26,15 @@ using Ogani.WebUI.Models.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.AppCode.Types;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d759d47a8946d7a9dcf03a3d30d08fc6479bef17", @"/Views/Shop/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"397dd3552672b938e82e1d2b5bc222493ece87a9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5840e127a9373479531cdda5245c36c5bc4cc528", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shop_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Product>
     #nullable disable
@@ -89,7 +96,7 @@ using Ogani.WebUI.Models.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("\n                </div>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"hero-search\">\n                    <div class=\"hero-search-form\">\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d759d47a8946d7a9dcf03a3d30d08fc6479bef175287", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d759d47a8946d7a9dcf03a3d30d08fc6479bef175500", async() => {
                 WriteLiteral(@"
                             <div class=""hero-search-categories"">
                                 All Categories
@@ -156,7 +163,7 @@ using Ogani.WebUI.Models.ViewModel;
                 <div class=""product-details-pic"">
                     <div class=""product-details-pic-item"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d759d47a8946d7a9dcf03a3d30d08fc6479bef178491", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d759d47a8946d7a9dcf03a3d30d08fc6479bef178704", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -198,7 +205,7 @@ AddHtmlAttributeValue("", 2658, Model.Name, 2658, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d759d47a8946d7a9dcf03a3d30d08fc6479bef1711043", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d759d47a8946d7a9dcf03a3d30d08fc6479bef1711256", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

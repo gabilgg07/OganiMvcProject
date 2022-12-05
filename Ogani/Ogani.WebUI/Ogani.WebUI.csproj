@@ -26,6 +26,7 @@
     <None Remove="Views\Shared\Components\Category\" />
     <None Remove="Models\ViewModel\" />
     <None Remove="Views\Shared\Components\SpecialProducts\" />
+    <None Remove="AppCode\Types\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -49,6 +50,7 @@
     <Folder Include="Views\Shared\Components\Category\" />
     <Folder Include="Models\ViewModel\" />
     <Folder Include="Views\Shared\Components\SpecialProducts\" />
+    <Folder Include="AppCode\Types\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

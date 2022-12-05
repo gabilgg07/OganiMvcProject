@@ -154,67 +154,11 @@
                     </div>
                     <div class="sidebar-item">
                         <div class="latest-product-text">
-                            <h4>Latest Products</h4>
-                            <div class="latest-product-slider owl-carousel">
-                                <div class="latest-prdouct-slider-item">
-                                    <a href="#" class="latest-product-item">
-                                        <div class="latest-product-item-pic">
-                                            <img src="assets/img/latest-product/lp-1.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product-item-text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product-item">
-                                        <div class="latest-product-item-pic">
-                                            <img src="assets/img/latest-product/lp-2.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product-item-text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product-item">
-                                        <div class="latest-product-item-pic">
-                                            <img src="assets/img/latest-product/lp-3.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product-item-text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latest-prdouct-slider-item">
-                                    <a href="#" class="latest-product-item">
-                                        <div class="latest-product-item-pic">
-                                            <img src="assets/img/latest-product/lp-1.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product-item-text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product-item">
-                                        <div class="latest-product-item-pic">
-                                            <img src="assets/img/latest-product/lp-2.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product-item-text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product-item">
-                                        <div class="latest-product-item-pic">
-                                            <img src="assets/img/latest-product/lp-3.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product-item-text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            @await Component.InvokeAsync("SpecialProducts", new
+                           {
+                               caption = "Latest Products",
+                               reportType = ProductReportType.Latest
+                           })
                         </div>
                     </div>
                 </div>
@@ -357,26 +301,26 @@
                 </div>
                 <div class="row">
                     @foreach (var item in Model.Items)
-                        {
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product-item">
-                                        <div class="product-item-pic set-bg" data-setbg="/uploads/images/products/@item.Images?.FirstOrDefault(i=>i.IsMain)?.ImagePath">
-                                            <ul class="product-item-pic-hover">
-                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                            <a class="product-item-details-link" asp-action="details" asp-route-id="@item.Id"></a>
-                                        </div>
-                                    <div class="product-item-text">
-                                        <h6><a asp-action="details" asp-route-id="@item.Id">@item.Name</a></h6>
-                                        <h5>$@item.Price.ToString("0.##")</h5>
-                                    </div>
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product-item">
+                                <div class="product-item-pic set-bg" data-setbg="/uploads/images/products/@item.Images?.FirstOrDefault(i=>i.IsMain)?.ImagePath">
+                                    <ul class="product-item-pic-hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                    <a class="product-item-details-link" asp-action="details" asp-route-id="@item.Id"></a>
+                                </div>
+                                <div class="product-item-text">
+                                    <h6><a asp-action="details" asp-route-id="@item.Id">@item.Name</a></h6>
+                                    <h5>$@item.Price.ToString("0.##")</h5>
                                 </div>
                             </div>
-                        }
+                        </div>
+                    }
                 </div>
-               @Model.GetPagination(Url,"Index")
+                @Model.GetPagination(Url, "Index")
             </div>
         </div>
     </div>

@@ -26,8 +26,15 @@ using Ogani.WebUI.Models.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.AppCode.Types;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b6dd354999289615514c7dbc2e9d578c11f1ed7e", @"/Views/Shared/_Navbar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"397dd3552672b938e82e1d2b5bc222493ece87a9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5840e127a9373479531cdda5245c36c5bc4cc528", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__Navbar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -66,7 +73,7 @@ using Ogani.WebUI.Models.ViewModel;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<ul>\n    <li class=\"active\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e5944", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e6157", async() => {
                 WriteLiteral("Home");
             }
             );
@@ -84,7 +91,7 @@ using Ogani.WebUI.Models.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n    <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e7296", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e7509", async() => {
                 WriteLiteral("Shop");
             }
             );
@@ -102,7 +109,7 @@ using Ogani.WebUI.Models.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n    <li>\n        <a href=\"#\">Pages</a>\n        <ul class=\"header-menu-dropdown\">\n            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e8744", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e8957", async() => {
                 WriteLiteral("Shoping Cart");
             }
             );
@@ -120,7 +127,7 @@ using Ogani.WebUI.Models.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e10112", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e10325", async() => {
                 WriteLiteral("Check Out");
             }
             );
@@ -138,7 +145,7 @@ using Ogani.WebUI.Models.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e11478", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e11691", async() => {
                 WriteLiteral("Blog Details");
             }
             );
@@ -156,7 +163,7 @@ using Ogani.WebUI.Models.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n        </ul>\n    </li>\n    <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e12865", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e13078", async() => {
                 WriteLiteral("Blog");
             }
             );
@@ -174,7 +181,7 @@ using Ogani.WebUI.Models.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n    <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e14218", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e14431", async() => {
                 WriteLiteral("Contact");
             }
             );
