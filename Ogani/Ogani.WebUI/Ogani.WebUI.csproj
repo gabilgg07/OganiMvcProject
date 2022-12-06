@@ -27,6 +27,7 @@
     <None Remove="Models\ViewModel\" />
     <None Remove="Views\Shared\Components\SpecialProducts\" />
     <None Remove="AppCode\Types\" />
+    <None Remove="AppCode\TagHelpers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -51,6 +52,7 @@
     <Folder Include="Models\ViewModel\" />
     <Folder Include="Views\Shared\Components\SpecialProducts\" />
     <Folder Include="AppCode\Types\" />
+    <Folder Include="AppCode\TagHelpers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

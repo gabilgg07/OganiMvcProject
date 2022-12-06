@@ -64,26 +64,11 @@
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header-top-right-social">
-            @if (!string.IsNullOrWhiteSpace(appInfo.Facebook))
-            {
-                <a href="@appInfo.Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-            }
-            @if (!string.IsNullOrWhiteSpace(appInfo.Instagram))
-            {
-                <a href="@appInfo.Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-            }
-            @if (!string.IsNullOrWhiteSpace(appInfo.Twitter))
-            {
-                <a href="@appInfo.Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-            }
-            @if (!string.IsNullOrWhiteSpace(appInfo.Linkedin))
-            {
-                <a href="@appInfo.Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
-            }
-            @if (!string.IsNullOrWhiteSpace(appInfo.Pinteres))
-            {
-                <a href="@appInfo.Pinteres" target="_blank"><i class="fa fa-pinterest-p"></i></a>
-            }
+            <social-network asp-link="@appInfo.Facebook" asp-icon-class="fa fa-facebook" />
+            <social-network asp-link="@appInfo.Instagram" asp-icon-class="fa fa-instagram" />
+            <social-network asp-link="@appInfo.Twitter" asp-icon-class="fa fa-twitter" />
+            <social-network asp-link="@appInfo.Linkedin" asp-icon-class="fa fa-linkedin" />
+            <social-network asp-link="@appInfo.Pinterest" asp-icon-class="fa fa-pinterest-p" />
         </div>
         <div class="humberger-menu-contact">
             <ul>
@@ -115,26 +100,11 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header-top-right">
                             <div class="header-top-right-social">
-                                @if (!string.IsNullOrWhiteSpace(appInfo.Facebook))
-                                {
-                                    <a href="@appInfo.Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                                }
-                                @if (!string.IsNullOrWhiteSpace(appInfo.Instagram))
-                                {
-                                    <a href="@appInfo.Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-                                }
-                                @if (!string.IsNullOrWhiteSpace(appInfo.Twitter))
-                                {
-                                    <a href="@appInfo.Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                                }
-                                @if (!string.IsNullOrWhiteSpace(appInfo.Linkedin))
-                                {
-                                    <a href="@appInfo.Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
-                                }
-                                @if (!string.IsNullOrWhiteSpace(appInfo.Pinteres))
-                                {
-                                    <a href="@appInfo.Pinteres" target="_blank"><i class="fa fa-pinterest-p"></i></a>
-                                }
+                                <social-network asp-link="@appInfo.Facebook" asp-icon-class="fa fa-facebook" />
+                                <social-network asp-link="@appInfo.Instagram" asp-icon-class="fa fa-instagram" />
+                                <social-network asp-link="@appInfo.Twitter" asp-icon-class="fa fa-twitter" />
+                                <social-network asp-link="@appInfo.Linkedin" asp-icon-class="fa fa-linkedin" />
+                                <social-network asp-link="@appInfo.Pinterest" asp-icon-class="fa fa-pinterest-p" />
                             </div>
                             <div class="header-top-right-language">
                                 <img src="assets/img/language.png" alt="">
@@ -231,26 +201,11 @@
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
                         <div class="footer-widget-social">
-                            @if (!string.IsNullOrWhiteSpace(appInfo.Facebook))
-                            {
-                                <a href="@appInfo.Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                            }
-                            @if (!string.IsNullOrWhiteSpace(appInfo.Instagram))
-                            {
-                                <a href="@appInfo.Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-                            }
-                            @if (!string.IsNullOrWhiteSpace(appInfo.Twitter))
-                            {
-                                <a href="@appInfo.Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                            }
-                            @if (!string.IsNullOrWhiteSpace(appInfo.Linkedin))
-                            {
-                                <a href="@appInfo.Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
-                            }
-                            @if (!string.IsNullOrWhiteSpace(appInfo.Pinteres))
-                            {
-                                <a href="@appInfo.Pinteres" target="_blank"><i class="fa fa-pinterest-p"></i></a>
-                            }
+                            <social-network asp-link="@appInfo.Facebook" asp-icon-class="fa fa-facebook" />
+                            <social-network asp-link="@appInfo.Instagram" asp-icon-class="fa fa-instagram" />
+                            <social-network asp-link="@appInfo.Twitter" asp-icon-class="fa fa-twitter" />
+                            <social-network asp-link="@appInfo.Linkedin" asp-icon-class="fa fa-linkedin" />
+                            <social-network asp-link="@appInfo.Pinterest" asp-icon-class="fa fa-pinterest-p" />
                         </div>
                     </div>
                 </div>

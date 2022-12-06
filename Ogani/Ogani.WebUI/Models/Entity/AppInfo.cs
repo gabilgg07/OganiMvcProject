@@ -33,7 +33,7 @@ namespace Ogani.WebUI.Models.Entity
 
         public string Linkedin { get; set; }
 
-        public string Pinteres { get; set; }
+        public string Pinterest { get; set; }
     }
 }
 
