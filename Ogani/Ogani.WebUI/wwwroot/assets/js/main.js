@@ -122,6 +122,7 @@
       $(".product-details-pic-item--large").attr({ src: imgurl });
     }
   });
+
   var proQty = $(".pro-qty");
   proQty.prepend('<span class="dec qtybtn">-</span>');
   proQty.append('<span class="inc qtybtn">+</span>');
@@ -138,7 +139,21 @@
       }
     }
     $button.parent().find("input").val(newVal);
+
+    if (typeof window["qtyChanged"] == "function") {
+      window["qtyChanged"](newVal, $($button).closest("tr")[0]);
+    }
   });
 
-  //   $(".imager").imgad();
+  //   $(".imager").imgadd();
 })(jQuery);
+
+function qtyChanged(value, tr) {
+  let price = parseFloat(
+    $(tr).find(".shoping-cart-price").text().trim().substring(1)
+  );
+  let total = price * value;
+  $(tr)
+    .find(".shoping-cart-total")
+    .text("$" + total.toFixed(2));
+}
