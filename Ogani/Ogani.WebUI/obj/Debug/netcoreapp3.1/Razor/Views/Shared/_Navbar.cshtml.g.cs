@@ -33,8 +33,15 @@ using Ogani.WebUI.AppCode.Types;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.Models.DataContext;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b6dd354999289615514c7dbc2e9d578c11f1ed7e", @"/Views/Shared/_Navbar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5840e127a9373479531cdda5245c36c5bc4cc528", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5b8f8ca7cd44221e8ce904bda6799cf20b7028f2", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__Navbar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -73,7 +80,7 @@ using Ogani.WebUI.AppCode.Types;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<ul>\n    <li class=\"active\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e6157", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e6375", async() => {
                 WriteLiteral("Home");
             }
             );
@@ -91,7 +98,7 @@ using Ogani.WebUI.AppCode.Types;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n    <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e7509", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e7727", async() => {
                 WriteLiteral("Shop");
             }
             );
@@ -109,7 +116,7 @@ using Ogani.WebUI.AppCode.Types;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n    <li>\n        <a href=\"#\">Pages</a>\n        <ul class=\"header-menu-dropdown\">\n            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e8957", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e9175", async() => {
                 WriteLiteral("Shoping Cart");
             }
             );
@@ -127,7 +134,7 @@ using Ogani.WebUI.AppCode.Types;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e10325", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e10543", async() => {
                 WriteLiteral("Check Out");
             }
             );
@@ -145,7 +152,7 @@ using Ogani.WebUI.AppCode.Types;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e11691", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e11909", async() => {
                 WriteLiteral("Blog Details");
             }
             );
@@ -163,7 +170,7 @@ using Ogani.WebUI.AppCode.Types;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n        </ul>\n    </li>\n    <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e13078", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e13296", async() => {
                 WriteLiteral("Blog");
             }
             );
@@ -181,7 +188,7 @@ using Ogani.WebUI.AppCode.Types;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n    <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e14431", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6dd354999289615514c7dbc2e9d578c11f1ed7e14649", async() => {
                 WriteLiteral("Contact");
             }
             );

@@ -121,15 +121,16 @@ textarea {
   }
 }
 a {
+  color: #7fad39;
   &:hover {
     text-decoration: none;
     outline: none;
-    color: #fff;
+    color: rgb(40, 40, 40);
   }
   &:focus {
     text-decoration: none;
     outline: none;
-    color: #fff;
+    color: rgb(30, 30, 30);
   }
 }
 ul {
@@ -273,6 +274,18 @@ ol {
       i {
         color: #252525;
         margin-right: 5px;
+        transition: color 0.3s;
+      }
+      a {
+        transition: color 0.3s;
+      }
+      &:hover {
+        i {
+          color: #7fad39;
+        }
+        a {
+          color: #404040;
+        }
       }
     }
   }
@@ -300,8 +313,12 @@ ol {
     display: inline-block;
     color: #1c1c1c;
     margin-right: 20px;
+    transition: color 0.3s;
     &:last-child {
       margin-right: 0;
+    }
+    &:hover {
+      color: #7fad39;
     }
   }
 }
@@ -364,6 +381,12 @@ ol {
         font-size: 14px;
         color: #fff;
         padding: 5px 10px;
+        transition: color 0.3s;
+      }
+      &:hover {
+        a {
+          color: #7fad39;
+        }
       }
     }
   }
@@ -374,8 +397,16 @@ ol {
     display: block;
     font-size: 14px;
     color: #1c1c1c;
+    transition: color 0.3s;
     i {
       margin-right: 6px;
+      transition: color 0.3s;
+    }
+    &:hover {
+      color: #7fad39;
+      i {
+        color: #7fad39;
+      }
     }
   }
 }
@@ -477,6 +508,12 @@ ol {
         i {
           font-size: 18px;
           color: #1c1c1c;
+          transition: color 0.3s;
+        }
+        &:hover {
+          i {
+            color: #7fad39;
+          }
         }
         span {
           height: 13px;
@@ -571,6 +608,12 @@ ol {
         color: #1c1c1c;
         line-height: 39px;
         display: block;
+        transition: color 0.3s;
+      }
+      &:hover {
+        a {
+          color: #7fad39;
+        }
       }
     }
   }
@@ -2399,6 +2442,12 @@ ul {
         color: #1c1c1c;
         font-size: 14px;
         line-height: 32px;
+        transition: color 0.3s;
+      }
+      &:hover {
+        a {
+          color: #7fad39;
+        }
       }
     }
   }

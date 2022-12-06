@@ -21,10 +21,30 @@ namespace Ogani.WebUI.Models.DataContext
 				InitCategories(db);
 				InitProductUnits(db);
 				InitProducts(db);
+
+                InitAppInfo(db);
             }
 
 			return app;
 		}
+
+        private static void InitAppInfo(OganiDbContext db)
+        {
+            if (!db.AppInfos.Any())
+            {
+                db.AppInfos.Add(new AppInfo
+                {
+                    Title = "Ogani",
+                    HashTag = "#təzə-tər #məhsullar",
+                    Phone = "+99412-345-67-89",
+                    ActivityHashTag = "support 24/7 time",
+                    Email = "ogani@box.az",
+                    Address = "60-49 Road 11378 New York"
+                });
+
+                db.SaveChanges();
+            }
+        }
 
         private static void InitProducts(OganiDbContext db)
         {

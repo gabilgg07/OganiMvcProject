@@ -20,6 +20,8 @@ namespace Ogani.WebUI.Models.DataContext
 		public DbSet<ProductImage> ProductImages { get; set; }
 
 		public DbSet<ContactPost> ContactPosts { get; set; }
+
+		public DbSet<AppInfo> AppInfos { get; set; }
     }
 }
 

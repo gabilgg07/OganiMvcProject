@@ -126,15 +126,18 @@ textarea:focus {
   outline: none;
 }
 
+a {
+  color: #7fad39;
+}
 a:hover {
   text-decoration: none;
   outline: none;
-  color: #fff;
+  color: rgb(40, 40, 40);
 }
 a:focus {
   text-decoration: none;
   outline: none;
-  color: #fff;
+  color: rgb(30, 30, 30);
 }
 
 ul {
@@ -288,6 +291,18 @@ ol {
 .header-top-left ul li i {
   color: #252525;
   margin-right: 5px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.header-top-left ul li a {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.header-top-left ul li:hover i {
+  color: #7fad39;
+}
+.header-top-left ul li:hover a {
+  color: #404040;
 }
 
 .header-top-right {
@@ -315,9 +330,14 @@ ol {
   display: inline-block;
   color: #1c1c1c;
   margin-right: 20px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 .header-top-right-social a:last-child {
   margin-right: 0;
+}
+.header-top-right-social a:hover {
+  color: #7fad39;
 }
 
 .header-top-right-language {
@@ -377,6 +397,11 @@ ol {
   font-size: 14px;
   color: #fff;
   padding: 5px 10px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.header-top-right-language ul li:hover a {
+  color: #7fad39;
 }
 
 .header-top-right-auth {
@@ -386,9 +411,19 @@ ol {
   display: block;
   font-size: 14px;
   color: #1c1c1c;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 .header-top-right-auth a i {
   margin-right: 6px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.header-top-right-auth a:hover {
+  color: #7fad39;
+}
+.header-top-right-auth a:hover i {
+  color: #7fad39;
 }
 
 .header-logo {
@@ -481,6 +516,11 @@ ol {
 .header-cart ul li a i {
   font-size: 18px;
   color: #1c1c1c;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.header-cart ul li a:hover i {
+  color: #7fad39;
 }
 .header-cart ul li a span {
   height: 13px;
@@ -578,6 +618,11 @@ ol {
   color: #1c1c1c;
   line-height: 39px;
   display: block;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.hero-categories ul li:hover a {
+  color: #7fad39;
 }
 
 .hero-search {
@@ -2433,6 +2478,11 @@ ul.pagination:before {
   color: #1c1c1c;
   font-size: 14px;
   line-height: 32px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.footer-widget ul li:hover a {
+  color: #7fad39;
 }
 .footer-widget p {
   font-size: 14px;

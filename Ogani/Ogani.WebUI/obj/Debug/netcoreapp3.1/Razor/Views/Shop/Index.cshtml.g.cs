@@ -33,8 +33,15 @@ using Ogani.WebUI.AppCode.Types;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.Models.DataContext;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8aa773d74e2ac2dfd482751cfce375d20442167b", @"/Views/Shop/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5840e127a9373479531cdda5245c36c5bc4cc528", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5b8f8ca7cd44221e8ce904bda6799cf20b7028f2", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shop_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PagedViewModel<Product>>
     #nullable disable
@@ -100,7 +107,7 @@ using Ogani.WebUI.AppCode.Types;
 #line hidden
 #nullable disable
             WriteLiteral("\n                </div>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"hero-search\">\n                    <div class=\"hero-search-form\">\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b6790", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b7008", async() => {
                 WriteLiteral(@"
                             <div class=""hero-search-categories"">
                                 All Categories
@@ -149,7 +156,7 @@ using Ogani.WebUI.AppCode.Types;
                     <h2>Organi Shop</h2>
                     <div class=""breadcrumb-option"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b9410", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b9628", async() => {
                 WriteLiteral("Home");
             }
             );
@@ -422,7 +429,7 @@ using Ogani.WebUI.AppCode.Types;
                         <div class=""col-lg-4 col-md-5"">
                           ");
             WriteLiteral("  <div class=\"filter-sort\">\n                                <span>Sort By</span>\n                                <select>\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b25349", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b25567", async() => {
                 WriteLiteral("Default");
             }
             );
@@ -438,7 +445,7 @@ using Ogani.WebUI.AppCode.Types;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b26528", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b26746", async() => {
                 WriteLiteral("Default");
             }
             );
@@ -503,7 +510,7 @@ using Ogani.WebUI.AppCode.Types;
                                         <li><a href=""#""><i class=""fa fa-shopping-cart""></i></a></li>
                                     </ul>
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b30056", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b30274", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
@@ -534,7 +541,7 @@ using Ogani.WebUI.AppCode.Types;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                </div>\n                                <div class=\"product-item-text\">\n                                    <h6>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b32444", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8aa773d74e2ac2dfd482751cfce375d20442167b32662", async() => {
 #nullable restore
 #line 316 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/Shop/Index.cshtml"
                                                                                    Write(item.Name);

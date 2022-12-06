@@ -1,13 +1,18 @@
-﻿
+﻿@inject OganiDbContext db;
+
+@{
+    var appInfo = db.AppInfos.FirstOrDefault();
+}
+
 <!DOCTYPE html>
 <html lang="az">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="description" content="@appInfo.Title organic shopping site">
+    <meta name="keywords" content="@appInfo.Title, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | @ViewBag.Title</title>
+    <title>@appInfo.Title | @ViewBag.Title</title>
 
     <base href="~/" />
 
@@ -59,15 +64,34 @@
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header-top-right-social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            @if (!string.IsNullOrWhiteSpace(appInfo.Facebook))
+            {
+                <a href="@appInfo.Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+            }
+            @if (!string.IsNullOrWhiteSpace(appInfo.Instagram))
+            {
+                <a href="@appInfo.Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+            }
+            @if (!string.IsNullOrWhiteSpace(appInfo.Twitter))
+            {
+                <a href="@appInfo.Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+            }
+            @if (!string.IsNullOrWhiteSpace(appInfo.Linkedin))
+            {
+                <a href="@appInfo.Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+            }
+            @if (!string.IsNullOrWhiteSpace(appInfo.Pinteres))
+            {
+                <a href="@appInfo.Pinteres" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+            }
         </div>
         <div class="humberger-menu-contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> <a href="https://colorlib.com/cdn-cgi/l/email-protection" class="-cf_email-" data-cfemail="aac2cfc6c6c5eac9c5c6c5d8c6c3c884c9c5c7">[email&#160;protected]</a></li>
-                <li>Free Shipping for all Order of $99</li>
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:@appInfo.Email?subject=Ogani%20Organic%20Shopping%20Site">@appInfo.Email</a>
+                </li>
+                <li>@appInfo.HashTag</li>
             </ul>
         </div>
     </div>
@@ -80,18 +104,37 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header-top-left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> <a href="https://colorlib.com/cdn-cgi/l/email-protection" class="-cf_email-" data-cfemail="9ff7faf3f3f0dffcf0f3f0edf3f6fdb1fcf0f2">[email&#160;protected]</a></li>
-                                <li>Free Shipping for all Order of $99</li>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <a href="mailto:@appInfo.Email?subject=Ogani%20Organic%20Shopping%20Site">@appInfo.Email</a>
+                                </li>
+                                <li>@appInfo.HashTag</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="header-top-right">
                             <div class="header-top-right-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                @if (!string.IsNullOrWhiteSpace(appInfo.Facebook))
+                                {
+                                    <a href="@appInfo.Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                }
+                                @if (!string.IsNullOrWhiteSpace(appInfo.Instagram))
+                                {
+                                    <a href="@appInfo.Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                                }
+                                @if (!string.IsNullOrWhiteSpace(appInfo.Twitter))
+                                {
+                                    <a href="@appInfo.Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                                }
+                                @if (!string.IsNullOrWhiteSpace(appInfo.Linkedin))
+                                {
+                                    <a href="@appInfo.Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                }
+                                @if (!string.IsNullOrWhiteSpace(appInfo.Pinteres))
+                                {
+                                    <a href="@appInfo.Pinteres" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+                                }
                             </div>
                             <div class="header-top-right-language">
                                 <img src="assets/img/language.png" alt="">
@@ -114,7 +157,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header-logo">
-                        <a href="index-2.html"><img src="assets/img/logo.png" alt=""></a>
+                        <a asp-controller="home" asp-action="index"><img src="assets/img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -149,9 +192,12 @@
                             <a asp-controller="home" asp-action="index"><img src="assets/img/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: <a href="https://colorlib.com/cdn-cgi/l/email-protection" class="-cf_email-" data-cfemail="167e737a7a795675797a79647a7f743875797b">[email&#160;protected]</a></li>
+                            <li>Address: @appInfo.Address</li>
+                            <li>Phone: @appInfo.Phone</li>
+                            <li>
+                                Email:
+                                <a href="mailto:@appInfo.Email?subject=Ogani%20Organic%20Shopping%20Site">@appInfo.Email</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -185,10 +231,26 @@
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
                         <div class="footer-widget-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            @if (!string.IsNullOrWhiteSpace(appInfo.Facebook))
+                            {
+                                <a href="@appInfo.Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(appInfo.Instagram))
+                            {
+                                <a href="@appInfo.Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(appInfo.Twitter))
+                            {
+                                <a href="@appInfo.Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(appInfo.Linkedin))
+                            {
+                                <a href="@appInfo.Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(appInfo.Pinteres))
+                            {
+                                <a href="@appInfo.Pinteres" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+                            }
                         </div>
                     </div>
                 </div>
@@ -198,8 +260,7 @@
                     <div class="footer-copyright">
                         <div class="footer-copyright-text">
                             <p>
-                                Copyright &copy;
-                                <script type="text/javascript">document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+                                Copyright &copy; @DateTime.Now.Year All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
                             </p>
                         </div>
                         <div class="footer-copyright-payment"><img src="assets/img/payment-item.png" alt=""></div>
