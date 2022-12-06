@@ -53,6 +53,7 @@
     <Folder Include="Views\Shared\Components\SpecialProducts\" />
     <Folder Include="AppCode\Types\" />
     <Folder Include="AppCode\TagHelpers\" />
+    <Folder Include="wwwroot\uploads\images\blogs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
@@ -61,6 +62,7 @@
     <Content Remove="wwwroot\uploads\" />
     <Content Remove="wwwroot\uploads\images\" />
     <Content Remove="wwwroot\uploads\videos\" />
+    <Content Remove="wwwroot\uploads\images\blogs\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.31" />

@@ -21,12 +21,234 @@ namespace Ogani.WebUI.Models.DataContext
 				InitCategories(db);
 				InitProductUnits(db);
 				InitProducts(db);
-
                 InitAppInfo(db);
+
+                InitAuthors(db);
+                InitUsers(db);
+                InitBlogs(db);
+                InitBlogTags(db);
+                //InitBlogTagBlogs(db);
             }
 
 			return app;
 		}
+
+        //private static void InitBlogTagBlogs(OganiDbContext db)
+        //{
+        //    if (!db.BlogTagBlogs.Any())
+        //    {
+        //        var blog = db.Blogs.FirstOrDefault();
+        //        var blogtag = db.BlogTags.FirstOrDefault();
+
+        //        if (blog != null && blogtag != null)
+        //        {
+        //            BlogTagBlog blogTagBlog = new BlogTagBlog
+        //            {
+        //                Blog = blog,
+        //                BlogTag = blogtag
+        //            };
+
+        //            db.BlogTagBlogs.Add(blogTagBlog);
+        //        }
+
+        //        db.SaveChanges();
+        //    }
+        //}
+
+        private static void InitBlogTags(OganiDbContext db)
+        {
+            if (!db.BlogTags.Any())
+            {
+
+                var blog = db.Blogs.FirstOrDefault();
+
+                if (blog != null)
+                {
+                    db.BlogTags.Add(new BlogTag
+                    {
+                        Name = "All",
+                        BlogTagBlogs = new List<BlogTagBlog> { new BlogTagBlog { Blog = blog } }
+
+                    });
+                    db.BlogTags.Add(new BlogTag
+                    {
+                        Name = "Trending",
+                        BlogTagBlogs = new List<BlogTagBlog> { new BlogTagBlog { Blog = blog } }
+                    });
+                    db.BlogTags.Add(new BlogTag
+                    {
+                        Name = "Cooking",
+                        BlogTagBlogs = new List<BlogTagBlog> { new BlogTagBlog { Blog = blog } }
+                    });
+                    db.BlogTags.Add(new BlogTag
+                    {
+                        Name = "Healthy Food",
+                        BlogTagBlogs = new List<BlogTagBlog> { new BlogTagBlog { Blog = blog } }
+                    });
+                    db.BlogTags.Add(new BlogTag
+                    {
+                        Name = "Life Style",
+                        BlogTagBlogs = new List<BlogTagBlog> { new BlogTagBlog { Blog = blog } }
+                    });
+                }
+                else
+                {
+                    db.BlogTags.Add(new BlogTag
+                    {
+                        Name = "All"
+                    });
+                    db.BlogTags.Add(new BlogTag
+                    {
+                        Name = "Trending"
+                    });
+                    db.BlogTags.Add(new BlogTag
+                    {
+                        Name = "Cooking"
+                    });
+                    db.BlogTags.Add(new BlogTag
+                    {
+                        Name = "Healthy Food"
+                    });
+                    db.BlogTags.Add(new BlogTag
+                    {
+                        Name = "Life Style"
+                    });
+                }
+
+                db.SaveChanges();
+            }
+        }
+
+        private static void InitBlogs(OganiDbContext db)
+        {
+            if (!db.Blogs.Any())
+            {
+                var author = db.Authors.FirstOrDefault();
+
+                if (author != null)
+                {
+                    Blog blog = new Blog
+                    {
+                        Title = "The Moment You Need To Remove Garlic From The Menu",
+                        Text = @"<p>
+                            Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
+                            dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit
+                            aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur
+                            sed, convallis at tellus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada.
+                            Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.
+                            Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis
+                            quis ac lectus. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada
+                            feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                        </p>
+                        <h3>
+                            The corner window forms a place within a place that is a resting point within the large
+                            space.
+                        </h3>
+                        <p>
+                            The study area is located at the back with a view of the vast nature. Together with the other
+                            buildings, a congruent story has been managed in which the whole has a reinforcing effect on
+                            the components. The use of materials seeks connection to the main house, the adjacent
+                            stables
+                        </p>",
+                        ImagePath = "blog-1.jpg",
+                        WrotedDate = new DateTime(2019, 1, 14),
+                        Facebook = "https://www.facebook.com/",
+                        Twitter = "https://twitter.com/",
+                        Linkedin = "https://www.linkedin.com/",
+                        Instagram = "https://www.instagram.com/",
+                        Author = author
+                    };
+
+                    var user = db.Users.FirstOrDefault();
+                    if (user != null)
+                    {
+                        blog.Comments = new List<Comment>();
+                        blog.Comments.Add(new Comment
+                        {
+                            Text = "Blogunuz cox gozeldir",
+                            User = user,
+                            Blog = blog
+                        });
+                        blog.Comments.Add(new Comment
+                        {
+                            Text = "Gozel blogunuz var",
+                            User = user,
+                            Blog = blog
+                        });
+                        blog.Comments.Add(new Comment
+                        {
+                            Text = "Cox gozel Blogunuz var",
+                            User = user,
+                            Blog = blog
+                        });
+                        blog.Comments.Add(new Comment
+                        {
+                            Text = "Maraqlidir",
+                            User = user,
+                            Blog = blog
+                        });
+                        blog.Comments.Add(new Comment
+                        {
+                            Text = "Maraqli blogdur",
+                            User = user,
+                            Blog = blog
+                        });
+                        blog.Comments.Add(new Comment
+                        {
+                            Text = "Nece de maaraqlidir",
+                            User = user,
+                            Blog = blog
+                        });
+                        blog.Comments.Add(new Comment
+                        {
+                            Text = "Blog cox maraqli yazilib",
+                            User = user,
+                            Blog = blog
+                        });
+                        blog.Comments.Add(new Comment
+                        {
+                            Text = "Cox maraqlidir",
+                            User = user,
+                            Blog = blog
+                        });
+                    }
+
+                    db.Blogs.Add(blog);
+                }
+
+                db.SaveChanges();
+            }
+        }
+
+
+        private static void InitUsers(OganiDbContext db)
+        {
+            if (!db.Users.Any())
+            {
+                db.Users.Add(new User
+                {
+                    Name = "Tony",
+                    Surname = "Cruse",
+                });
+
+                db.SaveChanges();
+            }
+        }
+
+        private static void InitAuthors(OganiDbContext db)
+        {
+            if (!db.Authors.Any())
+            {
+                db.Authors.Add(new Author
+                {
+                    FullName = "Michael Scofield",
+                    Role = "Admin",
+                    ImagePath = "author-1.jpg"
+                });
+
+                db.SaveChanges();
+            }
+        }
 
         private static void InitAppInfo(OganiDbContext db)
         {
