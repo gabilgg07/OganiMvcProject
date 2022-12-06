@@ -1,11 +1,7 @@
 ﻿
-
 @{
     ViewBag.Title = "Shopping Card";
 }
-
-
-
 
 <section class="hero hero-normal">
     <div class="container">
@@ -185,3 +181,85 @@
         </div>
     </div>
 </section>
+
+@section addjs{
+
+    <script>
+        function qtyChanged2(value, tr) {
+            let priceStr = $(tr).find(".shoping-cart-price").text().trim();
+            let price = priceStr.substring(1);
+            let symb = priceStr.substring(0, 1);
+            let total = (price * value).toFixed(2);
+            $(tr).find(".shoping-cart-total").text(`${symb}${total}`);
+
+            // yuxaridaki sekilde tehlukelidir, cunki, yoxlanis olmur.
+        }
+        function qtyChanged(value, tr) {
+            // asagidaki sekilde tehlukesizdir:
+
+            let priceStr = $(tr).find("td.shoping-cart-price").text().trim();
+            let groups = /^(\$)(\d+\.\d{1,2})$/.exec(priceStr);
+            if (groups != null) {
+                let symb = groups[1];
+                let price = groups[2];
+                let amount = (price * value).toFixed(2);
+                $(tr).find("td.shoping-cart-total").text(`${symb}${amount}`);
+                computeTotalSum();
+            }
+        }
+
+        function computeTotalSum() {
+
+            let prices = $("td.shoping-cart-total").map((i, p) => {
+                let groups = /^(\$)(\d+\.\d{1,2})$/.exec($(p).text().trim());
+                if (groups == null) return 0;
+                let price = groups[2];
+                return parseFloat(price);
+            });
+
+            let sum = 0;
+            if (prices.length != 0) {
+                sum = prices.toArray().reduce(function (a, b) {
+                    return a + b;
+                });
+            }
+
+            $("#subtotal").text(`$${sum.toFixed(2)}`);
+            $("#total").text(`$${sum.toFixed(2)}`);
+        }
+        function computeTotalSum2() {
+            let prices = $("td.shoping-cart-price")
+                .toArray()
+                .map((p) => {
+                    let input = $(p).closest("tr").find('.pro-qty input[type="text"]').val();
+                    let groups = /^(\$)(\d+\.\d{1,2})$/.exec(p.innerText);
+                    if (groups == null) return 0;
+                    let price = groups[2];
+
+                    return parseFloat(price) * parseFloat(input);
+                });
+
+            if (prices.length == 0) {
+                $("#subtotal").text(`$0.00`);
+                return;
+            }
+            let sum = 0;
+            if (prices.length != 0) {
+                sum = prices.reduce(function (a, b) {
+                    return a + b;
+                });
+            }
+
+            $("#subtotal").text(`$${sum.toFixed(2)}`);
+        }
+        if ($("td.shoping-cart-total").length != 0) {
+            computeTotalSum();
+        }
+        $(".shoping-cart-item-close").on("click", function (e) {
+            e.preventDefault();
+            $(e.currentTarget).closest("tr").remove();
+
+            computeTotalSum();
+        });
+    </script>
+}
