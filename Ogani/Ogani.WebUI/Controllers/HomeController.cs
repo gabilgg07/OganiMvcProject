@@ -28,6 +28,7 @@ namespace Ogani.WebUI.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Contact(ContactPost cPost)
         {
             if (ModelState.IsValid)
@@ -41,6 +42,21 @@ namespace Ogani.WebUI.Controllers
             }
 
             return View(cPost);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Subscribe(string email)
+        {
+            var anonymousObj = new
+            {
+                error = false,
+                message = "Siz yeniliklere abune olma sorgusu gonderdiniz," +
+                "E-poct unvaniniza gonderilen linki testiqlemekle emeliyyati tamamlaya bilersiniz",
+                email = email
+            };
+
+            return Json(anonymousObj);
         }
     }
 }

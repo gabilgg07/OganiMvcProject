@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Xb447qSXRM3PzjbAuAuMViG6hYzw8ZJe4VyU530bSxc3ZdP85H55Uhe6Um9zMF/OjzKqEe/t0WSLx3CUwPXlTg==",
+  "dgSpecHash": "nnRVhmxcoXPwqdSeVTe1UMp2Pi2MU66Yw1WJhxTCHK7Sx8RxzclARNtI92MUIwZdODiI/Up8C/NuCKto9pPWVQ==",
   "success": true,
   "projectFilePath": "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Ogani.WebUI.csproj",
   "expectedPackageFiles": [
+    "/Users/macbook/.nuget/packages/jquery/3.6.1/jquery.3.6.1.nupkg.sha512",
     "/Users/macbook/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/microsoft.aspnetcore.razor/2.2.0/microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/microsoft.aspnetcore.razor.language/3.1.0/microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

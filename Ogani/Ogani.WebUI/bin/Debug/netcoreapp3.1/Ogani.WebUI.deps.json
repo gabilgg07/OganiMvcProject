@@ -37,6 +37,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "3.1.31",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.5",
           "Pomelo.EntityFrameworkCore.MySql": "3.2.7",
+          "jQuery": "3.6.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -314,6 +315,7 @@
           "Ogani.WebUI.dll": {}
         }
       },
+      "jQuery/3.6.1": {},
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
         "dependencies": {
           "System.Text.Encodings.Web": "4.5.0"
@@ -3867,6 +3869,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "jQuery/3.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qkG79nkEvz6Oeabe5+qTB0O/FZagMmzpaafeAJZIppYTfrJim75VWNYuR26MLQCx8FWoqarqjpaDZ0/YubKmWg==",
+      "path": "jquery/3.6.1",
+      "hashPath": "jquery.3.6.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
       "type": "package",
