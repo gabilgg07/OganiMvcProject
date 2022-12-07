@@ -1,5 +1,7 @@
-﻿@{
+﻿@model PagedViewModel<Blog>
+@{
     ViewBag.Title = "Index";
+    IEnumerable<BlogTag> blogTags = ViewBag.BlogTags;
 }
 
 
@@ -51,7 +53,7 @@
                 <div class="breadcrumb-text">
                     <h2>Blog</h2>
                     <div class="breadcrumb-option">
-                        <a href="index-2.html">Home</a>
+                        <a asp-controller="home" asp-action="index">Home</a>
                         <span>Blog</span>
                     </div>
                 </div>
@@ -117,139 +119,42 @@
                     <div class="blog-sidebar-item">
                         <h4>Search By</h4>
                         <div class="blog-sidebar-item-tags">
-                            <a href="#">Apple</a>
-                            <a href="#">Beauty</a>
-                            <a href="#">Vegetables</a>
-                            <a href="#">Fruit</a>
-                            <a href="#">Healthy Food</a>
-                            <a href="#">Lifestyle</a>
+                            @if (blogTags != null)
+                            {
+                                @foreach (var bt in blogTags)
+                                {
+                                    <a asp-action="index" asp-route-tagId="@bt.Id">@bt.Name</a>
+                                }
+                            }
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-8 col-md-7">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="blog-item">
-                            <div class="blog-item-pic">
-                                <img src="assets/img/blog/blog-2.jpg" alt="">
-                            </div>
-                            <div class="blog-item-text">
-                                <ul>
-                                    <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                    <li><i class="fa fa-comment-o"></i> 5</li>
-                                </ul>
-                                <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                                <p>
-                                    Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat
-                                </p>
-                                <a href="#" class="blog-btn">READ MORE <span class="arrow_right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="blog-item">
-                            <div class="blog-item-pic">
-                                <img src="assets/img/blog/blog-3.jpg" alt="">
-                            </div>
-                            <div class="blog-item-text">
-                                <ul>
-                                    <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                    <li><i class="fa fa-comment-o"></i> 5</li>
-                                </ul>
-                                <h5><a href="#">Visit the clean farm in the US</a></h5>
-                                <p>
-                                    Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat
-                                </p>
-                                <a href="#" class="blog-btn">READ MORE <span class="arrow_right"></span></a>
+                    @foreach (var item in Model.Items)
+                    {
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="blog-item">
+                                <div class="blog-item-pic">
+                                    <img src="~/uploads/images/blogs/@item.ImagePath" alt="@item.Title">
+                                </div>
+                                <div class="blog-item-text">
+                                    <ul>
+                                        <li><i class="fa fa-calendar-o"></i> @item.WrotedDate.ToString("MMM dd,yyyy")</li>
+                                        <li><i class="fa fa-comment-o"></i> @item.Comments.Count()</li>
+                                    </ul>
+                                    <h5><a asp-action="details" asp-route-id="@item.Id">@item.Title</a></h5>
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                    <a asp-action="details" asp-route-id="@item.Id" class="blog-btn">READ MORE <span class="arrow_right"></span></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="blog-item">
-                            <div class="blog-item-pic">
-                                <img src="assets/img/blog/blog-1.jpg" alt="">
-                            </div>
-                            <div class="blog-item-text">
-                                <ul>
-                                    <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                    <li><i class="fa fa-comment-o"></i> 5</li>
-                                </ul>
-                                <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                <p>
-                                    Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat
-                                </p>
-                                <a href="#" class="blog-btn">READ MORE <span class="arrow_right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="blog-item">
-                            <div class="blog-item-pic">
-                                <img src="assets/img/blog/blog-4.jpg" alt="">
-                            </div>
-                            <div class="blog-item-text">
-                                <ul>
-                                    <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                    <li><i class="fa fa-comment-o"></i> 5</li>
-                                </ul>
-                                <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                <p>
-                                    Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat
-                                </p>
-                                <a href="#" class="blog-btn">READ MORE <span class="arrow_right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="blog-item">
-                            <div class="blog-item-pic">
-                                <img src="assets/img/blog/blog-4.jpg" alt="">
-                            </div>
-                            <div class="blog-item-text">
-                                <ul>
-                                    <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                    <li><i class="fa fa-comment-o"></i> 5</li>
-                                </ul>
-                                <h5><a href="#">The Moment You Need To Remove Garlic From The Menu</a></h5>
-                                <p>
-                                    Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat
-                                </p>
-                                <a href="#" class="blog-btn">READ MORE <span class="arrow_right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="blog-item">
-                            <div class="blog-item-pic">
-                                <img src="assets/img/blog/blog-6.jpg" alt="">
-                            </div>
-                            <div class="blog-item-text">
-                                <ul>
-                                    <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                    <li><i class="fa fa-comment-o"></i> 5</li>
-                                </ul>
-                                <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                <p>
-                                    Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                    quaerat
-                                </p>
-                                <a href="#" class="blog-btn">READ MORE <span class="arrow_right"></span></a>
-                            </div>
-                        </div>
-                    </div>
+                    }
                     <div class="col-lg-12">
-                        <div class="product-pagination blog-pagination">
-                            <a href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                        </div>
+                        @Model.GetPagination(Url, "Index")
                     </div>
                 </div>
             </div>

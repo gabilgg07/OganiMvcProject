@@ -11,10 +11,13 @@ namespace Ogani.WebUI.Models.Entity
 		[Required]
 		public string Title { get; set; }
 
-		[Required]
+        public string Description { get; set; }
+
+        [Required]
 		public string Text { get; set; }
 
-		public string ImagePath { get; set; }
+
+        public string ImagePath { get; set; }
 
         public DateTime WrotedDate { get; set; }
 

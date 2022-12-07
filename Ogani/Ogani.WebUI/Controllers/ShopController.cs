@@ -19,7 +19,7 @@ namespace Ogani.WebUI.Controllers
             this.db = db;
         }
 
-        public IActionResult Index(int pageIndex = 1, int pageSize = 3)
+        public IActionResult Index(int? categoryId,int pageIndex = 1, int pageSize = 3)
         {
             // lazy loading
             //List<Product> products = db.Products.ToList();
@@ -29,12 +29,16 @@ namespace Ogani.WebUI.Controllers
             //    .Skip((pageIndex-1)*pageSize)
             //    .Take(pageSize)
             //    .ToList();
+            var query = db.Products.AsQueryable();
 
-            var query = db.Products
-                .Include(p => p.Images)
-                .AsQueryable();
+            if (categoryId != null)
+            {
+                query = query.Where(p => p.CategoryId == categoryId);
+            }
 
-            var pagedModel = new PagedViewModel<Product>(query, pageIndex, pageSize);
+            query = query.Include(p => p.Images);
+
+            var pagedModel = new PagedViewModel<Product>(query, pageIndex, pageSize,categoryId);
 
             return View(pagedModel);
         }

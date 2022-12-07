@@ -16,6 +16,8 @@ namespace Ogani.WebUI.Models.ViewModel
         public int CurrentIndex { get; set; }
         public int PageSize { get; set; }
         public int TotalCount { get; set; }
+        public int? CategoryId { get; set; }
+        public int? TagId { get; set; }
 
         public int MaxPageIndex
         {
@@ -26,7 +28,7 @@ namespace Ogani.WebUI.Models.ViewModel
         }
 
 
-        public PagedViewModel(IQueryable<T> query, int pageIndex, int pageSize)
+        public PagedViewModel(IQueryable<T> query, int pageIndex, int pageSize, int? categoryId = null, int? tagId = null)
         {
             this.PageSize = pageSize;
             this.TotalCount = query.Count();
@@ -39,6 +41,9 @@ namespace Ogani.WebUI.Models.ViewModel
                 .ToList();
 
             this.CurrentIndex = pageIndex;
+
+            this.CategoryId = categoryId;
+            this.TagId = tagId;
         }
 
         public HtmlString GetPagination(IUrlHelper urlHelper, string action, string area = "")
@@ -57,8 +62,11 @@ namespace Ogani.WebUI.Models.ViewModel
                 {
                     pageindex = CurrentIndex - 1,
                     pagesize = PageSize,
+                    categoryId = CategoryId,
+                    tagId = TagId,
                     area
                 });
+
 
                 builder.Append($@"<li class='prev'>
                                 <a href='{link}'><i class='fa fa-chevron-left'></i></a>
@@ -97,6 +105,8 @@ namespace Ogani.WebUI.Models.ViewModel
                 {
                     pageindex = i,
                     pagesize = PageSize,
+                    categoryId = CategoryId,
+                    tagId = TagId,
                     area
                 });
 
@@ -111,6 +121,8 @@ namespace Ogani.WebUI.Models.ViewModel
                 {
                     pageindex = CurrentIndex + 1,
                     pagesize = PageSize,
+                    categoryId = CategoryId,
+                    tagId = TagId,
                     area
                 });
 
