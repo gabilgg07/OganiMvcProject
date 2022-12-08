@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nnRVhmxcoXPwqdSeVTe1UMp2Pi2MU66Yw1WJhxTCHK7Sx8RxzclARNtI92MUIwZdODiI/Up8C/NuCKto9pPWVQ==",
+  "dgSpecHash": "yCdz6bUWcfcTr/oWd/To90Ev8TuuVidiLVmTDUfjQAknZtWhmLfChOFMO7762cmjMSaEWRK+o0n2ODihxpN6kg==",
   "success": true,
   "projectFilePath": "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Ogani.WebUI.csproj",
   "expectedPackageFiles": [
@@ -53,6 +53,7 @@
     "/Users/macbook/.nuget/packages/microsoft.visualstudio.web.codegeneration.templating/3.1.5/microsoft.visualstudio.web.codegeneration.templating.3.1.5.nupkg.sha512",
     "/Users/macbook/.nuget/packages/microsoft.visualstudio.web.codegeneration.utils/3.1.5/microsoft.visualstudio.web.codegeneration.utils.3.1.5.nupkg.sha512",
     "/Users/macbook/.nuget/packages/microsoft.visualstudio.web.codegenerators.mvc/3.1.5/microsoft.visualstudio.web.codegenerators.mvc.3.1.5.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/microsoft.web.librarymanager.build/2.1.175/microsoft.web.librarymanager.build.2.1.175.nupkg.sha512",
     "/Users/macbook/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/microsoft.win32.registry/4.5.0/microsoft.win32.registry.4.5.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/mysqlconnector/0.69.10/mysqlconnector.0.69.10.nupkg.sha512",
@@ -138,6 +139,7 @@
     "/Users/macbook/.nuget/packages/system.runtime.handles/4.3.0/system.runtime.handles.4.3.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/system.runtime.interopservices/4.3.0/system.runtime.interopservices.4.3.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/system.runtime.interopservices.runtimeinformation/4.3.0/system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/system.runtime.loader/4.3.0/system.runtime.loader.4.3.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/system.runtime.numerics/4.3.0/system.runtime.numerics.4.3.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/system.runtime.serialization.formatters/4.3.0/system.runtime.serialization.formatters.4.3.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/system.runtime.serialization.json/4.3.0/system.runtime.serialization.json.4.3.0.nupkg.sha512",

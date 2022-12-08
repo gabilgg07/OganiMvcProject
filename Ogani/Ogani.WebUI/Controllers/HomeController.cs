@@ -51,7 +51,7 @@ namespace Ogani.WebUI.Controllers
             var anonymousObj = new
             {
                 error = false,
-                message = "Siz yeniliklere abune olma sorgusu gonderdiniz," +
+                message = "Siz yeniliklere abune olma sorgusu gonderdiniz, " +
                 "E-poct unvaniniza gonderilen linki testiqlemekle emeliyyati tamamlaya bilersiniz",
                 email = email
             };

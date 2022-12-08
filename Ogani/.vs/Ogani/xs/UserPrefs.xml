@@ -1,38 +1,29 @@
 ﻿<Properties StartupConfiguration="{320C438B-BE71-483D-8985-3514117EA629}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Ogani.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Ogani.WebUI/Program.cs">
+  <MonoDevelop.Ide.ItemProperties.Ogani.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Ogani.WebUI/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="Ogani.WebUI/Models/Entity/Product.cs" />
-      <File FileName="Ogani.WebUI/Models/Entity/ProductImage.cs" />
-      <File FileName="Ogani.WebUI/Models/Entity/ProductUnit.cs" />
-      <File FileName="Ogani.WebUI/Models/DataContext/OganiDbContext.cs" />
-      <File FileName="Ogani.WebUI/Models/Entity/Category.cs" />
-      <File FileName="Ogani.WebUI/Models/DataContext/OganiDbSeed.cs" />
-      <File FileName="Ogani.WebUI/Startup.cs" />
-      <File FileName="Ogani.WebUI/Program.cs" Line="16" Column="1" />
+      <File FileName="Ogani.WebUI/Views/Shared/_Layout.cshtml" Line="269" Column="1" />
+      <File FileName="Ogani.WebUI/Controllers/HomeController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Ogani" expanded="True">
-            <Node name="Ogani.WebUI" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Migrations" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="DataContext" expanded="True" />
-                <Node name="Entity" expanded="True" />
+            <Node name="Ogani.WebUI" expanded="True" selected="True">
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True" />
               </Node>
-              <Node name="Program.cs" selected="True" />
+              <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
