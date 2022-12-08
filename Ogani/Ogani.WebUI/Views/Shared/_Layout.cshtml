@@ -241,7 +241,7 @@
 
     <script src="assets/js/main.js" type="text/javascript"></script>
 
-    <script>
+    <script class="removeable">
         $(document).ready(function () {
 
             toastr.options = {
@@ -250,7 +250,7 @@
                 "newestOnTop": false,
                 "progressBar": true,
                 "positionClass": "toast-bottom-right",
-                "preventDuplicates": false,
+                "preventDuplicates": true,
                 "onclick": null,
                 "showDuration": "300",
                 "hideDuration": "1000",
@@ -285,6 +285,11 @@
                     processData: false,
                     contentType: false,
                     success: function (response) {
+                        if (response.error) {
+                            toastr.error(response.message, "Xeta");
+                            $(e.currentTarget).find('[name="email"]').focus();
+                            return;
+                        }
                         toastr.success(response.message, "Ugur");
                         $(e.currentTarget).find('[name="email"]').val("");
                     },
@@ -294,7 +299,9 @@
                     },
                 });
             });
-            
+
+
+            $('.removeable').remove();
         });
     </script>
 

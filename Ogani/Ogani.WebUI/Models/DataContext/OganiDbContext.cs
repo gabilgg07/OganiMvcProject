@@ -35,6 +35,8 @@ namespace Ogani.WebUI.Models.DataContext
 		public DbSet<Comment> Comments { get; set; }
 
 		public DbSet<BlogTagBlog> BlogTagBlogs { get; set; }
+
+		public DbSet<Subscribe> Subscribes { get; set; }
     }
 }
 

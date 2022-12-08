@@ -30,6 +30,7 @@
     <None Remove="AppCode\TagHelpers\" />
     <None Remove="jQuery" />
     <None Remove="Microsoft.Web.LibraryManager.Build" />
+    <None Remove="AppCode\Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -56,6 +57,7 @@
     <Folder Include="AppCode\Types\" />
     <Folder Include="AppCode\TagHelpers\" />
     <Folder Include="wwwroot\uploads\images\blogs\" />
+    <Folder Include="AppCode\Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

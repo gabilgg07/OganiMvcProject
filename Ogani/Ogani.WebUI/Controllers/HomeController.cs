@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Ogani.WebUI.AppCode.Extensions;
 using Ogani.WebUI.Models.DataContext;
 using Ogani.WebUI.Models.Entity;
 
@@ -48,6 +49,15 @@ namespace Ogani.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Subscribe(string email)
         {
+            if (!email.IsEmail())
+            {
+                return Json(new
+                {
+                    error = true,
+                    message = $"'{email}' - email formati ucun uygun deyil!"
+                });
+            }
+
             var anonymousObj = new
             {
                 error = false,

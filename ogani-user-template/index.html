@@ -945,15 +945,64 @@
     <script src="assets/js/owl.carousel.min.js" type="text/javascript"></script>
     <script src="assets/js/main.js" type="text/javascript"></script>
 
-    <script>
+    <script class="removeable">
       $(document).ready(function () {
+        toastr.options = {
+          closeButton: true,
+          debug: false,
+          newestOnTop: false,
+          progressBar: true,
+          positionClass: "toast-bottom-right",
+          preventDuplicates: true,
+          onclick: null,
+          showDuration: "300",
+          hideDuration: "1000",
+          timeOut: "5000",
+          extendedTimeOut: "2000",
+          showEasing: "swing",
+          hideEasing: "linear",
+          showMethod: "fadeIn",
+          hideMethod: "fadeOut",
+        };
+
         $("#frmSubscribe").submit(function (e) {
           e.preventDefault();
 
           let url = $(e.currentTarget).attr("action");
+          let formData = new FormData(e.currentTarget);
 
-          console.log(url);
+          let myValue = formData.get("email");
+
+          if (!isEmail(myValue)) {
+            toastr.warning("E-poct unvani dogru deyil", "Xeberdarliq");
+            $(e.currentTarget).find('[name="email"]').focus();
+
+            return;
+          }
+
+          $.ajax({
+            url: `${url}`,
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+              if (response.error) {
+                toastr.error(response.message, "Xeta");
+                $(e.currentTarget).find('[name="email"]').focus();
+                return;
+              }
+              toastr.success(response.message, "Ugur");
+              $(e.currentTarget).find('[name="email"]').val("");
+            },
+            error: function (response) {
+              console.error(response);
+              toastr.error("Gozlenilmez xeta bas verdi", "Ugursuz oldu");
+            },
+          });
         });
+
+        $(".removeable").remove();
       });
     </script>
   </body>
