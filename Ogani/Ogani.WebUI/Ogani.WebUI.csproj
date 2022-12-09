@@ -31,6 +31,7 @@
     <None Remove="jQuery" />
     <None Remove="Microsoft.Web.LibraryManager.Build" />
     <None Remove="AppCode\Extensions\" />
+    <None Remove="MailKit" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -83,5 +84,6 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.7" />
     <PackageReference Include="jQuery" Version="3.6.1" />
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
+    <PackageReference Include="MailKit" Version="3.4.3" />
   </ItemGroup>
 </Project>

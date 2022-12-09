@@ -58,6 +58,49 @@ namespace Ogani.WebUI.Controllers
                 });
             }
 
+            var founded = db.Subscribes.FirstOrDefault(s => s.Email.Equals(email));
+
+            if (founded != null)
+            {
+
+                return Json(new
+                {
+                    error = false,
+                    message = $"'{email}' - email artiq qeydiyatdan kecib"
+                });
+            }
+
+            var subscribe = new Subscribe
+            {
+                Email = email
+            };
+
+            db.Subscribes.Add(subscribe);
+
+            db.SaveChanges();
+
+            string token = $"{subscribe.Id}-{subscribe.Email}";
+
+            var callbackUrl = Url.Action("ConfirmSubscribe", "Home", new
+            {
+                token = token
+            }, protocol: Request.Scheme);
+
+            var sendState = email.SendEmail($"Zehmet olmasa abunelik isteyinizi <a href='{callbackUrl.ToString()}'>testiq edin!</a>");
+
+            if (!sendState)
+            {
+                db.Subscribes.Remove(subscribe);
+                db.SaveChanges();
+
+                return Json(new
+                {
+                    error = true,
+                    message = $"Muveqqeti olaraq xidmet islemir. Zehmet olmasa biraz sonra yeniden cehd edin"
+                });
+            }
+
+
             var anonymousObj = new
             {
                 error = false,
@@ -67,6 +110,11 @@ namespace Ogani.WebUI.Controllers
             };
 
             return Json(anonymousObj);
+        }
+
+        public IActionResult ConfirmSubscribe(string token)
+        {
+            return Json(token);
         }
     }
 }
