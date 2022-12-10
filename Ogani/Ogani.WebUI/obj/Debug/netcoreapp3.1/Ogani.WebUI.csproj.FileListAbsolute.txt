@@ -173,3 +173,4 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.pdb
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.genruntimeconfig.cache
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Home/ConfirmSubscribe.cshtml.g.cs

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Ogani.WebUI.AppCode.Extensions;
@@ -79,7 +80,7 @@ namespace Ogani.WebUI.Controllers
 
             db.SaveChanges();
 
-            string token = $"{subscribe.Id}-{subscribe.Email}";
+            string token = $"{subscribe.Id}-{subscribe.Email}".Encrypt();
 
             var callbackUrl = Url.Action("ConfirmSubscribe", "Home", new
             {
@@ -114,7 +115,42 @@ namespace Ogani.WebUI.Controllers
 
         public IActionResult ConfirmSubscribe(string token)
         {
-            return Json(token);
+            try
+            {
+                token = token.Decrypt();
+            }
+            catch (Exception)
+            {
+                return View(Tuple.Create("Xetali muraciet. Acar deaktivdir", true));
+            }
+
+
+            Match match = Regex.Match(token, @"^(?<id>\d+)-(?<email>([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?))$");
+
+            if (!match.Success)
+            {
+                return View(Tuple.Create("Xetali muraciet. Acar deaktivdir", true));
+            }
+
+            int id = Convert.ToInt32(match.Groups["id"].Value);
+            string email = match.Groups["email"].Value;
+
+            var founded = db.Subscribes.FirstOrDefault(s => s.Id == id && s.ConfirmedDate == null);
+
+            if (founded == null)
+            {
+                return View(Tuple.Create("Xetali muraciet. Acar deaktivdir", true));
+            }
+
+            if (!founded.Email.Equals(email))
+            {
+                return View(Tuple.Create("Xetali muraciet. Acar deaktivdir", true));
+            }
+
+            founded.ConfirmedDate = DateTime.Now;
+            db.SaveChanges();
+
+            return View(Tuple.Create("Tebrikler siz yeniliklere abune oldunuz", false));
         }
     }
 }

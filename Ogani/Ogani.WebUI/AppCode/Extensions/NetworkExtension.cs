@@ -16,7 +16,7 @@ namespace Ogani.WebUI.AppCode.Extensions
                 mailMessage.From.Add(MailboxAddress.Parse("aaliyeva0790@yandex.com"));
                 mailMessage.To.Add(MailboxAddress.Parse(email));
                 mailMessage.Subject = subjectText.ToString();
-                mailMessage.Body = new TextPart(TextFormat.Html) { Text = message };
+                mailMessage.Body = new TextPart(TextFormat.Html) { Text = message.ToString() };
 
                 using var smtp = new SmtpClient();
                 smtp.Connect("smtp.yandex.com", 587, SecureSocketOptions.StartTls);
@@ -25,7 +25,7 @@ namespace Ogani.WebUI.AppCode.Extensions
                 smtp.Disconnect(true);
 
                 return true;
-            }
+        }
             catch
             {
                 return false;
