@@ -38,11 +38,12 @@ namespace Ogani.WebUI.Controllers
                 db.ContactPosts.Add(cPost);
                 db.SaveChanges();
 
-                TempData["PostMessage"] = "Sualınız müvəffəqiyyətlə göndərildi";
-
-                return RedirectToAction(nameof(Contact));
+                ViewBag.State = Tuple.Create("Sorgunuz qebul edildi, qisa muddetde geri donus edeceyik",false);
+                ModelState.Clear();
+                return View();
             }
 
+            ViewBag.State = Tuple.Create("Zehmet olmasa melumatlarin dogrulugunu yeniden yoxlayasiniz", true);
             return View(cPost);
         }
 

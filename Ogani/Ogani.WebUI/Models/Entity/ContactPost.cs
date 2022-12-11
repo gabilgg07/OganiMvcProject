@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Ogani.WebUI.AppCode.DataAnnotation;
 
 namespace Ogani.WebUI.Models.Entity
 {
@@ -11,8 +12,7 @@ namespace Ogani.WebUI.Models.Entity
 		[MaxLength(100)]
 		public string FullName { get; set; }
 
-        [Required]
-        [MaxLength(100)]
+        [RequiredEmail]
         public string Email { get; set; }
 
         [Required]
