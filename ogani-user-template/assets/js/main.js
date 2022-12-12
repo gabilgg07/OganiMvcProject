@@ -1,4 +1,5 @@
 "use strict";
+
 (function ($) {
   $(window).on("load", function () {
     $(".loader").fadeOut();
@@ -146,7 +147,30 @@
   });
 
   //   $(".imager").imgadd();
+
+  if ($(".featured-controls").length > 0) {
+  }
 })(jQuery);
+
+$.fn.exists = function () {
+  return this.length !== 0;
+};
+
+if ($(".featured-controls").exists()) {
+  $(".featured-controls ul li").on("click", function (e) {
+    let filter = $(this).data("filter");
+    $(".featured-filter > div").addClass("d-none");
+    if (filter == "*") {
+      $(".featured-filter > div").removeClass("d-none");
+    } else {
+      $(`.featured-filter > div${filter}`).removeClass("d-none");
+    }
+  });
+}
+
+// $.each(collection, function (indexInArray, valueOfElement) {
+
+// });
 
 function isEmail(value) {
   return /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(

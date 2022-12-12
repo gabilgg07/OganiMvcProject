@@ -1,6 +1,6 @@
 ﻿@model Blog
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Blog Details";
     IEnumerable<BlogTag> blogTags = ViewBag.BlogTags;
     string tagNames = "";
     foreach (var item in Model.BlogTagBlogs)
@@ -9,47 +9,6 @@
     }
     tagNames = tagNames.Substring(2);
 }
-
-
-<section class="hero hero-normal">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="hero-categories">
-                    <div class="hero-categories-all">
-                        <i class="fa fa-bars"></i>
-                        <span>All departments</span>
-                    </div>
-                    @await Component.InvokeAsync("Category")
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <div class="hero-search">
-                    <div class="hero-search-form">
-                        <form action="#">
-                            <div class="hero-search-categories">
-                                All Categories
-                                <span class="arrow_carrot-down"></span>
-                            </div>
-                            <input type="text" placeholder="What do yo u need?">
-                            <button type="submit" class="site-btn">SEARCH</button>
-                        </form>
-                    </div>
-                    <div class="hero-search-phone">
-                        <div class="hero-search-phone-icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="hero-search-phone-text">
-                            <h5>+65 11.188.888</h5>
-                            <span>support 24/7 time</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 <section class="blog-details-hero set-bg" data-setbg="assets/img/blog/details/details-hero.jpg">
     <div class="container">

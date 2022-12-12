@@ -1,15 +1,17 @@
-﻿<ul>
-    <li class="active"><a asp-controller="home" asp-action="index">Home</a></li>
-    <li><a asp-controller="Shop" asp-action="index">Shop</a></li>
+﻿@{
+    string title = ViewBag.Title;
+}
+<ul>
+    <li class="@(title.ToLower().Contains("home")?"active":"")"><a asp-controller="home" asp-action="index">Home</a></li>
+    <li class="@(title.ToLower().Contains("shop")?"active":"")"><a asp-controller="Shop" asp-action="index">Shop</a></li>
     <li>
         <a href="#">Pages</a>
         <ul class="header-menu-dropdown">
             <li><a asp-controller="Shop" asp-action="ShoppingCard">Shoping Cart</a></li>
             <li><a asp-controller="Shop" asp-action="checkout">Check Out</a></li>
-            <li><a asp-controller="Blog" asp-action="details">Blog Details</a></li>
         </ul>
     </li>
-    <li><a asp-controller="blog" asp-action="index">Blog</a></li>
-    <li><a asp-controller="home" asp-action="contact">Contact</a></li>
+    <li class="@(title.ToLower().Contains("blog")?"active":"")"><a asp-controller="blog" asp-action="index">Blog</a></li>
+    <li class="@(title.ToLower().Contains("contact")?"active":"")"><a asp-controller="home" asp-action="contact">Contact</a></li>
 </ul>
 

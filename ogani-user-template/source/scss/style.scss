@@ -1021,6 +1021,10 @@ ol {
         color: #1c1c1c;
         line-height: 39px;
         display: block;
+        transition: color 0.3s;
+        &:hover {
+          color: #7fad39;
+        }
       }
     }
   }
@@ -2363,6 +2367,7 @@ ul {
   margin-bottom: 45px;
   img {
     margin-bottom: 30px;
+    width: 100%;
   }
   p {
     font-size: 18px;

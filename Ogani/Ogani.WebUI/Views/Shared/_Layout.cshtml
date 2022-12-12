@@ -2,6 +2,7 @@
 
 @{
     var appInfo = db.AppInfos.FirstOrDefault();
+    string title = ViewBag.Title;
 }
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
     <meta name="keywords" content="@appInfo.Title, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@appInfo.Title | @ViewBag.Title</title>
+    <title>@appInfo.Title | @title</title>
     <link rel="shortcut icon" href="#">
 
     <base href="~/" />
@@ -156,6 +157,57 @@
         </div>
     </header>
 
+
+    <section class="hero @(title.ToLower().Contains("home index")?"":"hero-normal")">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero-categories">
+                        <div class="hero-categories-all">
+                            <i class="fa fa-bars"></i>
+                            <span>All departments</span>
+                        </div>
+                        @await Component.InvokeAsync("Category")
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero-search">
+                        <div class="hero-search-form">
+                            <form action="#">
+                                <div class="hero-search-categories">
+                                    All Categories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="What do yo u need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div class="hero-search-phone">
+                            <div class="hero-search-phone-icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero-search-phone-text">
+                                <h5>@appInfo.Phone</h5>
+                                <span>@appInfo.ActivityHashTag</span>
+                            </div>
+                        </div>
+                    </div>
+                    @if (title.ToLower().Contains("home index"))
+                    {
+                        <div class="hero-item set-bg" data-setbg="assets/img/hero/banner.jpg">
+                            <div class="hero-text">
+                                <span>FRUIT FRESH</span>
+                                <h2>Vegetable <br />100% Organic</h2>
+                                <p>Free Pickup and Delivery Available</p>
+                                <a href="#" class="primary-btn">SHOP NOW</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
     @RenderBody()
 
     <footer class="footer spad">
@@ -242,8 +294,7 @@
 
     <script src="assets/js/main.js" type="text/javascript"></script>
 
-    <script class="removeable">
-        $(document).ready(function () {
+    <script class="removeable">$(document).ready(function () {
 
             toastr.options = {
                 "closeButton": true,
@@ -303,8 +354,7 @@
 
 
             $('.removeable').remove();
-        });
-    </script>
+        });</script>
 
     @RenderSection("addjs", required: false)
 </body>

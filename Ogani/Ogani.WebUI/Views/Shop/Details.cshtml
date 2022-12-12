@@ -1,48 +1,7 @@
 ﻿@model Product
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Shop Details";
 }
-
-
-
-<section class="hero hero-normal">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="hero-categories">
-                    <div class="hero-categories-all">
-                        <i class="fa fa-bars"></i>
-                        <span>All departments</span>
-                    </div>
-                    @await Component.InvokeAsync("Category")
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <div class="hero-search">
-                    <div class="hero-search-form">
-                        <form action="#">
-                            <div class="hero-search-categories">
-                                All Categories
-                                <span class="arrow_carrot-down"></span>
-                            </div>
-                            <input type="text" placeholder="What do yo u need?">
-                            <button type="submit" class="site-btn">SEARCH</button>
-                        </form>
-                    </div>
-                    <div class="hero-search-phone">
-                        <div class="hero-search-phone-icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="hero-search-phone-text">
-                            <h5>+65 11.188.888</h5>
-                            <span>support 24/7 time</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 <section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb.jpg">
@@ -50,11 +9,11 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="breadcrumb-text">
-                    <h2>Vegetable’s Package</h2>
+                    <h2>@Model.Name</h2>
                     <div class="breadcrumb-option">
-                        <a href="index-2.html">Home</a>
-                        <a href="index-2.html">Vegetables</a>
-                        <span>Vegetable’s Package</span>
+                        <a asp-controller="home" asp-action="index">Home</a>
+                        <a asp-action="index">Shop</a>
+                        <span>@Model.Name</span>
                     </div>
                 </div>
             </div>

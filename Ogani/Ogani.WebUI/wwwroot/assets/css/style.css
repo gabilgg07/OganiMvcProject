@@ -1041,6 +1041,11 @@ ol {
   color: #1c1c1c;
   line-height: 39px;
   display: block;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.sidebar-item ul li a:hover {
+  color: #7fad39;
 }
 .sidebar-item .latest-product-text {
   position: relative;
@@ -2417,6 +2422,7 @@ ul.pagination:before {
 }
 .blog-details-text img {
   margin-bottom: 30px;
+  width: 100%;
 }
 .blog-details-text p {
   font-size: 18px;
