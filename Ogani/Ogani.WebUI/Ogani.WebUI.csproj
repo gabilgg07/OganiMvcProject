@@ -39,6 +39,7 @@
     <None Remove="Areas\Admin\Models\" />
     <None Remove="Areas\Admin\Views\" />
     <None Remove="Areas\Admin\Views\Home\" />
+    <None Remove="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -73,6 +74,7 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
