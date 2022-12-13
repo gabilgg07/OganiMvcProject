@@ -75,6 +75,11 @@
     <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Areas\Admin\Views\Home\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="wwwroot\Admin\" />
+    <Folder Include="wwwroot\Admin\assets\" />
+    <Folder Include="wwwroot\Admin\assets\js\" />
+    <Folder Include="wwwroot\Admin\assets\css\" />
+    <Folder Include="wwwroot\Admin\assets\img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
@@ -84,6 +89,11 @@
     <Content Remove="wwwroot\uploads\images\" />
     <Content Remove="wwwroot\uploads\videos\" />
     <Content Remove="wwwroot\uploads\images\blogs\" />
+    <Content Remove="wwwroot\Admin\" />
+    <Content Remove="wwwroot\Admin\assets\" />
+    <Content Remove="wwwroot\Admin\assets\js\" />
+    <Content Remove="wwwroot\Admin\assets\css\" />
+    <Content Remove="wwwroot\Admin\assets\img\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.31" />

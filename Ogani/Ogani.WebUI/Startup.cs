@@ -48,8 +48,8 @@ namespace Ogani.WebUI
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute("defaultArea", "Admin", "admin/{controller=home}/{action=index}/{id?}");
                 endpoints.MapControllerRoute("default", "{controller=home}/{action=index}/{id?}");
-                endpoints.MapAreaControllerRoute("defaultArea","Admin", "admin/{controller=home}/{action=index}/{id?}");
             });
         }
     }
