@@ -25,6 +25,7 @@ namespace Ogani.WebUI.Models.DataContext
 
                 InitAuthors(db);
                 InitUsers(db);
+                InitBlogCategory(db);
                 InitBlogs(db);
                 InitBlogTags(db);
                 //InitBlogTagBlogs(db);
@@ -124,8 +125,9 @@ namespace Ogani.WebUI.Models.DataContext
             if (!db.Blogs.Any())
             {
                 var author = db.Authors.FirstOrDefault();
+                var blogsCategory = db.BlogCategories.FirstOrDefault();
 
-                if (author != null)
+                if (author != null && blogsCategory != null)
                 {
                     Blog blog = new Blog
                     {
@@ -156,6 +158,7 @@ namespace Ogani.WebUI.Models.DataContext
                         Twitter = "https://twitter.com/",
                         Linkedin = "https://www.linkedin.com/",
                         Instagram = "https://www.instagram.com/",
+                        BlogCategory = blogsCategory,
                         Author = author
                     };
 
@@ -220,6 +223,29 @@ namespace Ogani.WebUI.Models.DataContext
             }
         }
 
+
+
+        private static void InitBlogCategory(OganiDbContext db)
+        {
+
+            if (!db.BlogCategories.Any())
+            {
+                db.BlogCategories.Add(new BlogCategory
+                {
+                    Name = "Beuty"
+                });
+                db.BlogCategories.Add(new BlogCategory
+                {
+                    Name = "Food"
+                });
+                db.BlogCategories.Add(new BlogCategory
+                {
+                    Name = "Travel"
+                });
+
+                db.SaveChanges();
+            }
+        }
 
         private static void InitUsers(OganiDbContext db)
         {

@@ -2330,10 +2330,12 @@ ul.pagination:before {
 .blog-sidebar-recent-item-pic {
   float: left;
   margin-right: 20px;
+  width: 20%;
 }
 
 .blog-sidebar-recent-item-text {
   overflow: hidden;
+  width: 70%;
 }
 .blog-sidebar-recent-item-text h6 {
   font-weight: 700;

@@ -21,7 +21,11 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await db.Categories.ToListAsync());
+            var categories = await db.Categories
+                .Where(c => c.DeletedDate == null)
+                .ToListAsync();
+
+            return View(categories);
         }
 
         public async Task<IActionResult> Details(int? id)
@@ -31,7 +35,8 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var category = await db.Categories.FirstOrDefaultAsync(c => c.Id == id);
+            var category = await db.Categories
+                .FirstOrDefaultAsync(c => c.Id == id && c.DeletedDate == null);
 
             if (category == null)
             {
@@ -117,7 +122,8 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var category = await db.Categories.FirstOrDefaultAsync(c => c.Id == id);
+            var category = await db.Categories
+                .FirstOrDefaultAsync(c => c.Id == id && c.DeletedDate == null);
 
             if (category == null)
             {
@@ -140,7 +146,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         private bool CategoryExists(int id)
         {
-            return db.Categories.Any(e => e.Id == id);
+            return db.Categories.Any(e => e.Id == id && e.DeletedDate == null);
         }
     }
 }

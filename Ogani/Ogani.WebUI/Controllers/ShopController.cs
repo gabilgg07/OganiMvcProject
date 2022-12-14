@@ -36,7 +36,9 @@ namespace Ogani.WebUI.Controllers
                 query = query.Where(p => p.CategoryId == categoryId);
             }
 
-            query = query.Include(p => p.Images);
+            query = query
+                .Where(p => p.DeletedDate == null)
+                .Include(p => p.Images);
 
             var pagedModel = new PagedViewModel<Product>(query, pageIndex, pageSize,categoryId);
 
@@ -48,7 +50,7 @@ namespace Ogani.WebUI.Controllers
             var product = db.Products
                 .Include(p => p.Images)
                 .Include(p => p.Unit)
-                .FirstOrDefault(p => p.Id == id);
+                .FirstOrDefault(p => p.Id == id && p.DeletedDate == null);
 
             return View(product);
         }

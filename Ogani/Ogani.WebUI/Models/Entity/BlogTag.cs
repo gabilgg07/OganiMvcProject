@@ -12,6 +12,8 @@ namespace Ogani.WebUI.Models.Entity
         [Required]
         public string Name { get; set; }
 
+        public DateTime? DeletedDate { get; set; }
+
         public virtual ICollection<BlogTagBlog> BlogTagBlogs { get; set; }
     }
 }

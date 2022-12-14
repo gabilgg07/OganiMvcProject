@@ -21,6 +21,8 @@ namespace Ogani.WebUI.Models.Entity
         public string Answer { get; set; }
 
 		public DateTime? AnswerDate { get; set; }
+
+        public DateTime? DeletedDate { get; set; }
     }
 }
 

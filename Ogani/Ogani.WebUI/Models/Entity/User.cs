@@ -15,6 +15,8 @@ namespace Ogani.WebUI.Models.Entity
         public string Surname { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
+
+        public DateTime? DeletedDate { get; set; }
     }
 }
 

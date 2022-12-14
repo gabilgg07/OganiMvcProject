@@ -12,7 +12,9 @@ namespace Ogani.WebUI.Models.Entity
 		[MaxLength(100)]
 		public string Name { get; set; }
 
-		public virtual ICollection<Product> Products { get; set; }
+        public DateTime? DeletedDate { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
 
     }
 }

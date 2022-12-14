@@ -11,6 +11,8 @@ namespace Ogani.WebUI.Models.Entity
         [Required]
         public string Text { get; set; }
 
+        public DateTime? DeletedDate { get; set; }
+
         public int UserId { get; set; }
 
         public virtual User User { get; set; }

@@ -1,7 +1,6 @@
 ﻿@model PagedViewModel<Blog>
 @{
     ViewBag.Title = "Blog Index";
-    IEnumerable<BlogTag> blogTags = ViewBag.BlogTags;
 }
 
 
@@ -33,60 +32,9 @@
                             <button type="submit"><span class="icon_search"></span></button>
                         </form>
                     </div>
-                    <div class="blog-sidebar-item">
-                        <h4>Categories</h4>
-                        <ul>
-                            <li><a href="#">All</a></li>
-                            <li><a href="#">Beauty (20)</a></li>
-                            <li><a href="#">Food (5)</a></li>
-                            <li><a href="#">Life Style (9)</a></li>
-                            <li><a href="#">Travel (10)</a></li>
-                        </ul>
-                    </div>
-                    <div class="blog-sidebar-item">
-                        <h4>Recent News</h4>
-                        <div class="blog-sidebar-recent">
-                            <a href="#" class="blog-sidebar-recent-item">
-                                <div class="blog-sidebar-recent-item-pic">
-                                    <img src="assets/img/blog/sidebar/sr-1.jpg" alt="">
-                                </div>
-                                <div class="blog-sidebar-recent-item-text">
-                                    <h6>09 Kinds Of Vegetables<br /> Protect The Liver</h6>
-                                    <span>MAR 05, 2019</span>
-                                </div>
-                            </a>
-                            <a href="#" class="blog-sidebar-recent-item">
-                                <div class="blog-sidebar-recent-item-pic">
-                                    <img src="assets/img/blog/sidebar/sr-2.jpg" alt="">
-                                </div>
-                                <div class="blog-sidebar-recent-item-text">
-                                    <h6>Tips You To Balance<br /> Nutrition Meal Day</h6>
-                                    <span>MAR 05, 2019</span>
-                                </div>
-                            </a>
-                            <a href="#" class="blog-sidebar-recent-item">
-                                <div class="blog-sidebar-recent-item-pic">
-                                    <img src="assets/img/blog/sidebar/sr-3.jpg" alt="">
-                                </div>
-                                <div class="blog-sidebar-recent-item-text">
-                                    <h6>4 Principles Help You Lose <br />Weight With Vegetables</h6>
-                                    <span>MAR 05, 2019</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-sidebar-item">
-                        <h4>Search By</h4>
-                        <div class="blog-sidebar-item-tags">
-                            @if (blogTags != null)
-                            {
-                                @foreach (var bt in blogTags)
-                                {
-                                    <a asp-action="index" asp-route-tagId="@bt.Id">@bt.Name</a>
-                                }
-                            }
-                        </div>
-                    </div>
+                    @await Component.InvokeAsync("BlogCategories")
+                    @await Component.InvokeAsync("RecentNews")
+                    @await Component.InvokeAsync("BlogTags")
                 </div>
             </div>
             <div class="col-lg-8 col-md-7">

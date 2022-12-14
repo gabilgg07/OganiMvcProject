@@ -17,7 +17,9 @@ namespace Ogani.WebUI.AppCode.ViewComponents
 
 		public IViewComponentResult Invoke()
 		{
-			var categories = db.Categories.ToList();
+			var categories = db.Categories
+				.Where(c => c.DeletedDate == null)
+				.ToList();
 
 			return View(categories);
 		}

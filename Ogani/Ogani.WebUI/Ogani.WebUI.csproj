@@ -40,6 +40,8 @@
     <None Remove="Areas\Admin\Views\" />
     <None Remove="Areas\Admin\Views\Home\" />
     <None Remove="Areas\Admin\Views\Shared\" />
+    <None Remove="Views\Shared\Components\BlogTags\" />
+    <None Remove="Views\Shared\Components\RecentNews\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -80,6 +82,8 @@
     <Folder Include="wwwroot\Admin\assets\js\" />
     <Folder Include="wwwroot\Admin\assets\css\" />
     <Folder Include="wwwroot\Admin\assets\img\" />
+    <Folder Include="Views\Shared\Components\BlogTags\" />
+    <Folder Include="Views\Shared\Components\RecentNews\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

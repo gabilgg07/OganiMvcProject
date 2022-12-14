@@ -17,6 +17,8 @@ namespace Ogani.WebUI.Models.Entity
 
         public virtual ICollection<Product> Products { get; set; }
 
+        public DateTime? DeletedDate { get; set; }
+
     }
 }
 

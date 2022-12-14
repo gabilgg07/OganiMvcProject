@@ -13,6 +13,8 @@ namespace Ogani.WebUI.Models.Entity
         public string Role { get; set; }
         public string ImagePath { get; set; }
 
+        public DateTime? DeletedDate { get; set; }
+
         public virtual ICollection<Blog> Blogs { get; set; }
     }
 }

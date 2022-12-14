@@ -14,5 +14,7 @@ namespace Ogani.WebUI.Models.Entity
 		public DateTime CreatedDate { get; set; } = DateTime.Now;
 
 		public DateTime? ConfirmedDate { get; set; }
+
+        public DateTime? DeletedDate { get; set; }
     }
 }

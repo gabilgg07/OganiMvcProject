@@ -29,9 +29,15 @@ namespace Ogani.WebUI.Models.Entity
 
         public string Instagram { get; set; }
 
+        public DateTime? DeletedDate { get; set; }
+
         public int AuthorId { get; set; }
 
         public virtual Author Author { get; set; }
+
+        public int BlogCategoryId { get; set; } = 0;
+
+        public virtual BlogCategory BlogCategory { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
 

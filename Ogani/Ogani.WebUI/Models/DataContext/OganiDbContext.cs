@@ -30,7 +30,9 @@ namespace Ogani.WebUI.Models.DataContext
 
 		public DbSet<BlogTag> BlogTags { get; set; }
 
-		public DbSet<Blog> Blogs { get; set; }
+		public DbSet<BlogCategory> BlogCategories { get; set; }
+
+        public DbSet<Blog> Blogs { get; set; }
 
 		public DbSet<Comment> Comments { get; set; }
 

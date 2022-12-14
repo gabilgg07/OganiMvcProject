@@ -19,24 +19,26 @@ namespace Ogani.WebUI.Controllers
             this.db = db;
         }
 
-        public IActionResult Index(int pageIndex = 1, int pageSize = 6, int? tagId = null)
+        public IActionResult Index(int pageIndex = 1, int pageSize = 6, int? categoryId = null, int? tagId = null)
         {
 
             var query = db.Blogs.AsQueryable();
 
+            if (categoryId != null)
+            {
+                query = query.Where(b => b.BlogCategoryId == categoryId);
+            }
             if (tagId != null)
             {
                 query = query.Where(b => b.BlogTagBlogs.Any(btb => btb.BlogTagId == tagId));
             }
 
-            query = query
+            query = query.Where(b => b.DeletedDate == null)
                 .Include(b => b.Author)
                 .Include(b => b.Comments)
                 .AsQueryable();
 
-            var pagedModel = new PagedViewModel<Blog>(query, pageIndex, pageSize, tagId: tagId);
-
-            ViewBag.BlogTags = db.BlogTags.ToList();
+            var pagedModel = new PagedViewModel<Blog>(query, pageIndex, pageSize,categoryId, tagId);
 
             return View(pagedModel);
         }
@@ -48,12 +50,10 @@ namespace Ogani.WebUI.Controllers
                 .Include(b => b.Comments)
                 .Include(b => b.BlogTagBlogs)
                 .ThenInclude(bt => bt.BlogTag)
-                .FirstOrDefault(b => b.Id == id);
+                .FirstOrDefault(b => b.Id == id && b.DeletedDate == null);
 
             if (blog == null)
                 return NotFound();
-
-            ViewBag.BlogTags = db.BlogTags.ToList();
 
             return View(blog);
         }

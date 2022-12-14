@@ -34,6 +34,8 @@ namespace Ogani.WebUI.Models.Entity
 
         public string Reviews { get; set; }
 
+        public DateTime? DeletedDate { get; set; }
+
         public virtual ICollection<ProductImage> Images { get; set; }
 
 
