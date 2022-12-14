@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Ogani.WebUI.Models.DataContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ogani.WebUI.AppCode.ViewComponents
 {
@@ -18,7 +19,7 @@ namespace Ogani.WebUI.AppCode.ViewComponents
         {
             var blogsCategories = db.BlogCategories
                 .Where(bc => bc.DeletedDate == null)
-                .ToList();
+                .ToListAsync().Result;
 
             return View(blogsCategories);
         }

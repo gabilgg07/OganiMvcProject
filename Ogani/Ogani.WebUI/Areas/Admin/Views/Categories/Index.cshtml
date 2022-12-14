@@ -4,6 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
+<input type="hidden" value="@ViewBag.CategoryMessage" id="hasMessage" />
+
 <div class="content">
     <ul class="breadcrumb">
         <li>
@@ -34,24 +36,102 @@
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td class="vertical-middle">
-                                            @Html.DisplayFor(modelItem => item.Name)
-                                        </td>
-                                        <td class="text-center vertical-middle">
-                                            <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-default btn-cons min-w-0 mb-0"><i class="fa fa-pencil"></i></a>
-                                            <a asp-action="details" asp-route-id="@item.Id" class="btn btn-info btn-cons min-w-0 mb-0"><i class="fa fa-info-circle"></i></a>
-                                            <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger btn-cons min-w-0 mb-0"><i class="fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
-                                }
+                            {
+                                <tr>
+                                    <td class="vertical-middle">
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td class="text-center vertical-middle">
+                                        <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-default btn-cons min-w-0 mb-0"><i class="fa fa-pencil"></i></a>
+                                        <a asp-action="details" asp-route-id="@item.Id" class="btn btn-info btn-cons min-w-0 mb-0"><i class="fa fa-info-circle"></i></a>
+                                        <a onclick="removeCategory(@item.Id,'@item.Name')" class="btn btn-danger btn-cons min-w-0 mb-0"><i class="fa fa-trash-o"></i></a>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
+                    @Html.AntiForgeryToken()
+                </div>
+                <div style="visibility:hidden;">
+                    <form method="post" asp-action="ShowToastr" id="sendName">
+                        <input type="hidden" name="categoryMessage" id="categoryMessage" value="" />
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+@section addjs{
 
+    <script src="~/libs/sweetalert/sweetalert.min.js"></script>
+
+
+    <script class="removeable">
+        $(document).ready(function () {
+            if ($('#hasMessage').val().trim()) {
+                toastr.success(`${$('#hasMessage').val()}`, "Ugur");
+            }
+        });
+
+        (function ($) {
+            $.fn.getFormData = function (addProperties) {
+
+                let temp = this;
+                let obj = {};
+
+                $(temp).find('input[name]').each(function (index, item) {
+                    obj[item.name] = item.value;
+                });
+
+                obj = $.extend(obj, addProperties);
+
+                return obj;
+            }
+        })(jQuery);
+
+        function removeCategory(_id, name) {
+
+            let frmData = $('#formData').getFormData({
+                id: _id
+                });
+
+            swal({
+                title: "Diqqet!",
+                text: `Eminsiniz ki, "${name}" sistemden silinsin?`,
+                icon: "warning",
+                buttons: ["Xeyr", "Beli"],
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            url: '@Url.Action("Delete")',
+                            type: 'POST',
+                            data: frmData,
+                            success: function (response) {
+                                if (response.error) {
+                                    toastr.error(response.message, "Xeta");
+                                    return;
+                                }
+                                $('#categoryMessage').val(response.message);
+                                $('#sendName').submit();
+
+                                // asagidaki ShowToastr action-ni yazmadan,
+                                // sehife refresh olmadan evvel 5saniye erzinde toastr cixartmaq yoludur
+
+                                //toastr.success(response.message, "Ugur");
+                                //setTimeout(() => {
+                                //    window.location.reload();
+                                //}, 5000);
+
+                            },
+                            error: function (response) {
+                                toastr.error("Gozlenilmez xeta bas verdi", "Ugursuz oldu");
+                            },
+                        });
+                    }
+                });
+        }
+    </script>
+}

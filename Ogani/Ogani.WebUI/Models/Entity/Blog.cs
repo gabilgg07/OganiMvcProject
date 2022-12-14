@@ -35,7 +35,7 @@ namespace Ogani.WebUI.Models.Entity
 
         public virtual Author Author { get; set; }
 
-        public int BlogCategoryId { get; set; } = 0;
+        public int BlogCategoryId { get; set; }
 
         public virtual BlogCategory BlogCategory { get; set; }
 

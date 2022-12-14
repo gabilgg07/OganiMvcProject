@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Ogani.WebUI.Models.DataContext;
 
 namespace Ogani.WebUI.AppCode.ViewComponents
@@ -20,7 +21,7 @@ namespace Ogani.WebUI.AppCode.ViewComponents
                 .Where(b => b.DeletedDate == null)
                 .OrderByDescending(b => b.Id)
                 .Take(3)
-                .ToList();
+                .ToListAsync().Result;
 
             return View(lastBlogs);
         }

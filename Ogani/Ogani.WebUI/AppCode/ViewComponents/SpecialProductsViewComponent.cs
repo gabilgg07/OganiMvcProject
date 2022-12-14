@@ -43,8 +43,7 @@ namespace Ogani.WebUI.AppCode.ViewComponents
 					break;
 			}
 
-            var products = query.ToList();
-
+            var products = query.ToListAsync().Result;
 
             return View(products);
 		}

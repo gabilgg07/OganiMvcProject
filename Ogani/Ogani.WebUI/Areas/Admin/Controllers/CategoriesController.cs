@@ -24,7 +24,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             var categories = await db.Categories
                 .Where(c => c.DeletedDate == null)
                 .ToListAsync();
-
+            ViewBag.CategoryMessage = TempData["CategoryMessage"];
             return View(categories);
         }
 
@@ -114,39 +114,73 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(category);
         }
 
+        // istifade etmirik, sadece numune kimi saxladim:
 
-        public async Task<IActionResult> Delete(int? id)
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var category = await db.Categories
+        //        .FirstOrDefaultAsync(c => c.Id == id && c.DeletedDate == null);
+
+        //    if (category == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(category);
+        //}
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken] // --> heleki legv edirik bize mane olmasin
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
+            if (id<=0)
             {
-                return NotFound();
+                return Json(new
+                {
+                    error = true,
+                    message = "Xetali muraciet"
+                });
             }
 
-            var category = await db.Categories
-                .FirstOrDefaultAsync(c => c.Id == id && c.DeletedDate == null);
+            var category = await db.Categories.FindAsync(id);
 
             if (category == null)
             {
-                return NotFound();
+
+                return Json(new
+                {
+                    error = true,
+                    message = "Cari qeyd movcud deyil"
+                }); 
             }
 
-            return View(category);
-        }
+            category.DeletedDate = DateTime.Now;
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-
-            var category = await db.Categories.FindAsync(id);
-            db.Categories.Remove(category);
             await db.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            return Json(new
+            {
+                error = false,
+                message = $"{category.Name}* sistemden silindi!"
+            });
         }
 
         private bool CategoryExists(int id)
         {
             return db.Categories.Any(e => e.Id == id && e.DeletedDate == null);
+        }
+
+        [HttpPost]
+        public IActionResult ShowToastr( string categoryMessage)
+        {
+            TempData["CategoryMessage"] = categoryMessage;
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

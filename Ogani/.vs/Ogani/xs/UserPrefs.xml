@@ -1,40 +1,23 @@
 ﻿<Properties StartupConfiguration="{320C438B-BE71-483D-8985-3514117EA629}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Ogani.WebUI/AppCode/Extensions/NetworkExtension.cs">
-    <Files>
-      <File FileName="Ogani.WebUI/Views/Shared/_Layout.cshtml" />
-      <File FileName="Ogani.WebUI/AppCode/Extensions/RegexExtension.cs" />
-      <File FileName="Ogani.WebUI/Controllers/HomeController.cs" Line="115" Column="37" />
-      <File FileName="Ogani.WebUI/AppCode/Extensions/NetworkExtension.cs" Line="19" Column="61" />
-      <File FileName="Ogani.WebUI/Models/Entity/Subscribe.cs" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Ogani" expanded="True">
-            <Node name="Ogani.WebUI" expanded="True" selected="True">
-              <Node name="AppCode" expanded="True">
-                <Node name="Extensions" expanded="True" />
-              </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="DataContext" expanded="True" />
-                <Node name="Entity" expanded="True" />
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Shared" expanded="True" />
-                <Node name="Shop" expanded="True" />
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="assets" expanded="True">
-                  <Node name="js" expanded="True" />
+            <Node name="Ogani.WebUI" expanded="True">
+              <Node name="AppCode" expanded="True" />
+              <Node name="Areas" expanded="True">
+                <Node name="Admin" expanded="True">
+                  <Node name="Controllers" expanded="True" />
+                  <Node name="Views" expanded="True">
+                    <Node name="Categories" expanded="True" />
+                  </Node>
                 </Node>
-                <Node name="libs" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -43,4 +26,5 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Ogani.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
