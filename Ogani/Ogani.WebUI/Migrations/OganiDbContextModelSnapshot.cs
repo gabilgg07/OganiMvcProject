@@ -108,11 +108,11 @@ namespace Ogani.WebUI.Migrations
                     b.Property<int>("BlogCategoryId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Body")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Facebook")
                         .HasColumnType("nvarchar(max)");
@@ -126,9 +126,8 @@ namespace Ogani.WebUI.Migrations
                     b.Property<string>("Linkedin")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Text")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("PublishedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -136,9 +135,6 @@ namespace Ogani.WebUI.Migrations
 
                     b.Property<string>("Twitter")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("WrotedDate")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

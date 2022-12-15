@@ -11,15 +11,12 @@ namespace Ogani.WebUI.Models.Entity
 		[Required]
 		public string Title { get; set; }
 
-        // Body -> daha uygun olardi
         [Required]
-		public string Text { get; set; }
-
+		public string Body { get; set; }
 
         public string ImagePath { get; set; }
 
-        // PublishedDate -> daha uygun olardi
-        public DateTime WrotedDate { get; set; }
+        public DateTime? PublishedDate { get; set; }
 
         public string Facebook { get; set; }
 

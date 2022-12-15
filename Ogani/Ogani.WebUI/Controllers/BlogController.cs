@@ -33,7 +33,7 @@ namespace Ogani.WebUI.Controllers
                 query = query.Where(b => b.BlogTagBlogs.Any(btb => btb.BlogTagId == tagId));
             }
 
-            query = query.Where(b => b.DeletedDate == null)
+            query = query.Where(b => b.DeletedDate == null && b.PublishedDate != null)
                 .Include(b => b.Author)
                 .Include(b => b.Comments)
                 .AsQueryable();

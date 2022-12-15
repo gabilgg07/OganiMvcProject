@@ -23,7 +23,9 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         // GET: Admin/Blogs
         public async Task<IActionResult> Index()
         {
-            var oganiDbContext = _context.Blogs.Include(b => b.Author).Include(b => b.BlogCategory);
+            var oganiDbContext = _context.Blogs
+                .Include(b => b.Author)
+                .Include(b => b.BlogCategory);
             return View(await oganiDbContext.ToListAsync());
         }
 
@@ -51,7 +53,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         public IActionResult Create()
         {
             ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName");
-            ViewData["BlogCategoryId"] = new SelectList(_context.BlogCategories, "Id", "Id");
+            ViewData["BlogCategoryId"] = new SelectList(_context.BlogCategories, "Id", "Name");
             return View();
         }
 
@@ -60,7 +62,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Text,ImagePath,WrotedDate,Facebook,Twitter,Linkedin,Instagram,DeletedDate,AuthorId,BlogCategoryId")] Blog blog)
+        public async Task<IActionResult> Create([Bind("Id,Title,Body,ImagePath,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +71,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName", blog.AuthorId);
-            ViewData["BlogCategoryId"] = new SelectList(_context.BlogCategories, "Id", "Id", blog.BlogCategoryId);
+            ViewData["BlogCategoryId"] = new SelectList(_context.BlogCategories, "Id", "Name", blog.BlogCategoryId);
             return View(blog);
         }
 
@@ -87,7 +89,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName", blog.AuthorId);
-            ViewData["BlogCategoryId"] = new SelectList(_context.BlogCategories, "Id", "Id", blog.BlogCategoryId);
+            ViewData["BlogCategoryId"] = new SelectList(_context.BlogCategories, "Id", "Naame", blog.BlogCategoryId);
             return View(blog);
         }
 
@@ -96,7 +98,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Text,ImagePath,WrotedDate,Facebook,Twitter,Linkedin,Instagram,DeletedDate,AuthorId,BlogCategoryId")] Blog blog)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Body,ImagePath,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)
         {
             if (id != blog.Id)
             {
@@ -124,7 +126,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName", blog.AuthorId);
-            ViewData["BlogCategoryId"] = new SelectList(_context.BlogCategories, "Id", "Id", blog.BlogCategoryId);
+            ViewData["BlogCategoryId"] = new SelectList(_context.BlogCategories, "Id", "Name", blog.BlogCategoryId);
             return View(blog);
         }
 

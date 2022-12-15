@@ -18,7 +18,7 @@
                     <h2>@Model.Title</h2>
                     <ul>
                         <li>By @Model.Author.FullName</li>
-                        <li>@Model.WrotedDate.ToString("MMMM dd, yyyy")</li>
+                        <li>@Model.PublishedDate?.ToString("MMMM dd, yyyy")</li>
                         <li>@Model.Comments.Count() Comments</li>
                     </ul>
                 </div>
@@ -47,7 +47,7 @@
             <div class="col-lg-8 col-md-7 order-md-1 order-1">
                 <div class="blog-details-text">
                     <img src="~/uploads/images/blogs/@Model.ImagePath" alt="@Model.Title">
-                    @Html.Raw(Model.Text)
+                    @Html.Raw(Model.Body)
                 </div>
                 <div class="blog-details-content">
                     <div class="row">

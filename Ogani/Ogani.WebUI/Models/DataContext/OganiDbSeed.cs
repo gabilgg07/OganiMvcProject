@@ -132,7 +132,7 @@ namespace Ogani.WebUI.Models.DataContext
                     Blog blog = new Blog
                     {
                         Title = "The Moment You Need To Remove Garlic From The Menu",
-                        Text = @"<p>
+                        Body = @"<p>
                             Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
                             dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit
                             aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur
@@ -153,7 +153,7 @@ namespace Ogani.WebUI.Models.DataContext
                             stables
                         </p>",
                         ImagePath = "blog-1.jpg",
-                        WrotedDate = new DateTime(2019, 1, 14),
+                        PublishedDate = new DateTime(2019, 1, 14),
                         Facebook = "https://www.facebook.com/",
                         Twitter = "https://twitter.com/",
                         Linkedin = "https://www.linkedin.com/",

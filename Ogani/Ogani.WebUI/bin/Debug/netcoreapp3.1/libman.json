@@ -4,11 +4,23 @@
   "libraries": [
     {
       "library": "toastr.js@2.1.4",
-      "destination": "wwwroot/libs/toastr.js"
+      "destination": "wwwroot/lib/toastr.js"
     },
     {
       "library": "sweetalert@2.1.2",
-      "destination": "wwwroot/libs/sweetalert"
+      "destination": "wwwroot/lib/sweetalert"
+    },
+    {
+      "library": "select2@4.0.13",
+      "destination": "wwwroot/lib/select2"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@4.0.0",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive"
+    },
+    {
+      "library": "jquery-validate@1.19.5",
+      "destination": "wwwroot/lib/jquery-validation/dist"
     }
   ]
 }

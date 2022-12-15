@@ -31,13 +31,13 @@
                                     @Html.DisplayNameFor(model => model.Title)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Text)
+                                    @Html.DisplayNameFor(model => model.Body)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.ImagePath)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.WrotedDate)
+                                    @Html.DisplayNameFor(model => model.PublishedDate)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Author)
@@ -58,13 +58,13 @@
                                         @Html.DisplayFor(modelItem => item.Title)
                                     </td>
                                     <td>
-                                        @item.Text.CleanPlainText(100) ...
+                                        @item.Body.CleanPlainText(100) ...
                                     </td>
                                     <td>
                                         <img src="~/uploads/images/blogs/@Html.DisplayFor(modelItem => item.ImagePath)" class="max-w-100" />
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.WrotedDate)
+                                        @Html.DisplayFor(modelItem => item.PublishedDate)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Author.FullName)
