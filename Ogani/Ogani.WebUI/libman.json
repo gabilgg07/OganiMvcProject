@@ -21,6 +21,10 @@
     {
       "library": "jquery-validate@1.19.5",
       "destination": "wwwroot/lib/jquery-validation/dist"
+    },
+    {
+      "library": "ckeditor5@27.1.0",
+      "destination": "wwwroot/lib/ckeditor5/"
     }
   ]
 }

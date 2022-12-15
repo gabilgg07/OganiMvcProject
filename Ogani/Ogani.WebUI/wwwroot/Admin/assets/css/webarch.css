@@ -12364,3 +12364,7 @@ p.form-control {
     border: 1px solid white;
     box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.7);
 }
+
+.ck-editor__editable_inline {
+    min-height: 250px;
+}
