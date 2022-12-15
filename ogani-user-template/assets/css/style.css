@@ -2180,9 +2180,40 @@ ul.pagination:before {
   -o-object-position: center;
      object-position: center;
 }
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .blog-item-pic img {
+    max-height: 205px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .blog-item-pic img {
+    max-height: 130px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .blog-item-pic img {
+    max-height: 170px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .blog-item-pic img {
+    max-height: none;
+  }
+}
 
 .blog-item-text {
   padding-top: 25px;
+  min-height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .blog-item-text ul {
   margin-bottom: 15px;

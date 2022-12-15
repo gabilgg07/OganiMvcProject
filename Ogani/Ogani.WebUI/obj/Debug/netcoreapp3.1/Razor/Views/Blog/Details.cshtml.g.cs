@@ -40,8 +40,15 @@ using Ogani.WebUI.Models.DataContext;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.AppCode.Extensions;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"26ad858834413879b6087cc5513975514f6d3842", @"/Views/Blog/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4d52055a1277335da3c6bbd214794832b5307c3a", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2b731d2a1c19d2c61f2c786dd2cef5d63154b374", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Blog_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Blog>
     #nullable disable
@@ -147,7 +154,7 @@ using Ogani.WebUI.Models.DataContext;
                 <div class=""blog-sidebar"">
                     <div class=""blog-sidebar-search"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "26ad858834413879b6087cc5513975514f6d38427909", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "26ad858834413879b6087cc5513975514f6d38428127", async() => {
                 WriteLiteral("\n                            <input type=\"text\" placeholder=\"Search...\">\n                            <button type=\"submit\"><span class=\"icon_search\"></span></button>\n                        ");
             }
             );
@@ -188,7 +195,7 @@ using Ogani.WebUI.Models.DataContext;
 #line hidden
 #nullable disable
             WriteLiteral("\n                </div>\n            </div>\n            <div class=\"col-lg-8 col-md-7 order-md-1 order-1\">\n                <div class=\"blog-details-text\">\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "26ad858834413879b6087cc5513975514f6d384210506", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "26ad858834413879b6087cc5513975514f6d384210724", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -235,7 +242,7 @@ AddHtmlAttributeValue("", 1774, Model.Title, 1774, 12, false);
                             <div class=""blog-details-author"">
                                 <div class=""blog-details-author-pic"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "26ad858834413879b6087cc5513975514f6d384213098", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "26ad858834413879b6087cc5513975514f6d384213316", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -306,7 +313,7 @@ AddHtmlAttributeValue("", 2228, Model.Author.FullName, 2228, 22, false);
 #line hidden
 #nullable disable
             WriteLiteral("</li>\n                                </ul>\n                                <div class=\"blog-details-social\">\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "26ad858834413879b6087cc5513975514f6d384217026", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "26ad858834413879b6087cc5513975514f6d384217244", async() => {
             }
             );
             __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -332,7 +339,7 @@ AddHtmlAttributeValue("", 2228, Model.Author.FullName, 2228, 22, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "26ad858834413879b6087cc5513975514f6d384218864", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "26ad858834413879b6087cc5513975514f6d384219082", async() => {
             }
             );
             __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -358,7 +365,7 @@ AddHtmlAttributeValue("", 2228, Model.Author.FullName, 2228, 22, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "26ad858834413879b6087cc5513975514f6d384220701", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "26ad858834413879b6087cc5513975514f6d384220919", async() => {
             }
             );
             __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -384,7 +391,7 @@ AddHtmlAttributeValue("", 2228, Model.Author.FullName, 2228, 22, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "26ad858834413879b6087cc5513975514f6d384222540", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "26ad858834413879b6087cc5513975514f6d384222758", async() => {
             }
             );
             __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();

@@ -1,3 +1,5 @@
+@import "./mixins";
+
 @keyframes loader {
   0% {
     -webkit-transform: rotate(0deg);
@@ -2154,10 +2156,26 @@ ul {
     max-height: 260px;
     object-fit: cover;
     object-position: center;
+    @include mq-992-1199() {
+      max-height: 205px;
+    }
+    @include mq-768-991() {
+      max-height: 130px;
+    }
+    @include mq-576-767() {
+      max-height: 170px;
+    }
+    @include mq-max-575() {
+      max-height: none;
+    }
   }
 }
 .blog-item-text {
   padding-top: 25px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   ul {
     margin-bottom: 15px;
     li {

@@ -40,8 +40,15 @@ using Ogani.WebUI.Models.DataContext;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Views/_ViewImports.cshtml"
+using Ogani.WebUI.AppCode.Extensions;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4b25edd54408e613324b0ca937e5e80b40c9a4be", @"/Views/Shared/_Navbar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4d52055a1277335da3c6bbd214794832b5307c3a", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2b731d2a1c19d2c61f2c786dd2cef5d63154b374", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__Navbar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -96,7 +103,7 @@ WriteAttributeValue("", 63, title.ToLower().Contains("home")?"active":"", 63, 47
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be6386", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be6604", async() => {
                 WriteLiteral("Home");
             }
             );
@@ -124,7 +131,7 @@ WriteAttributeValue("", 185, title.ToLower().Contains("shop")?"active":"", 185, 
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be8149", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be8367", async() => {
                 WriteLiteral("Shop");
             }
             );
@@ -142,7 +149,7 @@ WriteAttributeValue("", 185, title.ToLower().Contains("shop")?"active":"", 185, 
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n    <li>\n        <a href=\"#\">Pages</a>\n        <ul class=\"header-menu-dropdown\">\n            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be9597", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be9815", async() => {
                 WriteLiteral("Shoping Cart");
             }
             );
@@ -160,7 +167,7 @@ WriteAttributeValue("", 185, title.ToLower().Contains("shop")?"active":"", 185, 
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\n            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be10965", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be11183", async() => {
                 WriteLiteral("Check Out");
             }
             );
@@ -188,7 +195,7 @@ WriteAttributeValue("", 583, title.ToLower().Contains("blog")?"active":"", 583, 
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be12761", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be12979", async() => {
                 WriteLiteral("Blog");
             }
             );
@@ -216,7 +223,7 @@ WriteAttributeValue("", 705, title.ToLower().Contains("contact")?"active":"", 70
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be14529", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b25edd54408e613324b0ca937e5e80b40c9a4be14747", async() => {
                 WriteLiteral("Contact");
             }
             );
