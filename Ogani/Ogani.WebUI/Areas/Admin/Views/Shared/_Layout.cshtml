@@ -534,8 +534,7 @@
     <script src="~/libs/toastr.js/toastr.min.js"></script>
 
 
-    <script class="removeable">
-        $(document).ready(function () {
+    <script class="removeable">$(document).ready(function () {
 
             toastr.options = {
                 "closeButton": true,
@@ -554,14 +553,12 @@
                 "showMethod": "fadeIn",
                 "hideMethod": "fadeOut"
             }
-});
-    </script>
+        });</script>
 
     @RenderSection("addjs", required: false)
+    @RenderSection("Scripts", required: false)
 
-    <script class="removeable">
-        $('.removeable').remove();
-    </script>
+    <script class="removeable">$('.removeable').remove();</script>
 
 </body>
 </html>

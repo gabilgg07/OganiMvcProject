@@ -12253,6 +12253,10 @@ body.rtl {
     min-width: 100% !important;
 }
 
+.max-w-100 {
+    max-width: 100% !important;
+}
+
 .w-100 {
     width: 100% !important;
 }
@@ -12340,4 +12344,13 @@ p.form-control {
     margin-bottom: 0;
     display: flex;
     align-items: center;
+}
+
+.blogs-table th {
+    width: 14%;
+}
+
+.blogs-table th,
+.blogs-table td {
+    vertical-align: middle !important;
 }

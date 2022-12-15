@@ -1,5 +1,5 @@
 ﻿@{
-    string title = ViewBag.Title;
+    string title = ViewBag.Title??"";
 }
 <ul>
     <li class="@(title.ToLower().Contains("home")?"active":"")"><a asp-controller="home" asp-action="index">Home</a></li>

@@ -24,7 +24,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             var categories = await db.Categories
                 .Where(c => c.DeletedDate == null)
                 .ToListAsync();
-            ViewBag.CategoryMessage = TempData["CategoryMessage"];
+            ViewBag.ToastrMsg = TempData["ToastrMsg"];
             return View(categories);
         }
 
@@ -176,9 +176,9 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult ShowToastr( string categoryMessage)
+        public IActionResult ShowToastr( string toastrMsg)
         {
-            TempData["CategoryMessage"] = categoryMessage;
+            TempData["ToastrMsg"] = toastrMsg;
 
             return RedirectToAction(nameof(Index));
         }

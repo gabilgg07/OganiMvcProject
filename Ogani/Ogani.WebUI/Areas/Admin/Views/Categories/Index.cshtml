@@ -1,10 +1,10 @@
-﻿@model IEnumerable<Ogani.WebUI.Models.Entity.Category>
+﻿@model IEnumerable<Category>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<input type="hidden" value="@ViewBag.CategoryMessage" id="hasMessage" />
+<input type="hidden" value="@ViewBag.ToastrMsg" id="hasMessage" />
 
 <div class="content">
     <ul class="breadcrumb">
@@ -53,8 +53,8 @@
                     @Html.AntiForgeryToken()
                 </div>
                 <div style="visibility:hidden;">
-                    <form method="post" asp-action="ShowToastr" id="sendName">
-                        <input type="hidden" name="categoryMessage" id="categoryMessage" value="" />
+                    <form method="post" asp-action="ShowToastr" id="sendMsg">
+                        <input type="hidden" name="toastrMsg" id="toastrMsg" value="" />
                     </form>
                 </div>
             </div>
@@ -73,22 +73,6 @@
                 toastr.success(`${$('#hasMessage').val()}`, "Ugur");
             }
         });
-
-        (function ($) {
-            $.fn.getFormData = function (addProperties) {
-
-                let temp = this;
-                let obj = {};
-
-                $(temp).find('input[name]').each(function (index, item) {
-                    obj[item.name] = item.value;
-                });
-
-                obj = $.extend(obj, addProperties);
-
-                return obj;
-            }
-        })(jQuery);
 
         function removeCategory(_id, name) {
 
@@ -114,8 +98,8 @@
                                     toastr.error(response.message, "Xeta");
                                     return;
                                 }
-                                $('#categoryMessage').val(response.message);
-                                $('#sendName').submit();
+                                $('#toastrMsg').val(response.message);
+                                $('#sendMsg').submit();
 
                                 // asagidaki ShowToastr action-ni yazmadan,
                                 // sehife refresh olmadan evvel 5saniye erzinde toastr cixartmaq yoludur

@@ -42,6 +42,7 @@
     <None Remove="Areas\Admin\Views\Shared\" />
     <None Remove="Views\Shared\Components\BlogTags\" />
     <None Remove="Views\Shared\Components\RecentNews\" />
+    <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -115,5 +116,6 @@
     <PackageReference Include="jQuery" Version="3.6.1" />
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
     <PackageReference Include="MailKit" Version="3.4.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.25" />
   </ItemGroup>
 </Project>

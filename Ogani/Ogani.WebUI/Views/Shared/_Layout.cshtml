@@ -336,6 +336,11 @@
                     data: formData,
                     processData: false,
                     contentType: false,
+                    beforeSend: function () {
+                        // request getmezden evvel:
+                        $(".loader").fadeIn();
+                        $('#preloder').delay(200).fadeIn("slow");
+                    },
                     success: function (response) {
                         if (response.error) {
                             toastr.error(response.message, "Xeta");
@@ -349,6 +354,12 @@
                         console.error(response);
                         toastr.error("Gozlenilmez xeta bas verdi", "Ugursuz oldu");
                     },
+                })
+                    .always(function () {
+                    // sorgunun sonunda isleyir:
+
+                    $(".loader").fadeOut();
+                    $('#preloder').delay(200).fadeOut("slow");
                 });
             });
 

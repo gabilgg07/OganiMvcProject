@@ -46,6 +46,7 @@ namespace Ogani.WebUI.Controllers
         public IActionResult Details(int id)
         {
             var blog = db.Blogs
+                .Include(b => b.BlogCategory)
                 .Include(b => b.Author)
                 .Include(b => b.Comments)
                 .Include(b => b.BlogTagBlogs)
