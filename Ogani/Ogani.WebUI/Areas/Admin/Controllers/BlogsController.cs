@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,13 +16,14 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
     public class BlogsController : Controller
     {
         private readonly OganiDbContext _context;
+        private readonly IWebHostEnvironment _env;
 
-        public BlogsController(OganiDbContext context)
+        public BlogsController(OganiDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
-        // GET: Admin/Blogs
         public async Task<IActionResult> Index()
         {
             var oganiDbContext = _context.Blogs
@@ -29,7 +32,6 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(await oganiDbContext.ToListAsync());
         }
 
-        // GET: Admin/Blogs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -49,7 +51,6 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(blog);
         }
 
-        // GET: Admin/Blogs/Create
         public IActionResult Create()
         {
             ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName");
@@ -57,15 +58,28 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/Blogs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Body,ImagePath,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)
+        public async Task<IActionResult> Create([Bind("Id,Title,Body,ImagePathTemp,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)
         {
+            if (blog.ImagePathTemp == null)
+            {
+                ModelState.AddModelError("ImagePathTemp","Sekil gonderilmeyib");
+            }
+
             if (ModelState.IsValid)
             {
+                string extension = Path.GetExtension(blog.ImagePathTemp.FileName);
+                string pureName = $"{DateTime.Now.ToString("yyMMddhhmmss")}-{Guid.NewGuid()}{extension}";
+                string fullPath = Path.Combine(_env.WebRootPath, "uploads", "images", "blogs", pureName);
+
+                using(var stream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
+                {
+                    blog.ImagePathTemp.CopyTo(stream);
+                }
+
+                blog.ImagePath = pureName;
+
                 _context.Add(blog);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -75,7 +89,6 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(blog);
         }
 
-        // GET: Admin/Blogs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -93,9 +106,6 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(blog);
         }
 
-        // POST: Admin/Blogs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Body,ImagePath,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)

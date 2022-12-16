@@ -12368,3 +12368,18 @@ p.form-control {
 .ck-editor__editable_inline {
     min-height: 250px;
 }
+
+.select2-container {
+    max-width:100%;
+}
+
+.image-input {
+    width: 350px !important;
+    border-radius: 5px;
+}
+
+.image-input span {
+    color: #fdfdff;
+    font-size: 20px;
+    text-shadow: 0px 0px 2px black;
+}

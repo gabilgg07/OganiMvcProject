@@ -51,9 +51,9 @@
                                         <li><i class="fa fa-calendar-o"></i> @item.PublishedDate?.ToString("MMM dd, yyyy")</li>
                                         <li><i class="fa fa-comment-o"></i> @item.Comments.Count()</li>
                                     </ul>
-                                    <h5><a asp-action="details" asp-route-id="@item.Id">@item.Title.CleanPlainText(30)...</a></h5>
+                                    <h5><a asp-action="details" asp-route-id="@item.Id">@item.Title.CleanPlainText(30)</a></h5>
                                     <p>
-                                        @item.Body.CleanPlainText(100)...
+                                        @item.Body.CleanPlainText(100)
                                     </p>
                                     <a asp-action="details" asp-route-id="@item.Id" class="blog-btn">READ MORE <span class="arrow_right"></span></a>
                                 </div>

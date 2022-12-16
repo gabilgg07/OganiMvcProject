@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
 
 namespace Ogani.WebUI.Models.Entity
 {
@@ -14,7 +16,17 @@ namespace Ogani.WebUI.Models.Entity
         [Required]
 		public string Body { get; set; }
 
+        //[NotMapped] --> db de saxlama demekdir
+        //public IFormFile ImagePath { get; set; }
+
+        // asagidaki kimi yazarsaq -> db de bu adla saxlayir.
+        //[Column("ImagePath")]
+        //public string ImagePathTemp { get; set; }
+
         public string ImagePath { get; set; }
+
+        [NotMapped]
+        public IFormFile ImagePathTemp { get; set; }
 
         public DateTime? PublishedDate { get; set; }
 

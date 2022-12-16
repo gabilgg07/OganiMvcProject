@@ -24,7 +24,7 @@
     <div class="span12">
         <div class="grid simple ">
             <div class="grid-body ">
-                <form asp-action="Create">
+                <form method="post" enctype="multipart/form-data">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Title" class="control-label"></label>
@@ -37,9 +37,9 @@
                         <span asp-validation-for="Body" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="ImagePath" class="control-label"></label>
-                        <input asp-for="ImagePath" class="form-control" />
-                        <span asp-validation-for="ImagePath" class="text-danger"></span>
+                        <image asp-has-label="true"
+                               asp-caption="BlogImage"
+                               asp-for="ImagePathTemp" ></image>
                     </div>
                     <div class="form-group">
                         <label asp-for="Facebook" class="control-label"></label>
@@ -80,18 +80,21 @@
 </div>
 
 
+@section addcss {
+    <link rel="stylesheet" href="~/lib/jquery-image-input/image-input.css" />
+}
 
 @section Scripts {@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}
 
 @section addjs {
+
+    <script src="~/lib/jquery-image-input/jquery.image-input.js"></script>
     <script src="~/lib/ckeditor5/ckeditor.js"></script>
-    <script class="removeable">
-        $(document).ready(function () {
+    <script class="removeable">$(document).ready(function () {
             ClassicEditor
                 .create(document.querySelector('#Body '))
                 .catch(error => {
                     console.error(error);
                 });
-        });
-    </script>
+        });</script>
 }

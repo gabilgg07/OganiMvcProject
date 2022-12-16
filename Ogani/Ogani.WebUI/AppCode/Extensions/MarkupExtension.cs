@@ -11,7 +11,7 @@ namespace Ogani.WebUI.AppCode.Extensions
 
 			if (limit.HasValue && limit.Value > 5 && text.Length > limit.Value)
 			{
-				text = text.Substring(0, limit.Value);
+				text = text.Substring(0, limit.Value-3) + "...";
 			}
 			return text;
 		}
