@@ -1,0 +1,53 @@
+﻿@model Tuple<string, string>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (Model != null)
+{
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2><strong>Name:</strong> @Model.Item1</h2>
+            <br />
+            <h3><strong>ImageName:</strong> @Model.Item2.Substring(0, Model.Item2.Length-4)</h3>
+            <br />
+            <img src="~/uploads/images/@Model.Item2"
+                 style="max-width:100%;border-radius:8px;box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5)" />
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="Name" />
+                </div>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="photo" name="profilePhoto" accept="image/*">
+                        <label class="custom-file-label" for="photo">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">Button</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('input[type="file"]').change(function (e) {
+                var fileName = e.target.files[0].name;
+                $("label[for='photo']").text(fileName);
+
+            });
+        });
+    </script>
+ }
+
