@@ -1,84 +1,101 @@
-@model Ogani.WebUI.Models.Entity.Blog
+@model Blog
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<ul class="breadcrumb">
+    <li>
+        <p>Admin</p>
+    </li>
+    <li>
+        <p>Blogs</p>
+    </li>
+    <li><a href="#" class="active">Edit</a> </li>
+</ul>
+<div class="page-title">
+    <i class="far fa-arrow-alt-circle-left"></i>
+    <h3>Admin - Blogs</h3>
+</div>
 
-<h4>Blog</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="grid simple ">
+            <div class="grid-body ">
+                <form method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Body" class="control-label"></label>
+                        <textarea asp-for="Body"></textarea>
+                        <span asp-validation-for="Body" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <image asp-caption="Blog Image"
+                               asp-for="Image"
+                               asp-path="/uploads/images/blogs/@Model.ImagePath"></image>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AuthorId" class="control-label"></label>
+                        <select asp-for="AuthorId" class="form-control select2" asp-items="ViewBag.AuthorId"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BlogCategoryId" class="control-label"></label>
+                        <select asp-for="BlogCategoryId" class="form-control select2" asp-items="ViewBag.BlogCategoryId"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Facebook" class="control-label"></label>
+                        <input asp-for="Facebook" class="form-control" />
+                        <span asp-validation-for="Facebook" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Twitter" class="control-label"></label>
+                        <input asp-for="Twitter" class="form-control" />
+                        <span asp-validation-for="Twitter" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Linkedin" class="control-label"></label>
+                        <input asp-for="Linkedin" class="form-control" />
+                        <span asp-validation-for="Linkedin" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Instagram" class="control-label"></label>
+                        <input asp-for="Instagram" class="form-control" />
+                        <span asp-validation-for="Instagram" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a class="btn btn-info" asp-action="index">Back to List</a>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Body" class="control-label"></label>
-                <input asp-for="Body" class="form-control" />
-                <span asp-validation-for="Body" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImagePath" class="control-label"></label>
-                <input asp-for="ImagePath" class="form-control" />
-                <span asp-validation-for="ImagePath" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PublishedDate" class="control-label"></label>
-                <input asp-for="PublishedDate" class="form-control" />
-                <span asp-validation-for="PublishedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Facebook" class="control-label"></label>
-                <input asp-for="Facebook" class="form-control" />
-                <span asp-validation-for="Facebook" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Twitter" class="control-label"></label>
-                <input asp-for="Twitter" class="form-control" />
-                <span asp-validation-for="Twitter" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Linkedin" class="control-label"></label>
-                <input asp-for="Linkedin" class="form-control" />
-                <span asp-validation-for="Linkedin" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Instagram" class="control-label"></label>
-                <input asp-for="Instagram" class="form-control" />
-                <span asp-validation-for="Instagram" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeletedDate" class="control-label"></label>
-                <input asp-for="DeletedDate" class="form-control" />
-                <span asp-validation-for="DeletedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AuthorId" class="control-label"></label>
-                <select asp-for="AuthorId" class="form-control" asp-items="ViewBag.AuthorId"></select>
-                <span asp-validation-for="AuthorId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BlogCategoryId" class="control-label"></label>
-                <select asp-for="BlogCategoryId" class="form-control" asp-items="ViewBag.BlogCategoryId"></select>
-                <span asp-validation-for="BlogCategoryId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@section addcss {
+    <link rel="stylesheet" href="~/lib/jquery-image-input/image-input.css" />
+}
+
+@section Scripts {@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}
+
+@section addjs {
+
+    <script src="~/lib/jquery-image-input/jquery.image-input.js"></script>
+    <script src="~/lib/ckeditor5/ckeditor.js"></script>
+    <script class="removeable">
+$(document).ready(function () {
+            ClassicEditor
+                .create(document.querySelector('#Body '))
+                .catch(error => {
+                    console.error(error);
+                });
+        });</script>
 }

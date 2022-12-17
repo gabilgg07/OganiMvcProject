@@ -135,7 +135,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         //}
 
         [HttpPost]
-        //[ValidateAntiForgeryToken] // --> heleki legv edirik bize mane olmasin
+        [ValidateAntiForgeryToken] // --> heleki legv edirik bize mane olmasin
         public async Task<IActionResult> Delete(int id)
         {
             if (id<=0)

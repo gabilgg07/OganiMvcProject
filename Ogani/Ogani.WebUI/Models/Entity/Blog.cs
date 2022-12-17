@@ -26,7 +26,7 @@ namespace Ogani.WebUI.Models.Entity
         public string ImagePath { get; set; }
 
         [NotMapped]
-        public IFormFile ImagePathTemp { get; set; }
+        public IFormFile Image { get; set; }
 
         public DateTime? PublishedDate { get; set; }
 

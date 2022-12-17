@@ -15,9 +15,9 @@ let noImage = `data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAEICAYAAABxiqL
             $(item).css('background-image', `url(${noImage})`)
         }
 
-        let hasRadonly = $(item).closest('div').attr('readonly');
+        let hasReadonly = $(item).closest('div').attr('readonly');
 
-        if (hasRadonly !== undefined) {
+        if (hasReadonly !== undefined) {
             return;
         }
 

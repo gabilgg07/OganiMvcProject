@@ -27,8 +27,10 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var oganiDbContext = _context.Blogs
+                .Where(b => b.DeletedDate == null)
                 .Include(b => b.Author)
                 .Include(b => b.BlogCategory);
+            ViewBag.ToastrMsg = TempData["ToastrMsg"];
             return View(await oganiDbContext.ToListAsync());
         }
 
@@ -60,22 +62,22 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Body,ImagePathTemp,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)
+        public async Task<IActionResult> Create([Bind("Title,Body,Image,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)
         {
-            if (blog.ImagePathTemp == null)
+            if (blog.Image == null)
             {
-                ModelState.AddModelError("ImagePathTemp","Sekil gonderilmeyib");
+                ModelState.AddModelError("Image","Sekil gonderilmeyib");
             }
 
             if (ModelState.IsValid)
             {
-                string extension = Path.GetExtension(blog.ImagePathTemp.FileName);
+                string extension = Path.GetExtension(blog.Image.FileName);
                 string pureName = $"{DateTime.Now.ToString("yyMMddhhmmss")}-{Guid.NewGuid()}{extension}";
                 string fullPath = Path.Combine(_env.WebRootPath, "uploads", "images", "blogs", pureName);
 
                 using(var stream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
                 {
-                    blog.ImagePathTemp.CopyTo(stream);
+                    blog.Image.CopyTo(stream);
                 }
 
                 blog.ImagePath = pureName;
@@ -102,24 +104,82 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName", blog.AuthorId);
-            ViewData["BlogCategoryId"] = new SelectList(_context.BlogCategories, "Id", "Naame", blog.BlogCategoryId);
+            ViewData["BlogCategoryId"] = new SelectList(_context.BlogCategories, "Id", "Name", blog.BlogCategoryId);
             return View(blog);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Body,ImagePath,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Body,Image,ImagePath,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)
         {
+
             if (id != blog.Id)
-            {
                 return NotFound();
-            }
 
             if (ModelState.IsValid)
             {
+                var entity = await _context.Blogs
+                    .FirstOrDefaultAsync(b => b.Id == blog.Id);
+
+                if (entity == null)
+                    return NotFound();
+
                 try
                 {
-                    _context.Update(blog);
+                    if (blog.Image == null && string.IsNullOrWhiteSpace(blog.ImagePath))
+                    {
+                        // sekil yoxdusa, ve ya silibse, kohneni sil:
+
+                        if (!string.IsNullOrWhiteSpace(entity.ImagePath))
+                        {
+                            entity.ImagePath = Path.Combine(_env.WebRootPath,
+                                "uploads",
+                                "images",
+                                "blogs", entity.ImagePath);
+
+                            if (System.IO.File.Exists(entity.ImagePath))
+                                System.IO.File.Delete(entity.ImagePath);
+
+                            entity.ImagePath = null;
+                        }
+
+                    }
+                    else if(blog.Image != null)
+                    {
+                        // teze sekil varsa, kohneni sil:
+
+                        if (!string.IsNullOrWhiteSpace(entity.ImagePath))
+                        {
+                            entity.ImagePath = Path.Combine(_env.WebRootPath,
+                                "uploads",
+                                "images",
+                                "blogs", entity.ImagePath);
+
+                            if (System.IO.File.Exists(entity.ImagePath))
+                                System.IO.File.Delete(entity.ImagePath);
+
+                        }
+
+                        string extension = Path.GetExtension(blog.Image.FileName);
+                        string pureName = $"{DateTime.Now.ToString("yyMMddhhmmss")}-{Guid.NewGuid()}{extension}";
+                        entity.ImagePath = Path.Combine(_env.WebRootPath, "uploads", "images", "blogs", pureName);
+
+                        using (var stream = new FileStream(entity.ImagePath, FileMode.Create, FileAccess.Write))
+                            blog.Image.CopyTo(stream);
+
+                        entity.ImagePath = pureName;
+                    }
+
+                    entity.Title = blog.Title;
+                    entity.Body = blog.Body;
+                    entity.AuthorId = blog.AuthorId;
+                    entity.BlogCategoryId = blog.BlogCategoryId;
+                    entity.Facebook = blog.Facebook;
+                    entity.Twitter = blog.Twitter;
+                    entity.Linkedin = blog.Linkedin;
+                    entity.Instagram = blog.Instagram;
+                    entity.PublishedDate = blog.PublishedDate;
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -140,34 +200,47 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(blog);
         }
 
-        // GET: Admin/Blogs/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
+            if (id <= 0)
             {
-                return NotFound();
+                return Json(new
+                {
+                    error = true,
+                    message = "Xetali muraciet"
+                });
             }
 
-            var blog = await _context.Blogs
-                .Include(b => b.Author)
-                .Include(b => b.BlogCategory)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var blog = await _context.Blogs.FindAsync(id);
+
             if (blog == null)
             {
-                return NotFound();
+
+                return Json(new
+                {
+                    error = true,
+                    message = "Cari qeyd movcud deyil"
+                });
             }
 
-            return View(blog);
+            blog.DeletedDate = DateTime.Now;
+
+            await _context.SaveChangesAsync();
+
+            return Json(new
+            {
+                error = false,
+                message = $"{blog.Title}* sistemden silindi!"
+            });
         }
 
-        // POST: Admin/Blogs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        [HttpPost]
+        public IActionResult ShowToastr(string toastrMsg)
         {
-            var blog = await _context.Blogs.FindAsync(id);
-            _context.Blogs.Remove(blog);
-            await _context.SaveChangesAsync();
+            TempData["ToastrMsg"] = toastrMsg;
+
             return RedirectToAction(nameof(Index));
         }
 

@@ -4,7 +4,6 @@
     ViewData["Title"] = "Index";
 }
 
-
 <input type="hidden" value="@ViewBag.ToastrMsg" id="hasMessage" />
 
 <div class="content">
@@ -12,7 +11,7 @@
         <li>
             <p>Admin</p>
         </li>
-        <li><a href="#" class="active">Categories</a> </li>
+        <li><a href="#" class="active">Blogs</a> </li>
     </ul>
     <div class="page-title">
         <i class="icon-custom-left"></i>
@@ -23,7 +22,7 @@
     <div class="row-fluid">
         <div class="span12">
             <div class="grid simple ">
-                <div class="grid-body ">
+                <div class="grid-body " id="formData">
                     <table class="table blogs-table">
                         <thead>
                             <tr>
@@ -95,7 +94,7 @@
 
 @section addjs{
 
-    <script src="~/libs/sweetalert/sweetalert.min.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
 
 
     <script class="removeable">
@@ -106,7 +105,6 @@
         });
 
         function removeBlog(_id, name) {
-
             let frmData = $('#formData').getFormData({
                 id: _id
                 });
@@ -131,15 +129,6 @@
                                 }
                                 $('#toastrMsg').val(response.message);
                                 $('#sendMsg').submit();
-
-                                // asagidaki ShowToastr action-ni yazmadan,
-                                // sehife refresh olmadan evvel 5saniye erzinde toastr cixartmaq yoludur
-
-                                //toastr.success(response.message, "Ugur");
-                                //setTimeout(() => {
-                                //    window.location.reload();
-                                //}, 5000);
-
                             },
                             error: function (response) {
                                 toastr.error("Gozlenilmez xeta bas verdi", "Ugursuz oldu");

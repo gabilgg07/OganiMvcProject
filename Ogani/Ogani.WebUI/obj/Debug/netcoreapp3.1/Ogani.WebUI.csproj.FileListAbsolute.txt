@@ -176,7 +176,6 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.TagHelpers.output.cache
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.RazorCoreGenerate.cache
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Blogs/Create.cshtml.g.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Blogs/Delete.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Blogs/Details.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Blogs/Edit.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Blogs/Index.cshtml.g.cs

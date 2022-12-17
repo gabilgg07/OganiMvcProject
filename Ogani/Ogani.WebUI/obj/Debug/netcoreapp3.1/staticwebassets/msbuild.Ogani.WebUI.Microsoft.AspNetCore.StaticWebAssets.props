@@ -8688,12 +8688,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\blogs\.DS_Store))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\blogs\221216104603-57639a91-10cd-471b-ba31-4972b526622f.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\blogs\221217030948-02e186ad-8351-4e88-a011-42e1ee18494a.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ogani.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ogani.WebUI</BasePath>
-      <RelativePath>uploads/images/blogs/221216104603-57639a91-10cd-471b-ba31-4972b526622f.jpg</RelativePath>
+      <RelativePath>uploads/images/blogs/221217030948-02e186ad-8351-4e88-a011-42e1ee18494a.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
       <AssetRole></AssetRole>
@@ -8702,7 +8702,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory></CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\blogs\221216104603-57639a91-10cd-471b-ba31-4972b526622f.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\blogs\221217030948-02e186ad-8351-4e88-a011-42e1ee18494a.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\blogs\blog-1.jpg))">
       <SourceType>Package</SourceType>
