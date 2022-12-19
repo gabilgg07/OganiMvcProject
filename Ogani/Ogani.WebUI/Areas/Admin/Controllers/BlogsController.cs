@@ -44,7 +44,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             var blog = await _context.Blogs
                 .Include(b => b.Author)
                 .Include(b => b.BlogCategory)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id && m.DeletedDate == null);
             if (blog == null)
             {
                 return NotFound();

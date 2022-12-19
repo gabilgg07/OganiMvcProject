@@ -43,6 +43,7 @@
     <None Remove="Views\Shared\Components\BlogTags\" />
     <None Remove="Views\Shared\Components\RecentNews\" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+    <None Remove="AppCode\Providers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -84,6 +85,7 @@
     <Folder Include="wwwroot\Admin\assets\img\" />
     <Folder Include="Views\Shared\Components\BlogTags\" />
     <Folder Include="Views\Shared\Components\RecentNews\" />
+    <Folder Include="AppCode\Providers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

@@ -159,7 +159,9 @@
             $(btnPlus).click(function () {
                 let fileInput = $(`<input name='${elName}[${ix - 1}].File' type="file" accept="image/x-png,image/gif,image/jpeg"/>`);
 
-                let label = $(`<label for='${guid}${ix}' class='img-thumb' style="background-image:url('assets/img/img-rendering.gif')">
+                let forLblGuid = `${guid}${ix}`;
+
+                let label = $(`<label for='${forLblGuid}' class='img-thumb' style="background-image:url('/assets/img/img-rendering.gif')">
                                     <span class='remove-thumb'></span>
                                </label>`)
                     .append(fileInput)
@@ -171,6 +173,15 @@
                 $(element).find('.viewer-thumbs').append(label);
 
                 $(label).append(`<input type='radio' name='${elName}[${ix - 1}].IsMain' id='${guid}${ix}'/>`);
+
+
+                window.onfocus = function () {
+                    setTimeout(() => {
+                        if (fileInput[0].files.length == 0) {
+                            $(`label[for="${forLblGuid}"]`).remove();
+                        }
+                    }, 500);
+                }
 
                 $(fileInput).change(function (e) {
                     $(label).attr('title', e.target.files[0].name);

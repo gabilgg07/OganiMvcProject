@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Ogani.WebUI.AppCode.Providers;
 using Ogani.WebUI.Models.DataContext;
 
 namespace Ogani.WebUI
@@ -19,7 +20,10 @@ namespace Ogani.WebUI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(cfg =>
+            {
+                cfg.ModelBinderProviders.Insert(0, new BooleanBinderProvider());
+            });
 
             services.AddRouting(cfg =>
             {

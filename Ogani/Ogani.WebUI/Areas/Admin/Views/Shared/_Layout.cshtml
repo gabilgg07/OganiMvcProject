@@ -19,13 +19,15 @@
 
     <!-- BEGIN PLUGIN CSS -->
     <link href="~/Admin/assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" type="text/css">
     <link href="~/Admin/assets/plugins/bootstrap-slider/css/slider.css" rel="stylesheet" type="text/css">
     <!-- END PLUGIN CSS -->
     <!-- BEGIN PLUGIN CSS -->
     <link href="~/Admin/assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="~/Admin/assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Admin/assets/plugins/bootstrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Admin/assets/plugins/googleapis/css/googleapis.css" rel="stylesheet" type="text/css" />
+    <link href="~/Admin/assets/plugins/googleapis/css/icon.css" rel="stylesheet" type="text/css" />
     <link href="~/Admin/assets/plugins/animate.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Admin/assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" />
     <!-- END PLUGIN CSS -->
@@ -53,13 +55,13 @@
                     </li>
                 </ul>
                 <!-- BEGIN LOGO -->
-                <a href="index.html">
+                <a asp-controller="home" asp-action="index">
                     <img src="~/Admin/assets/img/logo2x.png" class="logo" alt="" width="106" height="21" />
                 </a>
                 <!-- END LOGO -->
                 <ul class="nav pull-right notifcation-center">
                     <li class="dropdown hidden-xs hidden-sm">
-                        <a href="index.html" class="dropdown-toggle active" data-toggle="">
+                        <a asp-controller="home" asp-action="index" class="dropdown-toggle active" data-toggle="">
                             <i class="material-icons">home</i>
                         </a>
                     </li>

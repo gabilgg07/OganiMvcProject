@@ -33,12 +33,12 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="Body" class="control-label"></label>
-                        <textarea asp-for="Body"></textarea>
+                        <textarea asp-for="Body" class="txtEditor"></textarea>
                         <span asp-validation-for="Body" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <image asp-caption="Blog Image"
-                               asp-for="Image"/>
+                               asp-for="Image" />
                     </div>
                     <div class="form-group">
                         <label asp-for="AuthorId" class="control-label"></label>
@@ -83,17 +83,17 @@
     <link rel="stylesheet" href="~/lib/jquery-image-input/image-input.css" />
 }
 
-@section Scripts {@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}
+@*@section Scripts {@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}*@
 
 @section addjs {
 
     <script src="~/lib/jquery-image-input/jquery.image-input.js"></script>
     <script src="~/lib/ckeditor5/ckeditor.js"></script>
     <script class="removeable">$(document).ready(function () {
-            ClassicEditor
-                .create(document.querySelector('#Body '))
-                .catch(error => {
-                    console.error(error);
-                });
+
+            var allEditors = document.querySelectorAll('.txtEditor');
+            for (var i = 0; i < allEditors.length; ++i) {
+                ClassicEditor.create(allEditors[i]);
+            }
         });</script>
 }

@@ -12372,3 +12372,11 @@ p.form-control {
 .select2-container {
     max-width:100%;
 }
+
+.imager-container {
+    width: 100%;
+    padding: 6px 11px;
+    border-radius: 2px;
+    border: 1px solid #e5e9ec;
+    margin-top: 25px;
+}

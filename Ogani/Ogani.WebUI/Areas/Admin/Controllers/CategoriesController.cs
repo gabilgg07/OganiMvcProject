@@ -170,11 +170,6 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             });
         }
 
-        private bool CategoryExists(int id)
-        {
-            return db.Categories.Any(e => e.Id == id && e.DeletedDate == null);
-        }
-
         [HttpPost]
         public IActionResult ShowToastr( string toastrMsg)
         {
@@ -182,6 +177,13 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+
+        private bool CategoryExists(int id)
+        {
+            return db.Categories.Any(e => e.Id == id && e.DeletedDate == null);
+        }
+
     }
 }
 
