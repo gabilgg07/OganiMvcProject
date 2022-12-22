@@ -268,7 +268,7 @@
                                     <ul class="product-item-pic-hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a href="#" onclick="addToCard(event,@item.Id)"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                     <a class="product-item-details-link" asp-action="details" asp-route-id="@item.Id"></a>
                                 </div>
@@ -285,3 +285,24 @@
         </div>
     </div>
 </section>
+
+@section addjs {
+    <script src="~/lib/jquery-cookie/jquery.cookie.js"></script>
+    <script class="">
+        function addToCard(ev, id) {
+            ev.preventDefault();
+
+            var obj = {
+                productId: id,
+                count: 1
+            };
+
+            let arr = [];
+            arr.push(obj);
+
+            var jsonStrinfy = JSON.stringify(arr);
+
+            $.cookie('basket', jsonStrinfy, { expires: 7, path: '/' });
+        }
+    </script>
+}
