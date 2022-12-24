@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -81,7 +82,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                     {
 
                         string extension = Path.GetExtension(item.File.FileName);
-                        string pureName = $"{DateTime.Now.ToString("yyMMddhhmmss")}-{Guid.NewGuid()}{extension}";
+                        string pureName = $"{DateTime.Now.ToString("yyMMddHHmmssfff")}-{Guid.NewGuid()}{extension}";
                         string fullPath = Path.Combine(_env.WebRootPath, "uploads", "images", "products", pureName);
 
                         using (var stream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
@@ -136,7 +137,8 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
             ViewData["UnitId"] = new SelectList(_context.ProductUnits, "Id", "Name", product.UnitId);
-            ViewData["Images"] = await _context.ProductImages.Where(pi => pi.ProductId == product.Id).ToListAsync();
+            ViewData["Images"] = await _context.ProductImages
+                .Where(pi => pi.ProductId == product.Id).ToListAsync();
             return View(product);
         }
 
@@ -149,11 +151,84 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            var entity = await _context.Products.Include(p => p.Images)
+                .FirstOrDefaultAsync(p => p.Id == id && p.DeletedDate == null);
+
+            if (entity == null)
+            {
+                return NotFound();
+            }
             if (ModelState.IsValid)
             {
+                if (files != null)
+                {
+                    if (entity.Images == null)
+                    {
+                        entity.Images = new List<ProductImage>();
+                    }
+                    else if (entity.Images.Count() > 0)
+                    {
+                        foreach (var item in files)
+                        {
+                            if (entity.Images.Any(i => i.Id == item?.Id && string.IsNullOrWhiteSpace(item.TempPath)))
+                            {
+                                var deletedImg = entity.Images.FirstOrDefault(i => i.Id == item.Id);
+
+                                StringBuilder fullP = new StringBuilder();
+
+                                fullP.Append(Path.Combine(_env.WebRootPath,
+                               "uploads",
+                               "images",
+                               "products"));
+
+                                fullP.Append("/" + deletedImg.ImagePath);
+
+                                string fullPath = fullP.ToString();
+
+                                if (System.IO.File.Exists(fullPath))
+                                    System.IO.File.Delete(fullPath);
+
+                                entity.Images.Remove(deletedImg);
+                            }
+                        }
+                    }
+
+                    foreach (var item in files)
+                    {
+                        if (item.Id != null)
+                        {
+                            continue;
+                        }
+                        string extension = Path.GetExtension(item.File.FileName);
+                        string pureName = $"{DateTime.Now.ToString("yyMMddHHmmssfff")}-{Guid.NewGuid()}{extension}";
+                        string fullPath = Path.Combine(_env.WebRootPath, "uploads", "images", "products", pureName);
+
+                        using (var stream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
+                        {
+                            item.File.CopyTo(stream);
+                        }
+
+                        var proImg = new ProductImage
+                        {
+                            ImagePath = pureName,
+                            IsMain = item.IsMain,
+                            Product = entity
+                        };
+                        entity.Images.Add(proImg);
+                    }
+                }
+
+                entity.Name = product.Name;
+                entity.CategoryId = product.CategoryId;
+                entity.UnitId = product.UnitId;
+                entity.Price = product.Price;
+                entity.ShortDescription = product.ShortDescription;
+                entity.Weight = product.Weight;
+                entity.Description = product.Description;
+                entity.Information = product.Information;
+                entity.Reviews = product.Reviews;
                 try
                 {
-                    _context.Update(product);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

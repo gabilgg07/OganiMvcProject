@@ -1,21 +1,23 @@
 @model Product
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Products Edit";
     IEnumerable<ProductImage> images = ViewBag.Images;
 }
 
 <ul class="breadcrumb">
     <li>
-        <p>Admin</p>
+        <p><a asp-controller="home" asp-action="index">Admin</a></p>
     </li>
     <li>
-        <p>Products</p>
+        <p><a asp-action="index">Products</a></p>
     </li>
-    <li><a href="#" class="active">Edit</a> </li>
+    <li><a class="active">Edit</a> </li>
 </ul>
 <div class="page-title">
-    <i class="far fa-arrow-alt-circle-left"></i>
+    <a asp-action="index">
+        <i class="far fa-arrow-alt-circle-left"></i>
+    </a>
     <h3>Admin - Products</h3>
 </div>
 

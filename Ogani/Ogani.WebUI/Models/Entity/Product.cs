@@ -38,7 +38,6 @@ namespace Ogani.WebUI.Models.Entity
 
         public virtual ICollection<ProductImage> Images { get; set; }
 
-
     }
 }
 

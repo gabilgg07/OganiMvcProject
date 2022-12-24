@@ -10096,12 +10096,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\blog_authors\author-1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221219110551-5788482a-4758-437a-af46-9d910c3fd919.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144654039-b68dc3a6-f2e9-46d3-b672-76a33ea96172.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ogani.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ogani.WebUI</BasePath>
-      <RelativePath>uploads/images/products/221219110551-5788482a-4758-437a-af46-9d910c3fd919.jpg</RelativePath>
+      <RelativePath>uploads/images/products/221224144654039-b68dc3a6-f2e9-46d3-b672-76a33ea96172.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
       <AssetRole></AssetRole>
@@ -10110,14 +10110,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory></CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221219110551-5788482a-4758-437a-af46-9d910c3fd919.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144654039-b68dc3a6-f2e9-46d3-b672-76a33ea96172.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221219110551-a37c53b0-75f9-447b-88ed-9e1948ed27d0.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144654064-cb5d81fd-9b67-4b12-80bc-05dec9323609.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ogani.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ogani.WebUI</BasePath>
-      <RelativePath>uploads/images/products/221219110551-a37c53b0-75f9-447b-88ed-9e1948ed27d0.jpg</RelativePath>
+      <RelativePath>uploads/images/products/221224144654064-cb5d81fd-9b67-4b12-80bc-05dec9323609.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
       <AssetRole></AssetRole>
@@ -10126,14 +10126,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory></CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221219110551-a37c53b0-75f9-447b-88ed-9e1948ed27d0.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144654064-cb5d81fd-9b67-4b12-80bc-05dec9323609.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221219110551-a7847811-815a-4234-acbc-d050d97c555a.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144654064-ce9a121d-c614-477b-8d90-0bfb49a71f2f.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ogani.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ogani.WebUI</BasePath>
-      <RelativePath>uploads/images/products/221219110551-a7847811-815a-4234-acbc-d050d97c555a.jpg</RelativePath>
+      <RelativePath>uploads/images/products/221224144654064-ce9a121d-c614-477b-8d90-0bfb49a71f2f.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
       <AssetRole></AssetRole>
@@ -10142,14 +10142,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory></CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221219110551-a7847811-815a-4234-acbc-d050d97c555a.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144654064-ce9a121d-c614-477b-8d90-0bfb49a71f2f.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221219110551-aabce337-6a2f-4761-ae83-0164ef48c268.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144730846-6224f331-ce73-4a25-a95d-1bc4d67e42ba.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ogani.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ogani.WebUI</BasePath>
-      <RelativePath>uploads/images/products/221219110551-aabce337-6a2f-4761-ae83-0164ef48c268.jpg</RelativePath>
+      <RelativePath>uploads/images/products/221224144730846-6224f331-ce73-4a25-a95d-1bc4d67e42ba.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
       <AssetRole></AssetRole>
@@ -10158,7 +10158,247 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory></CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221219110551-aabce337-6a2f-4761-ae83-0164ef48c268.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144730846-6224f331-ce73-4a25-a95d-1bc4d67e42ba.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144730846-9eb2c06b-181d-4043-863e-57ab96c441a6.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224144730846-9eb2c06b-181d-4043-863e-57ab96c441a6.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144730846-9eb2c06b-181d-4043-863e-57ab96c441a6.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144730847-256800f3-4ca5-4ecc-9fa4-8a8006780d90.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224144730847-256800f3-4ca5-4ecc-9fa4-8a8006780d90.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144730847-256800f3-4ca5-4ecc-9fa4-8a8006780d90.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144730847-a95616ca-68e2-47e5-915e-635580915693.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224144730847-a95616ca-68e2-47e5-915e-635580915693.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144730847-a95616ca-68e2-47e5-915e-635580915693.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144730847-d3349584-d5c0-463c-bad9-a2928728466e.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224144730847-d3349584-d5c0-463c-bad9-a2928728466e.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144730847-d3349584-d5c0-463c-bad9-a2928728466e.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144807985-bb1b6f86-3ed6-46de-a8c6-2b7fdad55d1b.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224144807985-bb1b6f86-3ed6-46de-a8c6-2b7fdad55d1b.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144807985-bb1b6f86-3ed6-46de-a8c6-2b7fdad55d1b.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144807989-2599ee2f-9feb-4a84-94af-6c66752d92a8.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224144807989-2599ee2f-9feb-4a84-94af-6c66752d92a8.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144807989-2599ee2f-9feb-4a84-94af-6c66752d92a8.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144807989-422e329f-f760-424b-8790-e863e9e7a499.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224144807989-422e329f-f760-424b-8790-e863e9e7a499.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224144807989-422e329f-f760-424b-8790-e863e9e7a499.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224145022975-e9514ddf-8beb-4c3f-ad3a-0feb51a5b04b.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224145022975-e9514ddf-8beb-4c3f-ad3a-0feb51a5b04b.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224145022975-e9514ddf-8beb-4c3f-ad3a-0feb51a5b04b.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224145022976-7cd97303-9d44-4e98-8668-c5175f2810e5.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224145022976-7cd97303-9d44-4e98-8668-c5175f2810e5.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224145022976-7cd97303-9d44-4e98-8668-c5175f2810e5.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224145022976-842bdce9-19ee-498c-882d-8326f8b2ca8f.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224145022976-842bdce9-19ee-498c-882d-8326f8b2ca8f.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224145022976-842bdce9-19ee-498c-882d-8326f8b2ca8f.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224150009148-702f522b-5402-468f-a565-767736a1fd22.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224150009148-702f522b-5402-468f-a565-767736a1fd22.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224150009148-702f522b-5402-468f-a565-767736a1fd22.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224150009149-0494d50c-877a-43d8-88cc-c6681aab4f19.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224150009149-0494d50c-877a-43d8-88cc-c6681aab4f19.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224150009149-0494d50c-877a-43d8-88cc-c6681aab4f19.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224150009149-37a26e6d-7b83-42c5-a200-dde05550bcee.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224150009149-37a26e6d-7b83-42c5-a200-dde05550bcee.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224150009149-37a26e6d-7b83-42c5-a200-dde05550bcee.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224150009149-53d6f8ac-8cff-4ec1-b5cc-690e0999b655.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224150009149-53d6f8ac-8cff-4ec1-b5cc-690e0999b655.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224150009149-53d6f8ac-8cff-4ec1-b5cc-690e0999b655.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224150009149-6d15792b-4f08-4dff-bd10-840c901b3911.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ogani.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ogani.WebUI</BasePath>
+      <RelativePath>uploads/images/products/221224150009149-6d15792b-4f08-4dff-bd10-840c901b3911.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\221224150009149-6d15792b-4f08-4dff-bd10-840c901b3911.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\products\product-10.jpg))">
       <SourceType>Package</SourceType>

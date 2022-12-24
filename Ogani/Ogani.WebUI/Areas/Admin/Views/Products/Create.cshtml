@@ -1,20 +1,22 @@
 @model Product
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Products Create";
 }
 
 <ul class="breadcrumb">
     <li>
-        <p>Admin</p>
+        <p><a asp-controller="home" asp-action="index">Admin</a></p>
     </li>
     <li>
-        <p>Products</p>
+        <p><a asp-action="index">Products</a></p>
     </li>
-    <li><a href="#" class="active">Create</a> </li>
+    <li><a class="active">Create</a> </li>
 </ul>
 <div class="page-title">
-    <i class="far fa-arrow-alt-circle-left"></i>
+    <a asp-action="index">
+        <i class="far fa-arrow-alt-circle-left"></i>
+    </a>
     <h3>Admin - Products</h3>
 </div>
 

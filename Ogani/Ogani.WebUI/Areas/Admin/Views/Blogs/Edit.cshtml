@@ -1,20 +1,22 @@
 @model Blog
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Blogs Edit";
 }
 
 <ul class="breadcrumb">
     <li>
-        <p>Admin</p>
+        <p><a asp-controller="home" asp-action="index">Admin</a></p>
     </li>
     <li>
-        <p>Blogs</p>
+        <p><a asp-action="index">Blogs</a></p>
     </li>
-    <li><a href="#" class="active">Edit</a> </li>
+    <li><a class="active">Edit</a> </li>
 </ul>
 <div class="page-title">
-    <i class="far fa-arrow-alt-circle-left"></i>
+    <a asp-action="index">
+        <i class="far fa-arrow-alt-circle-left"></i>
+    </a>
     <h3>Admin - Blogs</h3>
 </div>
 

@@ -72,7 +72,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 string extension = Path.GetExtension(blog.Image.FileName);
-                string pureName = $"{DateTime.Now.ToString("yyMMddhhmmss")}-{Guid.NewGuid()}{extension}";
+                string pureName = $"{DateTime.Now.ToString("yyMMddHHmmssfff")}-{Guid.NewGuid()}{extension}";
                 string fullPath = Path.Combine(_env.WebRootPath, "uploads", "images", "blogs", pureName);
 
                 using(var stream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
@@ -161,7 +161,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                         }
 
                         string extension = Path.GetExtension(blog.Image.FileName);
-                        string pureName = $"{DateTime.Now.ToString("yyMMddhhmmss")}-{Guid.NewGuid()}{extension}";
+                        string pureName = $"{DateTime.Now.ToString("yyMMddHHmmssfff")}-{Guid.NewGuid()}{extension}";
                         entity.ImagePath = Path.Combine(_env.WebRootPath, "uploads", "images", "blogs", pureName);
 
                         using (var stream = new FileStream(entity.ImagePath, FileMode.Create, FileAccess.Write))

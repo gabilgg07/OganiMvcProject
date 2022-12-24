@@ -1,4 +1,6 @@
-﻿
+﻿@{
+    string title = ViewBag.Title;
+}
 
 
 <p class="menu-title sm">BROWSE <span class="pull-right"><a href="javascript:;"><i class="material-icons">refresh</i></a></span></p>
@@ -11,74 +13,73 @@
     </li>
     <li>
         <a asp-controller="categories" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("product-categories")?"-open":"")"></i>
             <span class="title">Product Categories</span>
         </a>
     </li>
     <li>
         <a asp-controller="units" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("units")?"-open":"")"></i>
             <span class="title">Product Units</span>
         </a>
     </li>
     <li>
         <a asp-controller="products" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("products")?"-open":"")"></i>
             <span class="title">Products</span>
-            <span class="label label-important bubble-only pull-right "></span>
         </a>
     </li>
     <li>
         <a asp-controller="blogcategories" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("blog-categories")?"-open":"")"></i>
             <span class="title">Blog Categories</span>
             <span class="label label-important bubble-only pull-right "></span>
         </a>
     </li>
     <li>
         <a asp-controller="authors" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("authors")?"-open":"")"></i>
             <span class="title">Authors</span>
             <span class="label label-important bubble-only pull-right "></span>
         </a>
     </li>
     <li>
         <a asp-controller="blogs" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("blogs")?"-open":"")"></i>
             <span class="title">Blogs</span>
         </a>
     </li>
     <li>
         <a asp-controller="blogtags" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("blog-tags")?"-open":"")"></i>
             <span class="title">Blog Tags</span>
             <span class="label label-important bubble-only pull-right "></span>
         </a>
     </li>
     <li>
         <a asp-controller="users" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("users")?"-open":"")"></i>
             <span class="title">Users</span>
             <span class="label label-important bubble-only pull-right "></span>
         </a>
     </li>
     <li>
         <a asp-controller="comments" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("comments")?"-open":"")"></i>
             <span class="title">Comments</span>
             <span class="label label-important bubble-only pull-right "></span>
         </a>
     </li>
     <li>
         <a asp-controller="contactposts" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("contact-posts")?"-open":"")"></i>
             <span class="title">Contact Posts</span>
             <span class="label label-important bubble-only pull-right "></span>
         </a>
     </li>
     <li>
         <a asp-controller="subscribes" asp-action="index">
-            <i class="material-icons">playlist_add_check</i>
+            <i class="fa fa-folder@(title.ToLower().Contains("subscribes")?"-open":"")"></i>
             <span class="title">Subscribes</span>
             <span class="label label-important bubble-only pull-right "></span>
         </a>

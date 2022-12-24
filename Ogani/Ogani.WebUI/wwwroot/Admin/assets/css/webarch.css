@@ -12322,7 +12322,6 @@ p.form-control {
     -webkit-appearance: none !important;
     color: #282323;
     outline: 0;
-    height: 16px;
     padding: 6px 11px !important;
     line-height: 15px;
     font-size: 13px;
@@ -12330,6 +12329,7 @@ p.form-control {
     vertical-align: top;
     background-color: #ffffff;
     min-height: 37px;
+    height: fit-content;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important;

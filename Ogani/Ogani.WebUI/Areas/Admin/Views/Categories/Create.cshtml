@@ -1,21 +1,23 @@
 ﻿@model Category
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Product-Categories Create";
 }
 
 
 <ul class="breadcrumb">
     <li>
-        <p>Admin</p>
+        <p><a asp-controller="home" asp-action="index">Admin</a></p>
     </li>
     <li>
-        <p>Categories</p>
+        <p><a asp-action="index">Categories</a></p>
     </li>
-    <li><a href="#" class="active">Create</a> </li>
+    <li><a class="active">Create</a> </li>
 </ul>
 <div class="page-title">
-    <i class="far fa-arrow-alt-circle-left"></i>
+    <a asp-action="index">
+        <i class="far fa-arrow-alt-circle-left"></i>
+    </a>
     <h3>Admin - Categories</h3>
 </div>
 

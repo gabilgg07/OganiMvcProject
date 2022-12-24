@@ -123,4 +123,7 @@
     transform: rotateX(0)
 }
 
+label.img-thumb.d-none {
+    display: none !important;
+}
 /*# sourceMappingURL=styke.min.css.map */

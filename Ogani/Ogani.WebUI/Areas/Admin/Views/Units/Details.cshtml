@@ -1,20 +1,22 @@
 @model Ogani.WebUI.Models.Entity.ProductUnit
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Units Details";
 }
 
 <ul class="breadcrumb">
     <li>
-        <p>Admin</p>
+        <p><a asp-controller="home" asp-action="index">Admin</a></p>
     </li>
     <li>
-        <p>Product Units</p>
+        <p><a asp-action="index">Product Units</a></p>
     </li>
-    <li><a href="#" class="active">View</a> </li>
+    <li><a class="active">View</a> </li>
 </ul>
 <div class="page-title">
-    <i class="far fa-arrow-alt-circle-left"></i>
+    <a asp-action="index">
+        <i class="far fa-arrow-alt-circle-left"></i>
+    </a>
     <h3>Admin - Units</h3>
 </div>
 
