@@ -86,6 +86,7 @@
     <Folder Include="Views\Shared\Components\BlogTags\" />
     <Folder Include="Views\Shared\Components\RecentNews\" />
     <Folder Include="AppCode\Providers\" />
+    <Folder Include="wwwroot\uploads\images\authors\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
@@ -99,6 +100,7 @@
     <Content Remove="wwwroot\Admin\assets\js\" />
     <Content Remove="wwwroot\Admin\assets\css\" />
     <Content Remove="wwwroot\Admin\assets\img\" />
+    <Content Remove="wwwroot\uploads\images\authors\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.31" />

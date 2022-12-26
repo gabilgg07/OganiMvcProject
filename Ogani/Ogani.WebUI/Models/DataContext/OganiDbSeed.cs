@@ -8,7 +8,7 @@ using Ogani.WebUI.Models.Entity;
 
 namespace Ogani.WebUI.Models.DataContext
 {
-	public static class OganiDbSeed
+    public static class OganiDbSeed
 	{
 		internal static IApplicationBuilder Seed(this IApplicationBuilder app)
 		{

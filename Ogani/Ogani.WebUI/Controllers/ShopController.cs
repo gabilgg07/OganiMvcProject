@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Ogani.WebUI.Models.DataContext;
 using Ogani.WebUI.Models.Entity;
 using Ogani.WebUI.Models.ViewModel;
@@ -57,6 +56,10 @@ namespace Ogani.WebUI.Controllers
 
         public IActionResult ShoppingCard()
         {
+            if (Request.Cookies.TryGetValue("basket", out string basketJson))
+            {
+                var basket = JsonConvert.DeserializeObject<List<BasketItem>>(basketJson);
+            }
             return View();
         }
 

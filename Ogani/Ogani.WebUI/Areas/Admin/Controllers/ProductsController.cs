@@ -249,36 +249,50 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(product);
         }
 
-        // GET: Admin/Products/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
+            if (id <= 0)
             {
-                return NotFound();
+                return Json(new
+                {
+                    error = true,
+                    message = "Xetali muraciet"
+                });
             }
 
-            var product = await _context.Products
-                .Include(p => p.Category)
-                .Include(p => p.Unit)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var product = await _context.Products.FindAsync(id);
+
             if (product == null)
             {
-                return NotFound();
+
+                return Json(new
+                {
+                    error = true,
+                    message = "Cari qeyd movcud deyil"
+                });
             }
 
-            return View(product);
+            product.DeletedDate = DateTime.Now;
+
+            await _context.SaveChangesAsync();
+
+            return Json(new
+            {
+                error = false,
+                message = $"{product.Name}* sistemden silindi!"
+            });
         }
 
-        // POST: Admin/Products/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        [HttpPost]
+        public IActionResult ShowToastr(string toastrMsg)
         {
-            var product = await _context.Products.FindAsync(id);
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
+            TempData["ToastrMsg"] = toastrMsg;
+
             return RedirectToAction(nameof(Index));
         }
+
 
         private bool ProductExists(int id)
         {

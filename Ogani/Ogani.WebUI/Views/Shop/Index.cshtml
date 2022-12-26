@@ -292,13 +292,27 @@
         function addToCard(ev, id) {
             ev.preventDefault();
 
-            var obj = {
-                productId: id,
-                count: 1
-            };
-
             let arr = [];
-            arr.push(obj);
+            var storedJson = $.cookie('basket');
+
+            if (storedJson != undefined && typeof storedJson == 'string') {
+                arr = JSON.parse(storedJson);
+            }
+
+            var found = arr.filter(item => {
+                return item.productId == id;
+            })[0];
+
+            if (found == undefined) {
+                found = {
+                    productId: id,
+                    count: 1
+                };
+                arr.push(found);
+            } else {
+                found.count++;
+            }
+            console.log(arr);
 
             var jsonStrinfy = JSON.stringify(arr);
 
