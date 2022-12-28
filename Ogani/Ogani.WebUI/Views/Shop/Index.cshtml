@@ -312,11 +312,12 @@
             } else {
                 found.count++;
             }
-            console.log(arr);
 
             var jsonStrinfy = JSON.stringify(arr);
 
-            $.cookie('basket', jsonStrinfy, { expires: 7, path: '/' });
+            $.cookie('basket', jsonStrinfy, { expires: 60, path: '/' });
+
+            showBasketCount();
         }
     </script>
 }

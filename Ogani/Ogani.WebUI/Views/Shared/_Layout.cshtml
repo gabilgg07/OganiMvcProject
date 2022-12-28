@@ -32,6 +32,12 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
     @RenderSection("addcss", required: false)
+
+    <style>
+        .basketCount:empty {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -47,7 +53,12 @@
         <div class="humberger-menu-cart">
             <ul>
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                <li>
+                    <a asp-area="" asp-controller="Shop" asp-action="ShoppingCard">
+                        <i class="fa fa-shopping-bag"></i>
+                        <span class="basketCount"></span>
+                    </a>
+                </li>
             </ul>
             <div class="header-cart-price">item: <span>$150.00</span></div>
         </div>
@@ -145,7 +156,12 @@
                     <div class="header-cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li>
+                                <a asp-area="" asp-controller="Shop" asp-action="ShoppingCard">
+                                    <i class="fa fa-shopping-bag"></i>
+                                    <span class="basketCount"></span>
+                                </a>
+                            </li>
                         </ul>
                         <div class="header-cart-price">item: <span>$150.00</span></div>
                     </div>
@@ -291,10 +307,23 @@
     <script src="assets/js/mixitup.min.js" type="text/javascript"></script>
     <script src="assets/js/owl.carousel.min.js" type="text/javascript"></script>
     <script src="lib/toastr.js/toastr.min.js"></script>
+    <script src="~/lib/jquery-cookie/jquery.cookie.js"></script>
 
     <script src="assets/js/main.js" type="text/javascript"></script>
 
-    <script class="removeable">$(document).ready(function () {
+    <script class="removeable">function showBasketCount() {
+
+            let arr = [];
+            var storedJson = $.cookie('basket');
+
+            if (storedJson != undefined && typeof storedJson == 'string') {
+                arr = JSON.parse(storedJson);
+            }
+
+            $('.basketCount').text(arr.length);
+        }
+
+        $(document).ready(function () {
 
             toastr.options = {
                 "closeButton": true,
@@ -356,21 +385,22 @@
                     },
                 })
                     .always(function () {
-                    // sorgunun sonunda isleyir:
+                        // sorgunun sonunda isleyir:
 
-                    $(".loader").fadeOut();
-                    $('#preloder').delay(200).fadeOut("slow");
-                });
+                        $(".loader").fadeOut();
+                        $('#preloder').delay(200).fadeOut("slow");
+                    });
             });
 
+            showBasketCount();
 
         });</script>
 
     @RenderSection("addjs", required: false)
 
-    <script>
-        $('.removeable').remove();
-    </script>
+    <script>$(document).ready(function () {
+            $('.removeable').remove();
+        });</script>
 </body>
 </html>
 

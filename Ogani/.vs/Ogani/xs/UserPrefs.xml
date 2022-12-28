@@ -1,45 +1,43 @@
 ﻿<Properties StartupConfiguration="{320C438B-BE71-483D-8985-3514117EA629}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Ogani.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Ogani.WebUI/Areas/Admin/Controllers/ProductsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Ogani.WebUI/Views/Shop/ShoppingCard.cshtml">
     <Files>
-      <File FileName="Ogani.WebUI/Areas/Admin/Controllers/ProductsController.cs" Line="90" Column="26" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Views/Products/Details.cshtml" />
-      <File FileName="Ogani.WebUI/Models/Entity/ProductImage.cs" />
-      <File FileName="Ogani.WebUI/Models/Entity/Product.cs" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Views/Products/Edit.cshtml" />
-      <File FileName="Ogani.WebUI/wwwroot/lib/jquery-imager/imager.js" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Views/Products/Create.cshtml" Line="83" Column="31" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Controllers/BlogsController.cs" NotebookId="1" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Views/Blogs/Index.cshtml" NotebookId="1" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Views/Blogs/Edit.cshtml" NotebookId="1" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Views/Blogs/Details.cshtml" Line="81" Column="45" NotebookId="1" />
+      <File FileName="Ogani.WebUI/Views/Shop/Index.cshtml" Line="289" Column="17" />
+      <File FileName="Ogani.WebUI/Controllers/ShopController.cs" Line="76" Column="37" />
+      <File FileName="Ogani.WebUI/Models/ViewModel/BasketItem.cs" Line="16" Column="23" />
+      <File FileName="Ogani.WebUI/Views/Shop/ShoppingCard.cshtml" Line="176" Column="1" />
+      <File FileName="Ogani.WebUI/wwwroot/assets/js/main.js" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Ogani" expanded="True">
             <Node name="Ogani.WebUI" expanded="True">
-              <Node name="AppCode" expanded="True" />
-              <Node name="Areas" expanded="True">
-                <Node name="Admin" expanded="True">
-                  <Node name="Controllers" expanded="True">
-                    <Node name="ProductsController.cs" selected="True" />
-                  </Node>
-                  <Node name="Models" expanded="True" />
-                  <Node name="Views" expanded="True">
-                    <Node name="Blogs" expanded="True" />
-                    <Node name="Products" expanded="True" />
-                    <Node name="Shared" expanded="True" />
-                  </Node>
-                </Node>
+              <Node name="AppCode" expanded="True">
+                <Node name="Providers" expanded="True" />
               </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
+                <Node name="DataContext" expanded="True" />
                 <Node name="ViewModel" expanded="True" />
               </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True" />
+                <Node name="Shop" expanded="True">
+                  <Node name="ShoppingCard.cshtml" selected="True" />
+                </Node>
+              </Node>
               <Node name="wwwroot" expanded="True">
-                <Node name="uploads" expanded="True">
-                  <Node name="images" expanded="True">
-                    <Node name="products" expanded="True" />
+                <Node name="assets" expanded="True">
+                  <Node name="js" expanded="True" />
+                </Node>
+                <Node name="uploads">
+                  <Node name="images">
+                    <Node name="authors" expanded="True" />
                   </Node>
                 </Node>
               </Node>
@@ -47,13 +45,12 @@
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.UploadExample.WebApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
 </Properties>

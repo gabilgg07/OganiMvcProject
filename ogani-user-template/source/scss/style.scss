@@ -519,19 +519,21 @@ ol {
           }
         }
         span {
-          height: 13px;
-          width: 13px;
+          height: 15px;
+          width: 15px;
           background: #7fad39;
           font-size: 10px;
           color: #fff;
-          line-height: 13px;
+          line-height: 15px;
           text-align: center;
           font-weight: 700;
-          display: inline-block;
           border-radius: 50%;
           position: absolute;
           top: 0;
           right: -12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
@@ -2917,19 +2919,21 @@ ul {
             color: #1c1c1c;
           }
           span {
-            height: 13px;
-            width: 13px;
+            height: 15px;
+            width: 15px;
             background: #7fad39;
             font-size: 10px;
             color: #fff;
-            line-height: 13px;
+            line-height: 15px;
             text-align: center;
             font-weight: 700;
-            display: inline-block;
             border-radius: 50%;
             position: absolute;
             top: 0;
             right: -12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
         }
       }
@@ -3190,19 +3194,21 @@ ul {
             color: #1c1c1c;
           }
           span {
-            height: 13px;
-            width: 13px;
+            height: 15px;
+            width: 15px;
             background: #7fad39;
             font-size: 10px;
             color: #fff;
-            line-height: 13px;
+            line-height: 15px;
             text-align: center;
             font-weight: 700;
-            display: inline-block;
             border-radius: 50%;
             position: absolute;
             top: 0;
             right: -12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
         }
       }

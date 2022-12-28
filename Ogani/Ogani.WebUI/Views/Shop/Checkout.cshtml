@@ -1,7 +1,9 @@
-﻿
+﻿@model IEnumerable<BasketItem>
 
 @{
     ViewBag.Title = " Shop Checkout";
+    decimal subtotal = 0;
+    decimal total = 0;
 }
 
 <section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb.jpg">
@@ -117,12 +119,16 @@
                             <h4>Your Order</h4>
                             <div class="checkout-order-products">Products <span>Total</span></div>
                             <ul>
-                                <li>Vegetable’s Package <span>$75.99</span></li>
-                                <li>Fresh Vegetable <span>$151.99</span></li>
-                                <li>Organic Bananas <span>$53.99</span></li>
+                                @foreach (var item in Model)
+                                {
+                                    <li>@item.Name <span>@((item.Price * item.Count).ToString("$0.00"))</span></li>
+                                    {
+                                        subtotal = total += (item.Price * item.Count);
+                                    }
+                                }
                             </ul>
-                            <div class="checkout-order-subtotal">Subtotal <span>$750.99</span></div>
-                            <div class="checkout-order-total">Total <span>$750.99</span></div>
+                            <div class="checkout-order-subtotal">Subtotal <span>@subtotal.ToString("$0.00")</span></div>
+                            <div class="checkout-order-total">Total <span>@total.ToString("$0.00")</span></div>
                             <div class="checkout-input-checkbox">
                                 <label for="acc-or">
                                     Create an account?

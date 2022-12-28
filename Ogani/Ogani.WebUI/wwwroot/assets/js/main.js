@@ -133,16 +133,16 @@
     if ($button.hasClass("inc")) {
       var newVal = parseFloat(oldValue) + 1;
     } else {
-      if (oldValue > 0) {
+      if (oldValue > 1) {
         var newVal = parseFloat(oldValue) - 1;
       } else {
-        newVal = 0;
+        newVal = 1;
       }
     }
     $button.parent().find("input").val(newVal);
 
     if (typeof window["qtyChanged"] == "function") {
-      window["qtyChanged"](newVal, $($button).closest("tr")[0]);
+        window["qtyChanged"](newVal, $($button).closest("tr")[0], $button.hasClass("inc"));
     }
   });
 

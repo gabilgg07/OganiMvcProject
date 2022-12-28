@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -54,17 +55,46 @@ namespace Ogani.WebUI.Controllers
             return View(product);
         }
 
-        public IActionResult ShoppingCard()
+        public async Task<IActionResult> ShoppingCard()
         {
             if (Request.Cookies.TryGetValue("basket", out string basketJson))
             {
                 var basket = JsonConvert.DeserializeObject<List<BasketItem>>(basketJson);
+
+                foreach (var basketItem in basket)
+                {
+                    var product = await db.Products
+                        .Include(p => p.Images)
+                        .FirstOrDefaultAsync(p => p.Id == basketItem.ProductId && p.DeletedDate == null);
+
+                    basketItem.Name = product.Name;
+                    basketItem.Price = product.Price;
+                    basketItem.ImagePath = product.Images?
+                        .FirstOrDefault(i => i.IsMain)?.ImagePath;
+                }
+
+                return View(basket);
             }
             return View();
         }
 
-        public IActionResult Checkout()
+        public async Task<IActionResult> Checkout()
         {
+            if (Request.Cookies.TryGetValue("basket", out string basketJson))
+            {
+                var basket = JsonConvert.DeserializeObject<List<BasketItem>>(basketJson);
+
+                foreach (var basketItem in basket)
+                {
+                    var product = await db.Products
+                        .FirstOrDefaultAsync(p => p.Id == basketItem.ProductId && p.DeletedDate == null);
+
+                    basketItem.Name = product.Name;
+                    basketItem.Price = product.Price;
+                }
+
+                return View(basket);
+            }
             return View();
         }
     }

@@ -523,19 +523,27 @@ ol {
   color: #7fad39;
 }
 .header-cart ul li a span {
-  height: 13px;
-  width: 13px;
+  height: 15px;
+  width: 15px;
   background: #7fad39;
   font-size: 10px;
   color: #fff;
-  line-height: 13px;
+  line-height: 15px;
   text-align: center;
   font-weight: 700;
-  display: inline-block;
   border-radius: 50%;
   position: absolute;
   top: 0;
   right: -12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .header-cart .header-cart-price {
   font-size: 14px;
@@ -2981,19 +2989,27 @@ ul.pagination:before {
     color: #1c1c1c;
   }
   .humberger-menu-cart ul li a span {
-    height: 13px;
-    width: 13px;
+    height: 15px;
+    width: 15px;
     background: #7fad39;
     font-size: 10px;
     color: #fff;
-    line-height: 13px;
+    line-height: 15px;
     text-align: center;
     font-weight: 700;
-    display: inline-block;
     border-radius: 50%;
     position: absolute;
     top: 0;
     right: -12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .humberger-menu-cart .header-cart-price {
     font-size: 14px;
@@ -3230,19 +3246,27 @@ ul.pagination:before {
     color: #1c1c1c;
   }
   .humberger-menu-cart ul li a span {
-    height: 13px;
-    width: 13px;
+    height: 15px;
+    width: 15px;
     background: #7fad39;
     font-size: 10px;
     color: #fff;
-    line-height: 13px;
+    line-height: 15px;
     text-align: center;
     font-weight: 700;
-    display: inline-block;
     border-radius: 50%;
     position: absolute;
     top: 0;
     right: -12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .humberger-menu-cart .header-cart-price {
     font-size: 14px;

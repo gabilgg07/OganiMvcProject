@@ -1,8 +1,17 @@
-﻿
+﻿@model IEnumerable<BasketItem>
 @{
     ViewBag.Title = "Shopping Card";
 }
-
+@section addcss{
+    <style>
+        .shoping-cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+}
 
 <section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb.jpg">
     <div class="container">
@@ -37,72 +46,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="shoping-cart-item">
-                                    <img src="assets/img/cart/cart-1.jpg" alt="">
-                                    <h5>Vegetable’s Package</h5>
-                                </td>
-                                <td class="shoping-cart-price">
-                                    $55.00
-                                </td>
-                                <td class="shoping-cart-quantity">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="shoping-cart-total">
-                                    $110.00
-                                </td>
-                                <td class="shoping-cart-item-close">
-                                    <span class="icon_close"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="shoping-cart-item">
-                                    <img src="assets/img/cart/cart-2.jpg" alt="">
-                                    <h5>Fresh Garden Vegetable</h5>
-                                </td>
-                                <td class="shoping-cart-price">
-                                    $39.00
-                                </td>
-                                <td class="shoping-cart-quantity">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="shoping-cart-total">
-                                    $39.99
-                                </td>
-                                <td class="shoping-cart-item-close">
-                                    <span class="icon_close"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="shoping-cart-item">
-                                    <img src="assets/img/cart/cart-3.jpg" alt="">
-                                    <h5>Organic Bananas</h5>
-                                </td>
-                                <td class="shoping-cart-price">
-                                    $69.00
-                                </td>
-                                <td class="shoping-cart-quantity">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="shoping-cart-total">
-                                    $69.99
-                                </td>
-                                <td class="shoping-cart-item-close">
-                                    <span class="icon_close"></span>
-                                </td>
-                            </tr>
+                            @if (Model != null)
+                            {
+                                @foreach (var item in Model)
+                                {
+                                    <tr data-product-id="@item.ProductId">
+                                        <td class="shoping-cart-item">
+                                            <img src="~/uploads/images/products/@item.ImagePath" alt="@item.Name">
+                                            <h5>@item.Name</h5>
+                                        </td>
+                                        <td class="shoping-cart-price">
+                                            @item.Price.ToString("$0.00")
+                                        </td>
+                                        <td class="shoping-cart-quantity">
+                                            <div class="quantity">
+                                                <div class="pro-qty">
+                                                    <input type="text" value="@item.Count">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="shoping-cart-total">
+                                            @item.Amount.ToString("$0.00")
+                                        </td>
+                                        <td class="shoping-cart-item-close">
+                                            <span class="icon_close"></span>
+                                        </td>
+                                    </tr>
+                                }
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -111,7 +82,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="shoping-cart-btns">
-                    <a href="#" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
+                    <a asp-controller="shop" asp-action="index" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
                     <a href="#" class="primary-btn cart-btn cart-btn-right">
                         <span class="icon_loading"></span>
                         Upadate Cart
@@ -133,10 +104,10 @@
                 <div class="shoping-checkout">
                     <h5>Cart Total</h5>
                     <ul>
-                        <li>Subtotal <span id="subtotal">$454.98</span></li>
-                        <li>Total <span id="total">$454.98</span></li>
+                        <li>Subtotal <span id="subtotal"></span></li>
+                        <li>Total <span id="total"></span></li>
                     </ul>
-                    <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    <a asp-area="" asp-controller="Shop" asp-action="checkout" class="primary-btn">PROCEED TO CHECKOUT</a>
                 </div>
             </div>
         </div>
@@ -145,6 +116,7 @@
 
 @section addjs{
 
+    <script src="~/lib/jquery-cookie/jquery.cookie.js"></script>
     <script class="removeable">
         function qtyChanged2(value, tr) {
             let priceStr = $(tr).find(".shoping-cart-price").text().trim();
@@ -155,7 +127,7 @@
 
             // yuxaridaki sekilde tehlukelidir, cunki, yoxlanis olmur.
         }
-        function qtyChanged(value, tr) {
+        function qtyChanged(value, tr, operation) {
             // asagidaki sekilde tehlukesizdir:
 
             let priceStr = $(tr).find("td.shoping-cart-price").text().trim();
@@ -164,8 +136,51 @@
                 let symb = groups[1];
                 let price = groups[2];
                 let amount = (price * value).toFixed(2);
+
                 $(tr).find("td.shoping-cart-total").text(`${symb}${amount}`);
+
                 computeTotalSum();
+
+                // start: basket change data
+
+                let arr = [];
+                var storedJson = $.cookie('basket');
+
+                if (storedJson != undefined && typeof storedJson == 'string') {
+                    arr = JSON.parse(storedJson);
+                }
+
+                let productId = $(tr).data('product-id');
+
+                var found = arr.filter(item => {
+                    return item.productId == productId;
+                })[0];
+
+                if (found == undefined) {
+                    found = {
+                        productId: productId,
+                        count: 1
+                    };
+                    arr.push(found);
+                } else {
+                    if (operation) {
+                        found.count++;
+                    } else {
+                        if (found.count > 1) {
+                            found.count--;
+                        } else {
+                            found.count = 1;
+                        }
+                    }
+                }
+
+                var jsonStrinfy = JSON.stringify(arr);
+
+                $.cookie('basket', jsonStrinfy, { expires: 60, path: '/' });
+
+                showBasketCount();
+
+                // end: basket change data
             }
         }
 
@@ -188,6 +203,7 @@
             $("#subtotal").text(`$${sum.toFixed(2)}`);
             $("#total").text(`$${sum.toFixed(2)}`);
         }
+
         function computeTotalSum2() {
             let prices = $("td.shoping-cart-price")
                 .toArray()
@@ -213,14 +229,36 @@
 
             $("#subtotal").text(`$${sum.toFixed(2)}`);
         }
+
         if ($("td.shoping-cart-total").length != 0) {
             computeTotalSum();
         }
+
         $(".shoping-cart-item-close").on("click", function (e) {
             e.preventDefault();
+
+            let productId = $(e.currentTarget).closest("tr").data('product-id');
             $(e.currentTarget).closest("tr").remove();
 
             computeTotalSum();
+
+
+            // start: basket remove item
+
+            let arr = [];
+            var storedJson = $.cookie('basket');
+
+            if (storedJson != undefined && typeof storedJson == 'string') {
+                arr = JSON.parse(storedJson);
+            }
+
+            arr = arr.filter(item => item.productId != productId)
+            var jsonStrinfy = JSON.stringify(arr);
+
+            $.cookie('basket', jsonStrinfy, { expires: 60, path: '/' });
+
+            showBasketCount();
+            // end : basket remove item
         });
     </script>
 }
