@@ -78,6 +78,68 @@ namespace Ogani.WebUI.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> ShoppingCardAmount()
+        {
+            // method base linq:
+
+            //var dataLinq = db.Products.Where(p => p.CategoryId == 1).ToList();
+
+            /*
+
+            select p.*, c.[Name] from [dbo].[Products] p
+            join dbo.Categories c on p.CategoryId = c.Id
+            where p.CategoryId = 1
+             
+             */
+
+            //var data = (from p in db.Products
+            //            join c in db.Categories on p.CategoryId equals c.Id
+            //            where p.CategoryId == 1
+            //            select new
+            //            {
+            //                Product = p,
+            //                Category = c
+            //            }).ToList();
+
+
+            if (Request.Cookies.TryGetValue("basket", out string basketJson))
+            {
+                var basket = JsonConvert.DeserializeObject<List<BasketItem>>(basketJson);
+
+
+                int[] productIds = basket.Select(b => b.ProductId).ToArray();
+
+                var basketProducts = await db.Products.Where(p => productIds.Contains(p.Id)).ToListAsync();
+
+                var amountsSum = (from p in basketProducts
+                                 join b in basket on p.Id equals b.ProductId
+                                 select p.Price * b.Count)
+                                 .Sum(a => a);
+
+                //foreach (var basketItem in basket)
+                //{
+                //    var product = await db.Products
+                //        .FirstOrDefaultAsync(p => p.Id == basketItem.ProductId && p.DeletedDate == null);
+
+                //    basketItem.Price = product.Price;
+                //}
+
+                return Json(new
+                {
+                    error = false,
+                    //amount = basket.Sum(b => b.Amount),
+                    amount = amountsSum,
+                    message = ""
+                });
+            }
+            return Json(new
+            {
+                error = true,
+                message = "Cookie bosdur"
+            });
+        }
+
         public async Task<IActionResult> Checkout()
         {
             if (Request.Cookies.TryGetValue("basket", out string basketJson))
