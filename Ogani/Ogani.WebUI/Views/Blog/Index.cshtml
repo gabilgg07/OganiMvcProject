@@ -49,7 +49,7 @@
                                 <div class="blog-item-text">
                                     <ul>
                                         <li><i class="fa fa-calendar-o"></i> @item.PublishedDate?.ToString("MMM dd, yyyy")</li>
-                                        <li><i class="fa fa-comment-o"></i> @item.Comments.Count()</li>
+                                        @*<li><i class="fa fa-comment-o"></i> @item.Comments.Count()</li>*@
                                     </ul>
                                     <h5><a asp-action="details" asp-route-id="@item.Id">@item.Title.CleanPlainText(30)</a></h5>
                                     <p>

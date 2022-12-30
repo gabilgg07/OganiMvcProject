@@ -48,7 +48,7 @@ namespace Ogani.WebUI.Models.Entity
 
         public virtual BlogCategory BlogCategory { get; set; }
 
-        public virtual ICollection<Comment> Comments { get; set; }
+        //public virtual ICollection<Comment> Comments { get; set; }
 
         public virtual ICollection<BlogTagBlog> BlogTagBlogs { get; set; }
     }

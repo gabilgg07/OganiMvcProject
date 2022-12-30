@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -10,6 +11,7 @@ using Ogani.WebUI.Models.ViewModel;
 
 namespace Ogani.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class ShopController : Controller
     {
         readonly OganiDbContext db;

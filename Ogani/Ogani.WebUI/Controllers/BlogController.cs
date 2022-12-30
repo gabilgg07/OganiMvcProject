@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Ogani.WebUI.Models.DataContext;
@@ -10,6 +8,7 @@ using Ogani.WebUI.Models.ViewModel;
 
 namespace Ogani.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class BlogController : Controller
     {
         readonly OganiDbContext db;
@@ -35,7 +34,7 @@ namespace Ogani.WebUI.Controllers
 
             query = query.Where(b => b.DeletedDate == null && b.PublishedDate != null)
                 .Include(b => b.Author)
-                .Include(b => b.Comments)
+                //.Include(b => b.Comments)
                 .AsQueryable();
 
             var pagedModel = new PagedViewModel<Blog>(query, pageIndex, pageSize,categoryId, tagId);
@@ -48,7 +47,7 @@ namespace Ogani.WebUI.Controllers
             var blog = db.Blogs
                 .Include(b => b.BlogCategory)
                 .Include(b => b.Author)
-                .Include(b => b.Comments)
+                //.Include(b => b.Comments)
                 .Include(b => b.BlogTagBlogs)
                 .ThenInclude(bt => bt.BlogTag)
                 .FirstOrDefault(b => b.Id == id && b.DeletedDate == null);

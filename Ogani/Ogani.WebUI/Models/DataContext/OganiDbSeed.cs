@@ -24,7 +24,7 @@ namespace Ogani.WebUI.Models.DataContext
                 InitAppInfo(db);
 
                 InitAuthors(db);
-                InitUsers(db);
+                //InitUsers(db);
                 InitBlogCategory(db);
                 InitBlogs(db);
                 InitBlogTags(db);
@@ -162,59 +162,59 @@ namespace Ogani.WebUI.Models.DataContext
                         Author = author
                     };
 
-                    var user = db.Users.FirstOrDefault();
-                    if (user != null)
-                    {
-                        blog.Comments = new List<Comment>();
-                        blog.Comments.Add(new Comment
-                        {
-                            Text = "Blogunuz cox gozeldir",
-                            User = user,
-                            Blog = blog
-                        });
-                        blog.Comments.Add(new Comment
-                        {
-                            Text = "Gozel blogunuz var",
-                            User = user,
-                            Blog = blog
-                        });
-                        blog.Comments.Add(new Comment
-                        {
-                            Text = "Cox gozel Blogunuz var",
-                            User = user,
-                            Blog = blog
-                        });
-                        blog.Comments.Add(new Comment
-                        {
-                            Text = "Maraqlidir",
-                            User = user,
-                            Blog = blog
-                        });
-                        blog.Comments.Add(new Comment
-                        {
-                            Text = "Maraqli blogdur",
-                            User = user,
-                            Blog = blog
-                        });
-                        blog.Comments.Add(new Comment
-                        {
-                            Text = "Nece de maaraqlidir",
-                            User = user,
-                            Blog = blog
-                        });
-                        blog.Comments.Add(new Comment
-                        {
-                            Text = "Blog cox maraqli yazilib",
-                            User = user,
-                            Blog = blog
-                        });
-                        blog.Comments.Add(new Comment
-                        {
-                            Text = "Cox maraqlidir",
-                            User = user,
-                            Blog = blog
-                        });
-                    }
+                    //var user = db.Users.FirstOrDefault();
+                    //if (user != null)
+                    //{
+                    //    blog.Comments = new List<Comment>();
+                    //    blog.Comments.Add(new Comment
+                    //    {
+                    //        Text = "Blogunuz cox gozeldir",
+                    //        User = user,
+                    //        Blog = blog
+                    //    });
+                    //    blog.Comments.Add(new Comment
+                    //    {
+                    //        Text = "Gozel blogunuz var",
+                    //        User = user,
+                    //        Blog = blog
+                    //    });
+                    //    blog.Comments.Add(new Comment
+                    //    {
+                    //        Text = "Cox gozel Blogunuz var",
+                    //        User = user,
+                    //        Blog = blog
+                    //    });
+                    //    blog.Comments.Add(new Comment
+                    //    {
+                    //        Text = "Maraqlidir",
+                    //        User = user,
+                    //        Blog = blog
+                    //    });
+                    //    blog.Comments.Add(new Comment
+                    //    {
+                    //        Text = "Maraqli blogdur",
+                    //        User = user,
+                    //        Blog = blog
+                    //    });
+                    //    blog.Comments.Add(new Comment
+                    //    {
+                    //        Text = "Nece de maaraqlidir",
+                    //        User = user,
+                    //        Blog = blog
+                    //    });
+                    //    blog.Comments.Add(new Comment
+                    //    {
+                    //        Text = "Blog cox maraqli yazilib",
+                    //        User = user,
+                    //        Blog = blog
+                    //    });
+                    //    blog.Comments.Add(new Comment
+                    //    {
+                    //        Text = "Cox maraqlidir",
+                    //        User = user,
+                    //        Blog = blog
+                    //    });
+                    //}
 
                     db.Blogs.Add(blog);
                 }
@@ -247,19 +247,19 @@ namespace Ogani.WebUI.Models.DataContext
             }
         }
 
-        private static void InitUsers(OganiDbContext db)
-        {
-            if (!db.Users.Any())
-            {
-                db.Users.Add(new User
-                {
-                    Name = "Tony",
-                    Surname = "Cruse",
-                });
+        //private static void InitUsers(OganiDbContext db)
+        //{
+        //    if (!db.Users.Any())
+        //    {
+        //        db.Users.Add(new User
+        //        {
+        //            Name = "Tony",
+        //            Surname = "Cruse",
+        //        });
 
-                db.SaveChanges();
-            }
-        }
+        //        db.SaveChanges();
+        //    }
+        //}
 
         private static void InitAuthors(OganiDbContext db)
         {

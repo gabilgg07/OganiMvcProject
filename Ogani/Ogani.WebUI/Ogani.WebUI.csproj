@@ -44,6 +44,9 @@
     <None Remove="Views\Shared\Components\RecentNews\" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="AppCode\Providers\" />
+    <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Microsoft.Extensions.Identity.Stores" />
+    <None Remove="Models\Entity\Membership\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -87,6 +90,7 @@
     <Folder Include="Views\Shared\Components\RecentNews\" />
     <Folder Include="AppCode\Providers\" />
     <Folder Include="wwwroot\uploads\images\authors\" />
+    <Folder Include="Models\Entity\Membership\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
@@ -119,5 +123,7 @@
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
     <PackageReference Include="MailKit" Version="3.4.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.25" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.31" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.31" />
   </ItemGroup>
 </Project>

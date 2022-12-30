@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Ogani.WebUI.AppCode.Extensions;
 using Ogani.WebUI.Models.DataContext;
@@ -10,6 +9,7 @@ using Ogani.WebUI.Models.Entity;
 
 namespace Ogani.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         readonly OganiDbContext db;
