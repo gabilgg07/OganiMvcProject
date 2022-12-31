@@ -28,27 +28,34 @@ using Ogani.WebUI.Models.ViewModel;
 #nullable disable
 #nullable restore
 #line 4 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Areas/Admin/Views/_ViewImports.cshtml"
-using Ogani.WebUI.AppCode.Types;
+using Ogani.WebUI.Areas.Admin.Models.ViewModel;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 5 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Areas/Admin/Views/_ViewImports.cshtml"
-using Ogani.WebUI.Models.DataContext;
+using Ogani.WebUI.AppCode.Types;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 6 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Areas/Admin/Views/_ViewImports.cshtml"
+using Ogani.WebUI.Models.DataContext;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Areas/Admin/Views/_ViewImports.cshtml"
 using Ogani.WebUI.AppCode.Extensions;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7dccb4971d9d7f8614ccecc123fbf208f92217f6", @"/Areas/Admin/Views/BlogCategories/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2b731d2a1c19d2c61f2c786dd2cef5d63154b374", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6b59ef3b100a8ed8d6942c55eca8b74cfb0bc76b", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_BlogCategories_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<BlogCategory>>
     #nullable disable
@@ -112,7 +119,7 @@ WriteAttributeValue("", 123, ViewBag.ToastrMsg, 123, 18, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(" id=\"hasMessage\" />\r\n\r\n<ul class=\"breadcrumb\">\r\n    <li>\r\n        <p>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f69201", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f69441", async() => {
                 WriteLiteral("Admin");
             }
             );
@@ -130,7 +137,7 @@ WriteAttributeValue("", 123, ViewBag.ToastrMsg, 123, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</p>\r\n    </li>\r\n    <li><a class=\"active\">Blog Categories</a> </li>\r\n</ul>\r\n<div class=\"page-title\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f610660", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f610900", async() => {
                 WriteLiteral("\r\n        <i class=\"far fa-arrow-alt-circle-left\"></i>\r\n    ");
             }
             );
@@ -169,7 +176,7 @@ WriteAttributeValue("", 123, ViewBag.ToastrMsg, 123, 18, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                            </th>\r\n                            <th class=\"text-center w-25\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f612858", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f613098", async() => {
                 WriteLiteral("<i class=\"fa fa-plus-circle\"></i>");
             }
             );
@@ -203,7 +210,7 @@ WriteAttributeValue("", 123, ViewBag.ToastrMsg, 123, 18, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                </td>\r\n                                <td class=\"text-center vertical-middle\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f615161", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f615401", async() => {
                 WriteLiteral("<i class=\"fa fa-pencil\"></i>");
             }
             );
@@ -235,7 +242,7 @@ WriteAttributeValue("", 123, ViewBag.ToastrMsg, 123, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f617488", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f617728", async() => {
                 WriteLiteral("<i class=\"fa fa-info-circle\"></i>");
             }
             );
@@ -303,7 +310,7 @@ WriteAttributeValue("", 1974, item.Name, 1974, 10, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n            </div>\r\n            <div style=\"visibility:hidden;\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f621554", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f621794", async() => {
                 WriteLiteral("\r\n                    <input type=\"hidden\" name=\"toastrMsg\" id=\"toastrMsg\"");
                 BeginWriteAttribute("value", " value=\"", 2480, "\"", 2488, 0);
                 EndWriteAttribute();
@@ -329,7 +336,7 @@ WriteAttributeValue("", 1974, item.Name, 1974, 10, false);
             WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
             DefineSection("addjs", async() => {
                 WriteLiteral("\r\n\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f623667", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dccb4971d9d7f8614ccecc123fbf208f92217f623907", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -47,6 +47,8 @@
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
     <None Remove="Microsoft.Extensions.Identity.Stores" />
     <None Remove="Models\Entity\Membership\" />
+    <None Remove="Areas\Admin\Models\ViewModel\" />
+    <None Remove="Areas\Admin\Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -91,6 +93,8 @@
     <Folder Include="AppCode\Providers\" />
     <Folder Include="wwwroot\uploads\images\authors\" />
     <Folder Include="Models\Entity\Membership\" />
+    <Folder Include="Areas\Admin\Models\ViewModel\" />
+    <Folder Include="Areas\Admin\Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

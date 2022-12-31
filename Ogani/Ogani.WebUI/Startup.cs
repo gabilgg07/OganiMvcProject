@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -44,6 +45,10 @@ namespace Ogani.WebUI
             services.AddIdentity<OganiUser, OganiRole>()
                 .AddEntityFrameworkStores<OganiDbContext>();
 
+            services.AddScoped<SignInManager<OganiUser>>();
+            services.AddScoped<UserManager<OganiUser>>();
+            services.AddScoped<RoleManager<OganiRole>>();
+
             services.AddRouting(cfg =>
             {
                 cfg.LowercaseUrls = true;
@@ -60,7 +65,8 @@ namespace Ogani.WebUI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Seed();
+            app.Seed()
+                .SeedMembership();
 
             app.UseStaticFiles();
             app.UseRouting();

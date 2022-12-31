@@ -2,25 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Ogani.WebUI.Models.Entity;
+using Ogani.WebUI.Models.Entity.Membership;
 
 namespace Ogani.WebUI.Models.DataContext
 {
     public static class OganiDbSeed
-	{
-		internal static IApplicationBuilder Seed(this IApplicationBuilder app)
-		{
-			using(var scope = app.ApplicationServices.CreateScope())
-			{
-				var db = scope.ServiceProvider.GetRequiredService<OganiDbContext>();
+    {
+        internal static IApplicationBuilder Seed(this IApplicationBuilder app)
+        {
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<OganiDbContext>();
 
-				db.Database.Migrate();
+                db.Database.Migrate();
 
-				InitCategories(db);
-				InitProductUnits(db);
-				InitProducts(db);
+                InitCategories(db);
+                InitProductUnits(db);
+                InitProducts(db);
                 InitAppInfo(db);
 
                 InitAuthors(db);
@@ -31,8 +33,56 @@ namespace Ogani.WebUI.Models.DataContext
                 //InitBlogTagBlogs(db);
             }
 
-			return app;
-		}
+            return app;
+        }
+
+        internal static IApplicationBuilder SeedMembership(this IApplicationBuilder app)
+        {
+            string superAdminRoleName = "SuperAdmin";
+            string superAdminEmail = "aaliyeva0791@gmail.com";
+            string superAdminPassword = "!2023@QabilCoder0707#";
+            string superAdminName = "sadmin";
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<OganiUser>>();
+                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<OganiRole>>();
+
+                var hasRole = roleManager.RoleExistsAsync(superAdminRoleName).Result;
+
+                if (!hasRole)
+                {
+                    roleManager.CreateAsync(new OganiRole
+                    {
+                        Name = superAdminRoleName
+                    }).Wait();
+                }
+
+                var admin = userManager.FindByEmailAsync(superAdminEmail).Result;
+
+                if (admin == null)
+                {
+                    admin = new OganiUser
+                    {
+                        Email = superAdminEmail,
+                        UserName = superAdminName,
+                        EmailConfirmed = true
+                    };
+
+                    userManager.CreateAsync(admin, superAdminPassword).Wait();
+                }
+
+                var isAdmin = userManager.IsInRoleAsync(admin, superAdminRoleName).Result;
+
+                if (!isAdmin)
+                {
+                    userManager.AddToRoleAsync(admin, superAdminRoleName).Wait();
+                }
+
+            }
+
+            return app;
+        }
 
         //private static void InitBlogTagBlogs(OganiDbContext db)
         //{
@@ -222,8 +272,6 @@ namespace Ogani.WebUI.Models.DataContext
                 db.SaveChanges();
             }
         }
-
-
 
         private static void InitBlogCategory(OganiDbContext db)
         {
