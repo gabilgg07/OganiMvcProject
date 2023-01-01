@@ -57,46 +57,23 @@ namespace Ogani.WebUI
             services.AddAuthentication();
             services.AddAuthorization(cfg =>
             {
-                cfg.AddPolicy("admin.blogCategories.index", p =>
+
+                if (Program.policies != null)
                 {
-                    p.RequireAssertion(handler =>
+                    foreach (var policy in Program.policies)
                     {
-                        bool allow = handler.User.IsInRole("SuperAdmin")
-                        || handler.User.HasClaim(m => m.Type.Equals("admin.blogCategories.index") && m.Value.Equals("1"));
+                        cfg.AddPolicy(policy, p =>
+                        {
+                            p.RequireAssertion(handler =>
+                            {
+                                bool allow = handler.User.IsInRole("SuperAdmin")
+                                || handler.User.HasClaim(m => m.Type.Equals(policy) && m.Value.Equals("1"));
 
-                        return allow;
-                    });
-                });
-                //cfg.AddPolicy("admin.blogCategories.details", p =>
-                //{
-                //    p.RequireAssertion(handler =>
-                //    {
-                //        bool allow = handler.User.IsInRole("SuperAdmin")
-                //        || handler.User.HasClaim(m => m.Type.Equals("admin.blogCategories.details") && m.Value.Equals("1"));
-
-                //        return allow;
-                //    });
-                //});
-                cfg.AddPolicy("admin.blogCategories.create", p =>
-                {
-                    p.RequireAssertion(handler =>
-                    {
-                        bool allow = handler.User.IsInRole("SuperAdmin")
-                        || handler.User.HasClaim(m => m.Type.Equals("admin.blogCategories.create") && m.Value.Equals("1"));
-
-                        return allow;
-                    });
-                });
-                cfg.AddPolicy("admin.blogCategories.edit", p =>
-                {
-                    p.RequireAssertion(handler =>
-                    {
-                        bool allow = handler.User.IsInRole("SuperAdmin")
-                        || handler.User.HasClaim(m => m.Type.Equals("admin.blogCategories.edit") && m.Value.Equals("1"));
-
-                        return allow;
-                    });
-                });
+                                return allow;
+                            });
+                        });
+                    }
+                }
             });
         }
 

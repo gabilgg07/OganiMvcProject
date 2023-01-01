@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -24,6 +25,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             _env = env;
         }
 
+        [Authorize(Policy = "admin.blogs.index")]
         public async Task<IActionResult> Index()
         {
             var oganiDbContext = _context.Blogs
@@ -34,6 +36,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(await oganiDbContext.ToListAsync());
         }
 
+        [Authorize(Policy = "admin.blogs.details")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -53,6 +56,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(blog);
         }
 
+        [Authorize(Policy = "admin.blogs.create")]
         public IActionResult Create()
         {
             ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName");
@@ -62,6 +66,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.blogs.create")]
         public async Task<IActionResult> Create([Bind("Title,Body,Image,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)
         {
             if (blog.Image == null)
@@ -91,6 +96,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(blog);
         }
 
+        [Authorize(Policy = "admin.blogs.edit")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -110,6 +116,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.blogs.edit")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Body,Image,ImagePath,Facebook,Twitter,Linkedin,Instagram,AuthorId,BlogCategoryId")] Blog blog)
         {
 
@@ -202,6 +209,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.blogs.delete")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0)
@@ -237,6 +245,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "admin.blogs.delete")]
         public IActionResult ShowToastr(string toastrMsg)
         {
             TempData["ToastrMsg"] = toastrMsg;
@@ -244,6 +253,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [NonAction]
         private bool BlogExists(int id)
         {
             return _context.Blogs.Any(e => e.Id == id);

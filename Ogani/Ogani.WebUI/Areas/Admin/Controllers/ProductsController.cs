@@ -2,11 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +27,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             _env = env;
         }
 
+        [Authorize(Policy = "admin.products.index")]
         public async Task<IActionResult> Index()
         {
             var oganiDbContext = _context.Products
@@ -39,6 +39,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(await oganiDbContext.ToListAsync());
         }
 
+        [Authorize(Policy = "admin.products.details")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -61,6 +62,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(product);
         }
 
+        [Authorize(Policy = "admin.products.create")]
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
@@ -70,6 +72,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.products.create")]
         public async Task<IActionResult> Create([Bind("Id,Name,Price,ShortDescription,Weight,UnitId,CategoryId,Description,Information,Reviews")] Product product,
             ImageItem[] files)
         {
@@ -123,6 +126,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(product);
         }
 
+        [Authorize(Policy = "admin.products.edit")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -144,6 +148,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.products.edit")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,ShortDescription,Weight,UnitId,CategoryId,Description,Information,Reviews")] Product product, ImageItem[] files)
         {
             if (id != product.Id)
@@ -251,6 +256,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.products.delete")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0)
@@ -286,6 +292,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "admin.products.delete")]
         public IActionResult ShowToastr(string toastrMsg)
         {
             TempData["ToastrMsg"] = toastrMsg;
@@ -293,7 +300,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+        [NonAction]
         private bool ProductExists(int id)
         {
             return _context.Products.Any(e => e.Id == id);

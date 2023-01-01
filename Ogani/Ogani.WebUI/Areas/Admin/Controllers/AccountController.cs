@@ -20,6 +20,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         }
 
         [AllowAnonymous]
+        [Authorize(Policy = "admin.account.signin")]
         public IActionResult Signin()
         {
             return View(new SignInModel
@@ -31,6 +32,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        [Authorize(Policy = "admin.account.signin")]
         public async Task<IActionResult> Signin(SignInModel user)
         {
             var foundUser = await userManager.FindByEmailAsync(user.UserName);

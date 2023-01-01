@@ -163,7 +163,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+        [NonAction]
         private bool BlogCategoryExists(int id)
         {
             return _context.BlogCategories.Any(e => e.Id == id);

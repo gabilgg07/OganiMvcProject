@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Ogani.WebUI.Models.DataContext;
@@ -19,6 +20,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             this._context = context;
         }
 
+        [Authorize(Policy = "admin.categories.index")]
         public async Task<IActionResult> Index()
         {
             var categories = await _context.Categories
@@ -28,6 +30,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(categories);
         }
 
+        [Authorize(Policy = "admin.categories.details")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,6 +49,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(category);
         }
 
+        [Authorize(Policy = "admin.categories.create")]
         public IActionResult Create()
         {
             return View();
@@ -53,6 +57,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.categories.create")]
         public async Task<IActionResult> Create([Bind("Id,Name")] Category category)
         {
             if (ModelState.IsValid)
@@ -64,7 +69,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(category);
         }
 
-
+        [Authorize(Policy = "admin.categories.edit")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,6 +89,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.categories.edit")]
         public async Task<IActionResult> Edit(int id,[Bind("Id,Name")] Category category)
         {
             if (id != category.Id)
@@ -136,6 +142,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken] // --> heleki legv edirik bize mane olmasin
+        [Authorize(Policy = "admin.categories.delete")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id<=0)
@@ -171,6 +178,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "admin.categories.delete")]
         public IActionResult ShowToastr( string toastrMsg)
         {
             TempData["ToastrMsg"] = toastrMsg;
@@ -178,7 +186,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+        [NonAction]
         private bool CategoryExists(int id)
         {
             return _context.Categories.Any(e => e.Id == id && e.DeletedDate == null);

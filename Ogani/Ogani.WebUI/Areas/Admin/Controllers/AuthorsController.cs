@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             _env = env;
         }
 
+        [Authorize(Policy = "admin.authors.index")]
         public async Task<IActionResult> Index()
         {
             var models = await _context.Authors
@@ -32,6 +34,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(models);
         }
 
+        [Authorize(Policy = "admin.authors.details")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -49,6 +52,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(model);
         }
 
+        [Authorize(Policy = "admin.authors.create")]
         public IActionResult Create()
         {
             return View();
@@ -56,6 +60,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.authors.create")]
         public async Task<IActionResult> Create([Bind("Id,FullName,Role,Image")] Author model)
         {
             if (model.Image == null)
@@ -84,6 +89,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(model);
         }
 
+        [Authorize(Policy = "admin.authors.edit")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -101,6 +107,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.authors.edit")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Role,Image,ImagePath")] Author model)
         {
             if (id != model.Id)
@@ -181,6 +188,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.authors.delete")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0)
@@ -216,6 +224,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "admin.authors.delete")]
         public IActionResult ShowToastr(string toastrMsg)
         {
             TempData["ToastrMsg"] = toastrMsg;
@@ -223,6 +232,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [NonAction]
         private bool AuthorExists(int id)
         {
             return _context.Authors.Any(e => e.Id == id);

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             _context = context;
         }
 
+        [Authorize(Policy = "admin.blogTags.index")]
         public async Task<IActionResult> Index()
         {
             var models = await _context.BlogTags
@@ -29,6 +31,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(models);
         }
 
+        [Authorize(Policy = "admin.blogTags.details")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,6 +49,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(model);
         }
 
+        [Authorize(Policy = "admin.blogTags.create")]
         public IActionResult Create()
         {
             return View();
@@ -53,6 +57,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.blogTags.create")]
         public async Task<IActionResult> Create([Bind("Id,Name")] BlogTag model)
         {
             if (ModelState.IsValid)
@@ -64,6 +69,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(model);
         }
 
+        [Authorize(Policy = "admin.blogTags.edit")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,6 +87,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.blogTags.edit")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] BlogTag model)
         {
             if (id != model.Id)
@@ -113,6 +120,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.blogTags.delete")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0)
@@ -149,6 +157,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [Authorize(Policy = "admin.blogTags.delete")]
         public IActionResult ShowToastr(string toastrMsg)
         {
             TempData["ToastrMsg"] = toastrMsg;
@@ -156,6 +165,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [NonAction]
         private bool BlogTagExists(int id)
         {
             return _context.BlogTags.Any(e => e.Id == id);

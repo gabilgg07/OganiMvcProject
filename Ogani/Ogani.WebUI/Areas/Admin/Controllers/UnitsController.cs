@@ -1,9 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ogani.WebUI.Models.DataContext;
 using Ogani.WebUI.Models.Entity;
@@ -20,6 +19,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             _context = context;
         }
 
+        [Authorize(Policy = "admin.units.index")]
         public async Task<IActionResult> Index()
         {
             var units = await _context.ProductUnits
@@ -30,6 +30,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(units);
         }
 
+        [Authorize(Policy = "admin.units.details")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,6 +48,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(productUnit);
         }
 
+        [Authorize(Policy = "admin.units.create")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +56,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.units.create")]
         public async Task<IActionResult> Create([Bind("Id,Name,Description")] ProductUnit productUnit)
         {
             if (ModelState.IsValid)
@@ -65,6 +68,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return View(productUnit);
         }
 
+        [Authorize(Policy = "admin.units.edit")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,6 +86,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.units.edit")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] ProductUnit productUnit)
         {
             if (id != productUnit.Id)
@@ -114,6 +119,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.units.delete")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0)
@@ -150,6 +156,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [Authorize(Policy = "admin.units.delete")]
         public IActionResult ShowToastr(string toastrMsg)
         {
             TempData["ToastrMsg"] = toastrMsg;
@@ -157,7 +164,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+        [NonAction]
         private bool ProductUnitExists(int id)
         {
             return _context.ProductUnits.Any(e => e.Id == id);
