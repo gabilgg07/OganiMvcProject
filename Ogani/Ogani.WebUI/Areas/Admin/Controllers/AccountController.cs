@@ -20,19 +20,17 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         }
 
         [AllowAnonymous]
-        [Authorize(Policy = "admin.account.signin")]
         public IActionResult Signin()
         {
             return View(new SignInModel
             {
-                UserName = "aaliyeva0791@gmail.com",
+                UserName = "admin123@box.az",
                 Password = "!2023@QabilCoder0707#"
             });
         }
 
         [HttpPost]
         [AllowAnonymous]
-        [Authorize(Policy = "admin.account.signin")]
         public async Task<IActionResult> Signin(SignInModel user)
         {
             var foundUser = await userManager.FindByEmailAsync(user.UserName);
@@ -77,6 +75,19 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             finish:
 
             return View(user);
+        }
+
+
+        public async Task<IActionResult> Signout(SignInModel user)
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction(nameof(Signin));
+        }
+
+        public IActionResult AccessDenied(SignInModel user)
+        {
+            
+            return View();
         }
     }
 }

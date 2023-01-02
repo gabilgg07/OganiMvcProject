@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -75,6 +76,16 @@ namespace Ogani.WebUI
                     }
                 }
             });
+
+            services.ConfigureApplicationCookie(cfg =>
+            {
+                cfg.LoginPath = "/signin.html";
+                cfg.AccessDeniedPath = "/accessdenied.html";
+
+                cfg.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+                cfg.Cookie.Name = "ogani";
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -95,6 +106,26 @@ namespace Ogani.WebUI
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute("defaultSignin",
+                    "Admin",
+                    "signin.html",
+                    defaults: new
+                    {
+                        area = "admin",
+                        controller = "account",
+                        action = "signin"
+                    });
+
+                endpoints.MapAreaControllerRoute("defaultSignin",
+                    "Admin",
+                    "accessdenied.html",
+                    defaults: new
+                    {
+                        area = "admin",
+                        controller = "account",
+                        action = "accessdenied"
+                    });
+
                 endpoints.MapAreaControllerRoute("defaultArea", "Admin", "admin/{controller=home}/{action=index}/{id?}");
                 endpoints.MapControllerRoute("default", "{controller=home}/{action=index}/{id?}");
             });
