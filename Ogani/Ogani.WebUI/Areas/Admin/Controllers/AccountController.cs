@@ -67,6 +67,13 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                 goto finish;
             }
 
+            string callbackUrl = Request.Query["ReturnUrl"].ToString();
+
+            if (!string.IsNullOrWhiteSpace(callbackUrl))
+            {
+                return Redirect(callbackUrl);
+            }
+
             return RedirectToAction("index", "home", routeValues: new
             {
                 area = "admin"
