@@ -12,6 +12,12 @@
         </ul>
     </li>
     <li>
+        <a asp-controller="account" asp-action="users">
+            <i class="fa fa-folder@(title.ToLower().Contains("user")?"-open-o":"")"></i>
+            <span class="title">Users</span>
+        </a>
+    </li>
+    <li>
         <a asp-controller="categories" asp-action="index">
             <i class="fa fa-folder@(title.ToLower().Contains("product-categories")?"-open-o":"")"></i>
             <span class="title">Product Categories</span>
