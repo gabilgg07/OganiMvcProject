@@ -20,7 +20,6 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             _context = context;
         }
 
-        // GET: Admin/Roles
         public async Task<IActionResult> Index()
         {
             return View(await _context.Roles.ToListAsync());

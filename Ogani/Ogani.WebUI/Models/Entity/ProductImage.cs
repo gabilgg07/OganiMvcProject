@@ -1,10 +1,8 @@
 ﻿using System;
 namespace Ogani.WebUI.Models.Entity
 {
-	public class ProductImage
-	{
-		public int Id { get; set; }
-		 
+	public class ProductImage : BaseEntity
+    {
 		public string ImagePath { get; set; }
 
 		public bool IsMain { get; set; }

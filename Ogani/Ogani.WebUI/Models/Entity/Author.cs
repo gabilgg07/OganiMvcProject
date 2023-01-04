@@ -6,10 +6,8 @@ using Microsoft.AspNetCore.Http;
 
 namespace Ogani.WebUI.Models.Entity
 {
-    public class Author
-	{
-        public int Id { get; set; }
-
+    public class Author : BaseEntity
+    {
         [Required]
         public string FullName { get; set; }
         public string Role { get; set; }

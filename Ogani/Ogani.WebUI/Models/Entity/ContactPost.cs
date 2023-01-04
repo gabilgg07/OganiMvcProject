@@ -4,10 +4,8 @@ using Ogani.WebUI.AppCode.DataAnnotation;
 
 namespace Ogani.WebUI.Models.Entity
 {
-	public class ContactPost
-	{
-		public int Id { get; set; }
-
+	public class ContactPost : BaseEntity
+    {
 		[Required]
 		[MaxLength(100)]
 		public string FullName { get; set; }
@@ -21,8 +19,6 @@ namespace Ogani.WebUI.Models.Entity
         public string Answer { get; set; }
 
 		public DateTime? AnswerDate { get; set; }
-
-        public DateTime? DeletedDate { get; set; }
     }
 }
 

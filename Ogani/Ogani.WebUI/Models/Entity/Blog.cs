@@ -6,9 +6,8 @@ using Microsoft.AspNetCore.Http;
 
 namespace Ogani.WebUI.Models.Entity
 {
-	public class Blog
-	{
-		public int Id { get; set; }
+	public class Blog : BaseEntity
+    {
 
 		[Required]
 		public string Title { get; set; }
@@ -37,8 +36,6 @@ namespace Ogani.WebUI.Models.Entity
         public string Linkedin { get; set; }
 
         public string Instagram { get; set; }
-
-        public DateTime? DeletedDate { get; set; }
 
         public int AuthorId { get; set; }
 

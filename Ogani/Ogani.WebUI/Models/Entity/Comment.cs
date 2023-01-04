@@ -3,15 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ogani.WebUI.Models.Entity
 {
-	public class Comment
-	{
-
-        public int Id { get; set; }
-
+	public class Comment : BaseEntity
+    {
         [Required]
         public string Text { get; set; }
-
-        public DateTime? DeletedDate { get; set; }
 
         //public int UserId { get; set; }
 

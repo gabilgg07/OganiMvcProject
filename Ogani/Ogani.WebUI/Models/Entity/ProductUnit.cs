@@ -4,10 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ogani.WebUI.Models.Entity
 {
-	public class ProductUnit
-	{
-		public int Id { get; set; }
-
+	public class ProductUnit : BaseEntity
+    {
 		[Required]
 		[MaxLength(100)]
 		public string Name { get; set; }
@@ -16,8 +14,6 @@ namespace Ogani.WebUI.Models.Entity
 		public string Description { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
-
-        public DateTime? DeletedDate { get; set; }
 
     }
 }

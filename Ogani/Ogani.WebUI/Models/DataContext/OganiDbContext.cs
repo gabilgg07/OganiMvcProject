@@ -41,6 +41,8 @@ namespace Ogani.WebUI.Models.DataContext
 
 		public DbSet<Subscribe> Subscribes { get; set; }
 
+		public DbSet<Audit> AuditLogs { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

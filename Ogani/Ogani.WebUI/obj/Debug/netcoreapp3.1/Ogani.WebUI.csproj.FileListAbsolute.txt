@@ -180,6 +180,10 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.TagHelpers.input.cache
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.TagHelpers.output.cache
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.RazorCoreGenerate.cache
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Account/AccessDenied.cshtml.g.cs
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Account/Signin.cshtml.g.cs
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Account/UserDetails.cshtml.g.cs
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Account/Users.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Authors/Create.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Authors/Details.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Authors/Edit.cshtml.g.cs
@@ -205,6 +209,11 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Products/Details.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Products/Edit.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Products/Index.cshtml.g.cs
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Create.cshtml.g.cs
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Delete.cshtml.g.cs
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Details.cshtml.g.cs
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Edit.cshtml.g.cs
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Index.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Shared/_Layout.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Shared/_SideBar.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Units/Create.cshtml.g.cs
@@ -239,12 +248,3 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.pdb
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.genruntimeconfig.cache
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Account/Signin.cshtml.g.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Account/AccessDenied.cshtml.g.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Account/Users.cshtml.g.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Account/UserDetails.cshtml.g.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Create.cshtml.g.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Delete.cshtml.g.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Details.cshtml.g.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Edit.cshtml.g.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Index.cshtml.g.cs

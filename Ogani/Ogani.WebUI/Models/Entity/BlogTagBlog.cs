@@ -1,10 +1,8 @@
 ﻿using System;
 namespace Ogani.WebUI.Models.Entity
 {
-	public class BlogTagBlog
+	public class BlogTagBlog : BaseEntity
     {
-        public int Id { get; set; }
-
         public int BlogId { get; set; }
 
         public virtual Blog Blog { get; set; }

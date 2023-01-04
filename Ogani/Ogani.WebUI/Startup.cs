@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Ogani.WebUI.AppCode.Middlewares;
 using Ogani.WebUI.AppCode.Providers;
 using Ogani.WebUI.Models.DataContext;
 using Ogani.WebUI.Models.Entity.Membership;
@@ -103,6 +104,8 @@ namespace Ogani.WebUI
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseAuditMiddleware();
 
             app.UseEndpoints(endpoints =>
             {

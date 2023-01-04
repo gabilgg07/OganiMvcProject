@@ -5,10 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ogani.WebUI.Models.Entity
 {
-	public class Product
-	{
-		public int Id { get; set; }
-
+	public class Product : BaseEntity
+    {
 		[Required]
 		[MaxLength(200)]
 		public string Name { get; set; }
@@ -33,8 +31,6 @@ namespace Ogani.WebUI.Models.Entity
         public string Information { get; set; }
 
         public string Reviews { get; set; }
-
-        public DateTime? DeletedDate { get; set; }
 
         public virtual ICollection<ProductImage> Images { get; set; }
 

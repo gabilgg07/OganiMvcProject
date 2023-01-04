@@ -222,7 +222,11 @@ $(document).ready(function () {
                     },
                     error: function (response) {
                         $(e.currentTarget).prop('checked', !data.selected);
-                        window.location.href = '@Url.Action("UserDetails",Model.Id)';
+                        let isAuthenticated = @(User.Identity.IsAuthenticated)
+
+                            if (!isAuthenticated){
+                                window.location.href = '@Url.Action("UserDetails",Model.Id)';
+                            }
                     }
                 });
     });

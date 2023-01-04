@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Ogani.WebUI.AppCode.Extensions;
@@ -26,6 +27,7 @@ namespace Ogani.WebUI.Controllers
 
         public IActionResult Contact()
         {
+            Task.Delay(2000).Wait();
             return View();
         }
 

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Ogani.WebUI.Models.DataContext;
 
 namespace Ogani.WebUI.Migrations
 {
     [DbContext(typeof(OganiDbContext))]
-    partial class OganiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230104143339_AuditLogsTaableCreated")]
+    partial class AuditLogsTaableCreated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,13 +91,13 @@ namespace Ogani.WebUI.Migrations
                     b.Property<int?>("CreatedByUserId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("CreatedDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("DeletedByUserId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("DeletedDate")
+                    b.Property<DateTime>("DeletedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Method")
@@ -132,15 +134,6 @@ namespace Ogani.WebUI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
@@ -155,10 +148,6 @@ namespace Ogani.WebUI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
 
                     b.ToTable("Authors");
                 });
@@ -179,15 +168,6 @@ namespace Ogani.WebUI.Migrations
                     b.Property<string>("Body")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
@@ -220,10 +200,6 @@ namespace Ogani.WebUI.Migrations
 
                     b.HasIndex("BlogCategoryId");
 
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
-
                     b.ToTable("Blogs");
                 });
 
@@ -234,15 +210,6 @@ namespace Ogani.WebUI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
@@ -250,10 +217,6 @@ namespace Ogani.WebUI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
 
                     b.ToTable("BlogCategories");
                 });
@@ -265,15 +228,6 @@ namespace Ogani.WebUI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
@@ -282,10 +236,6 @@ namespace Ogani.WebUI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
 
                     b.ToTable("BlogTags");
                 });
@@ -303,27 +253,11 @@ namespace Ogani.WebUI.Migrations
                     b.Property<int>("BlogTagId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
 
                     b.HasIndex("BlogId");
 
                     b.HasIndex("BlogTagId");
-
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
 
                     b.ToTable("BlogTagBlogs");
                 });
@@ -335,15 +269,6 @@ namespace Ogani.WebUI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
@@ -353,10 +278,6 @@ namespace Ogani.WebUI.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
 
                     b.ToTable("Categories");
                 });
@@ -373,15 +294,6 @@ namespace Ogani.WebUI.Migrations
 
                     b.Property<DateTime?>("AnswerDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
@@ -400,10 +312,6 @@ namespace Ogani.WebUI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
 
                     b.ToTable("ContactPosts");
                 });
@@ -615,15 +523,6 @@ namespace Ogani.WebUI.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
@@ -657,10 +556,6 @@ namespace Ogani.WebUI.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
-
                     b.HasIndex("UnitId");
 
                     b.ToTable("Products");
@@ -673,18 +568,6 @@ namespace Ogani.WebUI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
@@ -695,10 +578,6 @@ namespace Ogani.WebUI.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
 
                     b.HasIndex("ProductId");
 
@@ -711,15 +590,6 @@ namespace Ogani.WebUI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
@@ -735,10 +605,6 @@ namespace Ogani.WebUI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
-
                     b.ToTable("ProductUnits");
                 });
 
@@ -752,14 +618,8 @@ namespace Ogani.WebUI.Migrations
                     b.Property<DateTime?>("ConfirmedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeletedByUserId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
@@ -770,25 +630,10 @@ namespace Ogani.WebUI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedByUserId");
-
-                    b.HasIndex("DeletedByUserId");
-
                     b.ToTable("Subscribes");
                 });
 
             modelBuilder.Entity("Ogani.WebUI.Models.Entity.Audit", b =>
-                {
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
-                });
-
-            modelBuilder.Entity("Ogani.WebUI.Models.Entity.Author", b =>
                 {
                     b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
                         .WithMany()
@@ -812,36 +657,6 @@ namespace Ogani.WebUI.Migrations
                         .HasForeignKey("BlogCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
-                });
-
-            modelBuilder.Entity("Ogani.WebUI.Models.Entity.BlogCategory", b =>
-                {
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
-                });
-
-            modelBuilder.Entity("Ogani.WebUI.Models.Entity.BlogTag", b =>
-                {
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
                 });
 
             modelBuilder.Entity("Ogani.WebUI.Models.Entity.BlogTagBlog", b =>
@@ -857,36 +672,6 @@ namespace Ogani.WebUI.Migrations
                         .HasForeignKey("BlogTagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
-                });
-
-            modelBuilder.Entity("Ogani.WebUI.Models.Entity.Category", b =>
-                {
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
-                });
-
-            modelBuilder.Entity("Ogani.WebUI.Models.Entity.ContactPost", b =>
-                {
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
                 });
 
             modelBuilder.Entity("Ogani.WebUI.Models.Entity.Membership.OganiRoleClaim", b =>
@@ -948,14 +733,6 @@ namespace Ogani.WebUI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
-
                     b.HasOne("Ogani.WebUI.Models.Entity.ProductUnit", "Unit")
                         .WithMany("Products")
                         .HasForeignKey("UnitId")
@@ -965,41 +742,11 @@ namespace Ogani.WebUI.Migrations
 
             modelBuilder.Entity("Ogani.WebUI.Models.Entity.ProductImage", b =>
                 {
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
-
                     b.HasOne("Ogani.WebUI.Models.Entity.Product", "Product")
                         .WithMany("Images")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Ogani.WebUI.Models.Entity.ProductUnit", b =>
-                {
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
-                });
-
-            modelBuilder.Entity("Ogani.WebUI.Models.Entity.Subscribe", b =>
-                {
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Ogani.WebUI.Models.Entity.Membership.OganiUser", "DeletedByUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedByUserId");
                 });
 #pragma warning restore 612, 618
         }

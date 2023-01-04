@@ -49,6 +49,7 @@
     <None Remove="Models\Entity\Membership\" />
     <None Remove="Areas\Admin\Models\ViewModel\" />
     <None Remove="Areas\Admin\Views\Account\" />
+    <None Remove="AppCode\Middlewares\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -95,6 +96,7 @@
     <Folder Include="Models\Entity\Membership\" />
     <Folder Include="Areas\Admin\Models\ViewModel\" />
     <Folder Include="Areas\Admin\Views\Account\" />
+    <Folder Include="AppCode\Middlewares\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
