@@ -109,6 +109,17 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
         [Authorize(Policy = "admin.account.setrole")]
         public async Task<IActionResult> SetRole(int userId, int roleId, bool selected)
         {
+            var user = await db.Users.FirstOrDefaultAsync(u => u.Id == userId);
+
+            if (user == null)
+            {
+                return Json(new
+                {
+                    error = true,
+                    message = "Istifadeci tapilmadi"
+                });
+            }
+
             var role = await db.Roles.FirstOrDefaultAsync(r => r.Id == roleId);
 
             if (role == null)
@@ -122,7 +133,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
             if (selected)
             {
-#warning role set etmek ucun
+#warning policy set etmek ucun
 
                 if (await db.UserRoles.AnyAsync(ur => ur.UserId == userId && ur.RoleId == roleId))
                 {
@@ -143,7 +154,7 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
             }
             else
             {
-#warning roldan cixartmaq ucun
+#warning policy-den cixartmaq ucun
 
                 if (userId == UserId)
                 {
@@ -166,6 +177,83 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                 }
 
                 db.UserRoles.Remove(userRole);
+                await db.SaveChangesAsync();
+            }
+
+            return Json(new
+            {
+                error = false,
+                message = "Successed"
+            });
+        }
+
+        [HttpPost]
+        [Authorize(Policy = "admin.account.setpolicy")]
+        public async Task<IActionResult> SetPolicy(int userId, string policyName, bool selected)
+        {
+            var user = await db.Users.FirstOrDefaultAsync(u => u.Id == userId);
+
+            if (user == null)
+            {
+                return Json(new
+                {
+                    error = true,
+                    message = "Istifadeci tapilmadi"
+                });
+            }
+
+            if (Program.policies == null || !Program.policies.Contains(policyName))
+            {
+                return Json(new
+                {
+                    error = true,
+                    message = "Bele selahiyyet yoxdur"
+                });
+            }
+
+            if (selected)
+            {
+#warning role set etmek ucun
+
+                if (db.UserClaims.Any(uc => uc.UserId == userId &&
+                uc.ClaimType.Equals(policyName) &&
+                uc.ClaimValue.Equals("1")))
+                {
+                    return Json(new
+                    {
+                        error = true,
+                        message = "Istifadeciye bu selahiyyet verilib"
+                    });
+                }
+
+                await db.UserClaims.AddAsync(new OganiUserClaim
+                {
+                    UserId = userId,
+                    ClaimType = policyName,
+                    ClaimValue = "1"
+                });
+
+                await db.SaveChangesAsync();
+            }
+            else
+            {
+#warning roldan cixartmaq ucun
+
+                var claim = await db.UserClaims.FirstOrDefaultAsync(uc =>
+                uc.UserId == userId &&
+                uc.ClaimType.Equals(policyName) &&
+                uc.ClaimValue.Equals("1"));
+
+                if (claim == null)
+                {
+                    return Json(new
+                    {
+                        error = true,
+                        message = "Istifadeci uzre silinecek selahiyyet movcud deyil"
+                    });
+                }
+
+                db.UserClaims.Remove(claim);
                 await db.SaveChangesAsync();
             }
 
@@ -214,6 +302,19 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
                         .ToArray();
 
             ViewBag.Roles = roles;
+
+            if (Program.policies != null)
+            {
+
+                var aviablePolicies = (from policy in Program.policies
+                                       join uc in db.UserClaims
+                                       on new { UserId = id, ClaimType = policy, ClaimValue = "1" }
+                                       equals new { uc.UserId, uc.ClaimType, uc.ClaimValue } into lGroup
+                                       from lg in lGroup.DefaultIfEmpty()
+                                       select Tuple.Create(policy, lg != null)).ToArray();
+
+                ViewBag.Policies = aviablePolicies;
+            }
 
             return View(user);
         }

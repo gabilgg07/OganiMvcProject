@@ -18,6 +18,12 @@
         </a>
     </li>
     <li>
+        <a asp-controller="roles" asp-action="index">
+            <i class="fa fa-folder@(title.ToLower().Contains("role")?"-open-o":"")"></i>
+            <span class="title">Roles</span>
+        </a>
+    </li>
+    <li>
         <a asp-controller="categories" asp-action="index">
             <i class="fa fa-folder@(title.ToLower().Contains("product-categories")?"-open-o":"")"></i>
             <span class="title">Product Categories</span>

@@ -127,36 +127,39 @@
                             <div class="tab-pane" id="tabClaims">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        @*<table class="table table-hover table-striped">
+                                        <table class="table table-hover table-striped">
                                             <thead>
                                                 <tr>
                                                     <th>
                                                         Secilib
                                                     </th>
                                                     <th>
-                                                        Rol Adi
+                                                        Selahiyyet Adi
                                                     </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach (Tuple<int, string, bool> item in ViewBag.Roles)
+                                                @if (ViewBag.Policies != null)
                                                 {
-                                                    <tr>
-                                                        <td>
-                                                            <label for="role_@item.Item1"></label>
-                                                            <input type="checkbox"
-                                                                   id="role_@item.Item1"
-                                                                   data-role-id="@item.Item1"
-                                                                   data-user-id="@Model.Id"
-                                                                   @(item.Item3 ? " checked" : "") />
-                                                        </td>
-                                                        <td>
-                                                            @item.Item2
-                                                        </td>
-                                                    </tr>
+                                                    @foreach (Tuple<string, bool> item in ViewBag.Policies)
+                                                    {
+                                                        <tr>
+                                                            <td>
+                                                                <label for="policy_@item.Item1.Replace(".","_")"></label>
+                                                                <input type="checkbox"
+                                                                       id="policy_@item.Item1.Replace(".","_")"
+                                                                       data-policy-name="@item.Item1"
+                                                                       data-user-id="@Model.Id"
+                                                                       @(item.Item2 ? " checked" : "") />
+                                                            </td>
+                                                            <td>
+                                                                @item.Item1
+                                                            </td>
+                                                        </tr>
+                                                    }
                                                 }
                                             </tbody>
-                                        </table>*@
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +175,7 @@
 @section addjs{
     <script>
 $(document).ready(function () {
-            $('[id^=role_]').change(function (e) {
+    $('[id^=role_]').change(function (e) {
                 let data = $(e.currentTarget).data();
                 data.selected = $(e.currentTarget).is(':checked');
                 $.ajax({
@@ -195,14 +198,46 @@ $(document).ready(function () {
                         window.location.href = '@Url.Action("UserDetails",Model.Id)';
                     }
                     });
-            });
-    let maxHeightOfTabPane = 0;
-
-    $('.tab-pane').each((index, item) => {
-        let height = parseInt($(item).css('height').substring(0, $(item).css('height').length - 2));
-        if (maxHeightOfTabPane < height)
-            maxHeightOfTabPane = height;
-        $(item).css('height', `${maxHeightOfTabPane}px`);
     });
+
+    $('[id^=policy_]').change(function (e) {
+                let data = $(e.currentTarget).data();
+        data.selected = $(e.currentTarget).is(':checked');
+
+        console.log(data);
+                $.ajax({
+                    url: '@Url.Action("SetPolicy")',
+                    type: 'POST',
+                    data: data,
+                    success: function (response) {
+                        if (response.error) {
+                            toastr.error(response.message, 'Xeta!');
+
+                            $(e.currentTarget).prop('checked', !data.selected);
+                            return;
+                        }
+
+
+                        toastr.success(response.message, 'Ugur!');
+                    },
+                    error: function (response) {
+                        $(e.currentTarget).prop('checked', !data.selected);
+                        window.location.href = '@Url.Action("UserDetails",Model.Id)';
+                    }
+                });
+    });
+
+
+
+    //let maxHeightOfTabPane = 0;
+
+    //$('.tab-pane').each((index, item) => {
+    //    let height = parseInt($(item).css('height').substring(0, $(item).css('height').length - 2));
+    //    if (maxHeightOfTabPane < height)
+    //        maxHeightOfTabPane = height;
+    //});
+    //$('.tab-pane').each((index, item) => {
+    //    $(item).css('height', `${maxHeightOfTabPane}px`);
+    //});
         });</script>
 }
