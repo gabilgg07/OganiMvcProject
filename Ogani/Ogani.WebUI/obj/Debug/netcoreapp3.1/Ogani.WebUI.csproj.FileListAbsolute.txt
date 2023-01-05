@@ -1,3 +1,11 @@
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.csproj.AssemblyReference.cache
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.GeneratedMSBuildEditorConfig.editorconfig
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.AssemblyInfoInputs.cache
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.AssemblyInfo.cs
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.csproj.CoreCompileInputs.cache
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.MvcApplicationPartsAssemblyInfo.cache
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.RazorAssemblyInfo.cache
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.RazorAssemblyInfo.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/bin/Debug/netcoreapp3.1/appsettings.json
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/bin/Debug/netcoreapp3.1/libman.json
@@ -163,14 +171,6 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp3.1/System.Security.Cryptography.Pkcs.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp3.1/System.Text.Encoding.CodePages.dll
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.csproj.AssemblyReference.cache
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.GeneratedMSBuildEditorConfig.editorconfig
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.AssemblyInfoInputs.cache
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.AssemblyInfo.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.csproj.CoreCompileInputs.cache
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.MvcApplicationPartsAssemblyInfo.cache
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.RazorAssemblyInfo.cache
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Ogani.WebUI.RazorAssemblyInfo.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/staticwebassets/Ogani.WebUI.StaticWebAssets.Manifest.cache
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/staticwebassets/Ogani.WebUI.StaticWebAssets.Pack.cache
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/staticwebassets/msbuild.Ogani.WebUI.Microsoft.AspNetCore.StaticWebAssets.props
@@ -210,7 +210,6 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Products/Edit.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Products/Index.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Create.cshtml.g.cs
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Delete.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Details.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Edit.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/Debug/netcoreapp3.1/Razor/Areas/Admin/Views/Roles/Index.cshtml.g.cs

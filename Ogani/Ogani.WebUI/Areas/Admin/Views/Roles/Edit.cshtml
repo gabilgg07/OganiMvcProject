@@ -1,41 +1,46 @@
-@model Ogani.WebUI.Models.Entity.Membership.OganiRole
+@model OganiRole
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Role Edit";
 }
 
-<h1>Edit</h1>
+<ul class="breadcrumb">
+    <li>
+        <p><a asp-controller="home" asp-action="index">Admin</a></p>
+    </li>
+    <li>
+        <p><a asp-action="index">Roles</a></p>
+    </li>
+    <li><a class="active">Edit</a> </li>
+</ul>
+<div class="page-title">
+    <a asp-action="index">
+        <i class="far fa-arrow-alt-circle-left"></i>
+    </a>
+    <h3>Admin - Roles</h3>
+</div>
 
-<h4>OganiRole</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="grid simple ">
+            <div class="grid-body ">
+
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a class="btn btn-info" asp-action="index">Back to list</a>
+                    </div>
+                </form>
+
             </div>
-            <div class="form-group">
-                <label asp-for="NormalizedName" class="control-label"></label>
-                <input asp-for="NormalizedName" class="form-control" />
-                <span asp-validation-for="NormalizedName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConcurrencyStamp" class="control-label"></label>
-                <input asp-for="ConcurrencyStamp" class="form-control" />
-                <span asp-validation-for="ConcurrencyStamp" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
