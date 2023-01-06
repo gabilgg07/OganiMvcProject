@@ -50,6 +50,8 @@
     <None Remove="Areas\Admin\Models\ViewModel\" />
     <None Remove="Areas\Admin\Views\Account\" />
     <None Remove="AppCode\Middlewares\" />
+    <None Remove="AppCode\Resources\" />
+    <None Remove="AppCode\Resources\UserResource\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -97,6 +99,8 @@
     <Folder Include="Areas\Admin\Models\ViewModel\" />
     <Folder Include="Areas\Admin\Views\Account\" />
     <Folder Include="AppCode\Middlewares\" />
+    <Folder Include="AppCode\Resources\" />
+    <Folder Include="AppCode\Resources\UserResource\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
@@ -131,5 +135,16 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.25" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.31" />
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.31" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="AppCode\Resources\UserResource\LayoutResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LayoutResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AppCode\Resources\UserResource\LayoutResource.Designer.cs">
+      <DependentUpon>LayoutResource.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
