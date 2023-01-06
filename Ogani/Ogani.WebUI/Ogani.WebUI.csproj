@@ -59,7 +59,6 @@
     <Folder Include="Views\" />
     <Folder Include="wwwroot\" />
     <Folder Include="Views\Shared\" />
-    <Folder Include="AppCode\" />
     <Folder Include="wwwroot\assets\" />
     <Folder Include="wwwroot\uploads\" />
     <Folder Include="wwwroot\uploads\images\" />
@@ -99,8 +98,6 @@
     <Folder Include="Areas\Admin\Models\ViewModel\" />
     <Folder Include="Areas\Admin\Views\Account\" />
     <Folder Include="AppCode\Middlewares\" />
-    <Folder Include="AppCode\Resources\" />
-    <Folder Include="AppCode\Resources\UserResource\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
@@ -138,13 +135,16 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="AppCode\Resources\UserResource\LayoutResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LayoutResource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="AppCode\Resources\UserResource\LayoutResource.Designer.cs">
       <DependentUpon>LayoutResource.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
 </Project>

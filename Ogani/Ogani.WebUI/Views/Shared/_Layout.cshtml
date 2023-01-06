@@ -3,6 +3,7 @@
 @{
     var appInfo = db.AppInfos.FirstOrDefault();
     string title = ViewBag.Title;
+    bool isHomeIndex = title.ToUpper().Contains("HOME INDEX");
 }
 
 <!DOCTYPE html>
@@ -73,7 +74,7 @@
                 </ul>
             </div>
             <div class="header-top-right-auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a href="#"><i class="fa fa-user"></i> @LayoutResource.Login</a>
             </div>
         </div>
         <nav class="humberger-menu-nav mobile-menu">
@@ -133,7 +134,7 @@
                                 </ul>
                             </div>
                             <div class="header-top-right-auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                <a href="#"><i class="fa fa-user"></i> @LayoutResource.Login</a>
                             </div>
                         </div>
                     </div>
@@ -174,14 +175,14 @@
     </header>
 
 
-    <section class="hero @(title.ToLower().Contains("home index")?"":"hero-normal")">
+    <section class="hero @(isHomeIndex?"":"hero-normal")">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="hero-categories">
                         <div class="hero-categories-all">
                             <i class="fa fa-bars"></i>
-                            <span>All departments</span>
+                            <span>@LayoutResource.AllDepartments</span>
                         </div>
                         @await Component.InvokeAsync("Category")
                     </div>
@@ -191,11 +192,11 @@
                         <div class="hero-search-form">
                             <form action="#">
                                 <div class="hero-search-categories">
-                                    All Categories
+                                    @LayoutResource.AllCategories
                                     <span class="arrow_carrot-down"></span>
                                 </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
+                                <input type="text" placeholder="@LayoutResource.PlaceholdSearch">
+                                <button type="submit" class="site-btn">@LayoutResource.Search</button>
                             </form>
                         </div>
                         <div class="hero-search-phone">
@@ -208,7 +209,7 @@
                             </div>
                         </div>
                     </div>
-                    @if (title.ToLower().Contains("home index"))
+                    @if (isHomeIndex)
                     {
                         <div class="hero-item set-bg" data-setbg="assets/img/hero/banner.jpg">
                             <div class="hero-text">
@@ -238,7 +239,7 @@
                             <li>Address: @appInfo.Address</li>
                             <li>Phone: @appInfo.Phone</li>
                             <li>
-                                Email:
+                                @LayoutResource.Email:
                                 <a href="mailto:@appInfo.Email?subject=Ogani%20Organic%20Shopping%20Site">@appInfo.Email</a>
                             </li>
                         </ul>
@@ -246,7 +247,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
                     <div class="footer-widget">
-                        <h6>Useful Links</h6>
+                        <h6>@LayoutResource.UsefulLinks</h6>
                         <ul>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">About Our Shop</a></li>
@@ -267,11 +268,11 @@
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="footer-widget">
-                        <h6>Join Our Newsletter Now</h6>
+                        <h6>@LayoutResource.JoinOurNewsletterNow</h6>
                         <p>Get E-mail updates about our latest shop and special offers.</p>
                         <form method="post" asp-controller="home" asp-action="subscribe" id="frmSubscribe">
-                            <input type="text" placeholder="Enter your mail" name="email">
-                            <button type="submit" class="site-btn">Subscribe</button>
+                            <input type="text" placeholder="@LayoutResource.PlaceholdEmail" name="email">
+                            <button type="submit" class="site-btn">@LayoutResource.Subscribe</button>
                         </form>
                         <div class="footer-widget-social">
                             <social-network asp-link="@appInfo.Facebook" asp-icon-class="fa fa-facebook" />
