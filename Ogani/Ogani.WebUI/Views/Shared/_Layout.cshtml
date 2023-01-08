@@ -61,7 +61,7 @@
                     </a>
                 </li>
             </ul>
-            <div class="header-cart-price">item: <span class="basketAmount"></span></div>
+            <div class="header-cart-price">@LayoutResource.Item: <span class="basketAmount"></span></div>
         </div>
         <div class="humberger-menu-widget">
             <div class="header-top-right-language">
@@ -164,7 +164,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="header-cart-price">item: <span class="basketAmount"></span></div>
+                        <div class="header-cart-price">@LayoutResource.Item: <span class="basketAmount"></span></div>
                     </div>
                 </div>
             </div>
@@ -236,8 +236,8 @@
                             <a asp-controller="home" asp-action="index"><img src="assets/img/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: @appInfo.Address</li>
-                            <li>Phone: @appInfo.Phone</li>
+                            <li>@LayoutResource.Address: @appInfo.Address</li>
+                            <li>@LayoutResource.Phone: @appInfo.Phone</li>
                             <li>
                                 @LayoutResource.Email:
                                 <a href="mailto:@appInfo.Email?subject=Ogani%20Organic%20Shopping%20Site">@appInfo.Email</a>
@@ -331,10 +331,19 @@
 			$.ajax({
 				url: '@Url.Action("ShoppingCardAmount", "Shop")',
 				type: 'post',
-				success: function (response) {
-					if (!response.error) {
-						$('.basketAmount').text(`$${response.amount}`);
-					}
+                success: function (response) {
+                    if (!response.error) {
+                        if (response.amount > 0) {
+                            $('.basketAmount').parent().css("display", "inline-block");
+                            $('.basketAmount').text(`$${response.amount}`);
+                        } else {
+                            $('.basketAmount').parent().css("display", "none");
+                        }
+                    } else {
+                        if (response.amount == undefined) {
+                            $('.basketAmount').parent().css("display", "none");
+                        }
+                    }
 				}
 			});
 
@@ -416,7 +425,7 @@
 
     @RenderSection("addjs", required: false)
 
-    <script>$(document).ready(function () {
+    <script class="removeable">$(document).ready(function () {
             $('.removeable').remove();
         });</script>
 </body>

@@ -40,8 +40,8 @@ namespace Ogani.WebUI
 
             services.AddDbContext<OganiDbContext>(cfg =>
             {
-                //cfg.UseSqlServer(Configuration.GetConnectionString("cString"));
-                cfg.UseSqlServer(Configuration.GetConnectionString("cStringWindows"));
+                cfg.UseSqlServer(Configuration.GetConnectionString("cString"));
+                //cfg.UseSqlServer(Configuration.GetConnectionString("cStringWindows"));
                 //cfg.UseMySql(Configuration.GetConnectionString("cStringMySql"));
             });
 
@@ -97,6 +97,15 @@ namespace Ogani.WebUI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseRequestLocalization(cfg =>
+            {
+                cfg.AddSupportedCultures("az","en","ru");
+                cfg.AddSupportedUICultures("az","en","ru");
+
+                cfg.RequestCultureProviders.Clear();
+                cfg.RequestCultureProviders.Add(new CultureProvider());
+            });
+
             app.Seed()
                 .SeedMembership();
 
@@ -112,26 +121,42 @@ namespace Ogani.WebUI
             {
                 endpoints.MapAreaControllerRoute("defaultSignin",
                     "Admin",
-                    "signin.html",
+                    "{lang=az}/signin.html",
                     defaults: new
                     {
                         area = "admin",
                         controller = "account",
                         action = "signin"
+                    },
+                    constraints: new
+                    {
+                        lang = "az|en|ru"
                     });
 
                 endpoints.MapAreaControllerRoute("defaultSignin",
                     "Admin",
-                    "accessdenied.html",
+                    "{lang=az}/accessdenied.html",
                     defaults: new
                     {
                         area = "admin",
                         controller = "account",
                         action = "accessdenied"
+                    },
+                    constraints: new
+                    {
+                        lang = "az|en|ru"
                     });
 
-                endpoints.MapAreaControllerRoute("defaultArea", "Admin", "admin/{controller=home}/{action=index}/{id?}");
-                endpoints.MapControllerRoute("default", "{controller=home}/{action=index}/{id?}");
+                endpoints.MapAreaControllerRoute("defaultArea", "Admin", "{lang=az}/admin/{controller=home}/{action=index}/{id?}",
+                    constraints: new
+                    {
+                        lang = "az|en|ru"
+                    });
+                endpoints.MapControllerRoute("default", "{lang=az}/{controller=home}/{action=index}/{id?}",
+                    constraints: new
+                    {
+                        lang = "az|en|ru"
+                    });
             });
         }
     }

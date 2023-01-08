@@ -145,6 +145,7 @@
       <DependentUpon>LayoutResource.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
     </Compile>
   </ItemGroup>
 </Project>

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\code\\Lessons\\Ogani project from Mac\\OganiMvcProject\\Ogani\\Ogani.WebUI\\Ogani.WebUI.csproj": {}
+    "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Ogani.WebUI.csproj": {}
   },
   "projects": {
-    "D:\\code\\Lessons\\Ogani project from Mac\\OganiMvcProject\\Ogani\\Ogani.WebUI\\Ogani.WebUI.csproj": {
+    "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Ogani.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\Lessons\\Ogani project from Mac\\OganiMvcProject\\Ogani\\Ogani.WebUI\\Ogani.WebUI.csproj",
+        "projectUniqueName": "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Ogani.WebUI.csproj",
         "projectName": "Ogani.WebUI",
-        "projectPath": "D:\\code\\Lessons\\Ogani project from Mac\\OganiMvcProject\\Ogani\\Ogani.WebUI\\Ogani.WebUI.csproj",
-        "packagesPath": "C:\\Users\\GabilGG\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\Lessons\\Ogani project from Mac\\OganiMvcProject\\Ogani\\Ogani.WebUI\\obj\\",
+        "projectPath": "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Ogani.WebUI.csproj",
+        "packagesPath": "/Users/macbook/.nuget/packages/",
+        "outputPath": "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\GabilGG\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/macbook/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -99,7 +97,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -111,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }
