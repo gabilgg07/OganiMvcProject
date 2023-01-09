@@ -61,8 +61,15 @@ using Ogani.WebUI.AppCode.Extensions;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/Ogani.WebUI/Areas/Admin/Views/_ViewImports.cshtml"
+using Resource;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf6", @"/Areas/Admin/Views/Account/Users.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6244a0023b07c6b07a0f7bc0a39069631e6de224", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"58c16ec933f450aeafb6cbc4b9c34753067bce6f", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Account_Users : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<OganiUser>>
     #nullable disable
@@ -125,7 +132,7 @@ WriteAttributeValue("", 106, ViewBag.ToastrMsg, 106, 18, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(" id=\"hasMessage\" />\r\n\r\n<ul class=\"breadcrumb\">\r\n    <li>\r\n        <p>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf69568", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf69777", async() => {
                 WriteLiteral("Admin");
             }
             );
@@ -143,7 +150,7 @@ WriteAttributeValue("", 106, ViewBag.ToastrMsg, 106, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</p>\r\n    </li>\r\n    <li><a class=\"active\">Users</a> </li>\r\n</ul>\r\n<div class=\"page-title\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf611017", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf611226", async() => {
                 WriteLiteral("\r\n        <i class=\"far fa-arrow-alt-circle-left\"></i>\r\n    ");
             }
             );
@@ -190,7 +197,7 @@ WriteAttributeValue("", 106, ViewBag.ToastrMsg, 106, 18, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                            </th>\r\n                            <th class=\"text-center w-25\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf613622", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf613831", async() => {
                 WriteLiteral("<i class=\"fa fa-plus-circle\"></i>");
             }
             );
@@ -232,7 +239,7 @@ WriteAttributeValue("", 106, ViewBag.ToastrMsg, 106, 18, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                </td>\r\n                                <td class=\"text-center vertical-middle\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf616314", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf616523", async() => {
                 WriteLiteral("<i class=\"fa fa-pencil\"></i>");
             }
             );
@@ -264,7 +271,7 @@ WriteAttributeValue("", 106, ViewBag.ToastrMsg, 106, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf618634", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf618843", async() => {
                 WriteLiteral("<i class=\"fa fa-info-circle\"></i>");
             }
             );
@@ -332,7 +339,7 @@ WriteAttributeValue("", 2236, item.UserName, 2236, 14, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n            </div>\r\n            <div style=\"visibility:hidden;\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf622673", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf622882", async() => {
                 WriteLiteral("\r\n                    <input type=\"hidden\" name=\"toastrMsg\" id=\"toastrMsg\"");
                 BeginWriteAttribute("value", " value=\"", 2746, "\"", 2754, 0);
                 EndWriteAttribute();
@@ -358,7 +365,7 @@ WriteAttributeValue("", 2236, item.UserName, 2236, 14, false);
             WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
             DefineSection("addjs", async() => {
                 WriteLiteral("\r\n\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf624786", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec58c302f7d8f18c128fb36a1bb4499ebd3fbf624995", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

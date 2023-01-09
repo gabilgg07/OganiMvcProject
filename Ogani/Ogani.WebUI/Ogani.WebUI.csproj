@@ -52,6 +52,7 @@
     <None Remove="AppCode\Middlewares\" />
     <None Remove="AppCode\Resources\" />
     <None Remove="AppCode\Resources\UserResource\" />
+    <None Remove="AppCode\Resources\AdminResource\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -98,6 +99,7 @@
     <Folder Include="Areas\Admin\Models\ViewModel\" />
     <Folder Include="Areas\Admin\Views\Account\" />
     <Folder Include="AppCode\Middlewares\" />
+    <Folder Include="AppCode\Resources\AdminResource\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
@@ -139,6 +141,18 @@
       <LastGenOutput>LayoutResource.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resource</CustomToolNamespace>
     </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\BlogResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BlogResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\BlogResource.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BlogResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\BlogResource.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BlogResource.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="AppCode\Resources\UserResource\LayoutResource.Designer.cs">
@@ -146,6 +160,15 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <CustomToolNamespace>Resource</CustomToolNamespace>
+    </Compile>
+    <Compile Update="AppCode\Resources\AdminResource\BlogResource.Designer.cs">
+      <DependentUpon>BlogResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="AppCode\Resources\AdminResource\BlogResource.en.Designer.cs">
+      <DependentUpon>BlogResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Update="AppCode\Resources\AdminResource\BlogResource.ru.Designer.cs">
+      <DependentUpon>BlogResource.ru.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

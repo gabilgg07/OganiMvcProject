@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Http;
+using Resource;
 
 namespace Ogani.WebUI.Models.Entity
 {
@@ -10,10 +11,12 @@ namespace Ogani.WebUI.Models.Entity
     {
 
 		[Required]
+        [Display(ResourceType =typeof(BlogResource),Name = "Title")]
 		public string Title { get; set; }
 
         [Required]
-		public string Body { get; set; }
+        [Display(ResourceType = typeof(BlogResource), Name = "Body")]
+        public string Body { get; set; }
 
         //[NotMapped] --> db de saxlama demekdir
         //public IFormFile ImagePath { get; set; }
@@ -22,6 +25,7 @@ namespace Ogani.WebUI.Models.Entity
         //[Column("ImagePath")]
         //public string ImagePathTemp { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "BlogImage")]
         public string ImagePath { get; set; }
 
         [NotMapped]
@@ -37,8 +41,10 @@ namespace Ogani.WebUI.Models.Entity
 
         public string Instagram { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "AuthorFullName")]
         public int AuthorId { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "AuthorFullName")]
         public virtual Author Author { get; set; }
 
         public int BlogCategoryId { get; set; }

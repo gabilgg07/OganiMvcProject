@@ -96,21 +96,13 @@ namespace Ogani.WebUI
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseRequestLocalization(cfg =>
-            {
-                cfg.AddSupportedCultures("az","en","ru");
-                cfg.AddSupportedUICultures("az","en","ru");
-
-                cfg.RequestCultureProviders.Clear();
-                cfg.RequestCultureProviders.Add(new CultureProvider());
-            });
-
             app.Seed()
                 .SeedMembership();
 
             app.UseStaticFiles();
             app.UseRouting();
+
+            app.UseCultureMiddleware();
 
             app.UseAuthentication();
             app.UseAuthorization();

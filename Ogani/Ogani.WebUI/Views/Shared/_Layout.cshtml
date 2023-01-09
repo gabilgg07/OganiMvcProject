@@ -65,12 +65,13 @@
         </div>
         <div class="humberger-menu-widget">
             <div class="header-top-right-language">
-                <img src="assets/img/language.png" alt="">
-                <div>English</div>
+                <img src="assets/img/az.png" alt="Azerbaijan flag">
+                <div>Azərbaycan</div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
+                    <li><a href="#" data-lang="az">Azərbaycan</a></li>
+                    <li><a href="#" data-lang="en">English</a></li>
+                    <li><a href="#" data-lang="ru">Русский</a></li>
                 </ul>
             </div>
             <div class="header-top-right-auth">
@@ -125,12 +126,13 @@
                                 <social-network asp-link="@appInfo.Pinterest" asp-icon-class="fa fa-pinterest-p" />
                             </div>
                             <div class="header-top-right-language">
-                                <img src="assets/img/language.png" alt="">
-                                <div>English</div>
+                                <img class="langFlag" src="assets/img/az.png" alt="Azerbaijan flag">
+                                <div class="siteLang">Azərbaycan</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
+                                    <li><a href="#" data-lang="az">Azərbaycan</a></li>
+                                    <li><a href="#" data-lang="en">English</a></li>
+                                    <li><a href="#" data-lang="ru">Русский</a></li>
                                 </ul>
                             </div>
                             <div class="header-top-right-auth">
@@ -418,7 +420,43 @@
 					});
 			});
 
-			showBasketCount();
+            showBasketCount();
+
+            let currentHref = window.location.href;
+            const pattern = /.*\/(az|en|ru)(\/.*)?/;
+
+            let result = pattern.exec(currentHref);
+            let cookieLang = $.cookie('lang');
+
+            let siteLangNow = "";
+
+            if (result != null) {
+                siteLangNow = result[1];
+            } else if (cookieLang != null) {
+                siteLangNow = cookieLang;
+            }
+
+
+            $('.langFlag').attr("src", `assets/img/${siteLangNow}.png`);
+            $('.langFlag').attr("alt", `${siteLangNow.toUpperCase} flag`);
+            let textLang = $(`[data-lang=${siteLangNow}]`)[0].innerText;
+
+            $('.siteLang').text(`${textLang}`);
+
+
+            $('[data-lang]').click(function (e) {
+                e.preventDefault();
+
+                let currentHref = window.location.href;
+                const pattern = /.*\/(az|en|ru)(\/.*)?/;
+
+                let result = pattern.exec(currentHref);
+                let selectedLang = $(e.currentTarget).data('lang');
+                if (result != null) {
+                    let href = `${selectedLang}${result[2]}`;
+                    window.location.href = href;
+                }
+            });
 
 		});
     </script>

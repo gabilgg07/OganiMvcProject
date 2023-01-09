@@ -10,6 +10,9 @@ namespace Ogani.WebUI.AppCode.Providers
     {
         public override Task<ProviderCultureResult> DetermineProviderCultureResult(HttpContext httpContext)
         {
+            if (Regex.IsMatch(httpContext.Request.Path, @".*\.(jpg|jpeg|png)$"))
+                return Task.FromResult(new ProviderCultureResult("az"));
+
             string ln = "az";
 
             Match langMatch = Regex.Match(httpContext.Request.Path, @"/?(?<lang>en|az|ru)/?");
