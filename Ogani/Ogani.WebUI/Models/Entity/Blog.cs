@@ -31,6 +31,7 @@ namespace Ogani.WebUI.Models.Entity
         [NotMapped]
         public IFormFile Image { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "PublishedDate")]
         public DateTime? PublishedDate { get; set; }
 
         public string Facebook { get; set; }
@@ -47,8 +48,10 @@ namespace Ogani.WebUI.Models.Entity
         [Display(ResourceType = typeof(BlogResource), Name = "AuthorFullName")]
         public virtual Author Author { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "CategoryName")]
         public int BlogCategoryId { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "CategoryName")]
         public virtual BlogCategory BlogCategory { get; set; }
 
         //public virtual ICollection<Comment> Comments { get; set; }

@@ -24,5 +24,14 @@
   <data name="AuthorFullName" xml:space="preserve">
     <value>Полное имя автора</value>
   </data>
+  <data name="Blogs" xml:space="preserve">
+    <value>Блоги</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Название категории</value>
+  </data>
+  <data name="PublishedDate" xml:space="preserve">
+    <value>Дата публикации</value>
+  </data>
 </root>
 

@@ -76,11 +76,38 @@ namespace Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Paylaşımlar.
+        /// </summary>
+        public static string Blogs {
+            get {
+                return ResourceManager.GetString("Blogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mətn.
         /// </summary>
         public static string Body {
             get {
                 return ResourceManager.GetString("Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kateqoriyanın adı.
+        /// </summary>
+        public static string CategoryName {
+            get {
+                return ResourceManager.GetString("CategoryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paylaşım tarixi.
+        /// </summary>
+        public static string PublishedDate {
+            get {
+                return ResourceManager.GetString("PublishedDate", resourceCulture);
             }
         }
         

@@ -19,14 +19,14 @@ namespace Ogani.WebUI.AppCode.Resources.AdminResource {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Build.Tasks.StronglyTypedResourceBuilder", "15.1.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class BlogResource_en {
+    internal class CrudResource_ru {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal BlogResource_en() {
+        internal CrudResource_ru() {
         }
         
         /// <summary>
@@ -36,7 +36,7 @@ namespace Ogani.WebUI.AppCode.Resources.AdminResource {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ogani.WebUI.AppCode.Resources.AdminResource.BlogResource.en", typeof(BlogResource_en).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ogani.WebUI.AppCode.Resources.AdminResource.CrudResource.ru", typeof(CrudResource_ru).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -58,65 +58,65 @@ namespace Ogani.WebUI.AppCode.Resources.AdminResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Author Full Name.
+        ///   Looks up a localized string similar to Обратно к списку.
         /// </summary>
-        internal static string AuthorFullName {
+        internal static string BackToList {
             get {
-                return ResourceManager.GetString("AuthorFullName", resourceCulture);
+                return ResourceManager.GetString("BackToList", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blog Image.
+        ///   Looks up a localized string similar to Создавать.
         /// </summary>
-        internal static string BlogImage {
+        internal static string CreateBtn {
             get {
-                return ResourceManager.GetString("BlogImage", resourceCulture);
+                return ResourceManager.GetString("CreateBtn", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blogs.
+        ///   Looks up a localized string similar to Создавать Новый.
         /// </summary>
-        internal static string Blogs {
+        internal static string CreateTitle {
             get {
-                return ResourceManager.GetString("Blogs", resourceCulture);
+                return ResourceManager.GetString("CreateTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Body.
+        ///   Looks up a localized string similar to Подробности.
         /// </summary>
-        internal static string Body {
+        internal static string Details {
             get {
-                return ResourceManager.GetString("Body", resourceCulture);
+                return ResourceManager.GetString("Details", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Category Name.
+        ///   Looks up a localized string similar to Редактировать.
         /// </summary>
-        internal static string CategoryName {
+        internal static string EditBtn {
             get {
-                return ResourceManager.GetString("CategoryName", resourceCulture);
+                return ResourceManager.GetString("EditBtn", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Published Date.
+        ///   Looks up a localized string similar to Редактировать.
         /// </summary>
-        internal static string PublishedDate {
+        internal static string EditTitle {
             get {
-                return ResourceManager.GetString("PublishedDate", resourceCulture);
+                return ResourceManager.GetString("EditTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Title.
+        ///   Looks up a localized string similar to Сохранить.
         /// </summary>
-        internal static string Title {
+        internal static string Save {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
     }

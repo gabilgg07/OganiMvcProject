@@ -76,11 +76,38 @@ namespace Ogani.WebUI.AppCode.Resources.AdminResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Блоги.
+        /// </summary>
+        internal static string Blogs {
+            get {
+                return ResourceManager.GetString("Blogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Тело.
         /// </summary>
         internal static string Body {
             get {
                 return ResourceManager.GetString("Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Название категории.
+        /// </summary>
+        internal static string CategoryName {
+            get {
+                return ResourceManager.GetString("CategoryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата публикации.
+        /// </summary>
+        internal static string PublishedDate {
+            get {
+                return ResourceManager.GetString("PublishedDate", resourceCulture);
             }
         }
         

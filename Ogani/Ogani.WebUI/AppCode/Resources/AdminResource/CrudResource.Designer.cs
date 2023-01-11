@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ogani.WebUI.AppCode.Resources.AdminResource {
+namespace Resource {
     using System;
     
     
@@ -19,24 +19,24 @@ namespace Ogani.WebUI.AppCode.Resources.AdminResource {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Build.Tasks.StronglyTypedResourceBuilder", "15.1.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class BlogResource_en {
+    public class CrudResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal BlogResource_en() {
+        public CrudResource() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ogani.WebUI.AppCode.Resources.AdminResource.BlogResource.en", typeof(BlogResource_en).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ogani.WebUI.AppCode.Resources.AdminResource.CrudResource", typeof(CrudResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -48,7 +48,7 @@ namespace Ogani.WebUI.AppCode.Resources.AdminResource {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -58,65 +58,65 @@ namespace Ogani.WebUI.AppCode.Resources.AdminResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Author Full Name.
+        ///   Looks up a localized string similar to Siyahıya Qayıtmaq.
         /// </summary>
-        internal static string AuthorFullName {
+        public static string BackToList {
             get {
-                return ResourceManager.GetString("AuthorFullName", resourceCulture);
+                return ResourceManager.GetString("BackToList", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blog Image.
+        ///   Looks up a localized string similar to Yaradın.
         /// </summary>
-        internal static string BlogImage {
+        public static string CreateBtn {
             get {
-                return ResourceManager.GetString("BlogImage", resourceCulture);
+                return ResourceManager.GetString("CreateBtn", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blogs.
+        ///   Looks up a localized string similar to Yenisini yaratmaq.
         /// </summary>
-        internal static string Blogs {
+        public static string CreateTitle {
             get {
-                return ResourceManager.GetString("Blogs", resourceCulture);
+                return ResourceManager.GetString("CreateTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Body.
+        ///   Looks up a localized string similar to Təfərrüatlar.
         /// </summary>
-        internal static string Body {
+        public static string Details {
             get {
-                return ResourceManager.GetString("Body", resourceCulture);
+                return ResourceManager.GetString("Details", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Category Name.
+        ///   Looks up a localized string similar to Redaktə edin.
         /// </summary>
-        internal static string CategoryName {
+        public static string EditBtn {
             get {
-                return ResourceManager.GetString("CategoryName", resourceCulture);
+                return ResourceManager.GetString("EditBtn", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Published Date.
+        ///   Looks up a localized string similar to Redaktə etmək.
         /// </summary>
-        internal static string PublishedDate {
+        public static string EditTitle {
             get {
-                return ResourceManager.GetString("PublishedDate", resourceCulture);
+                return ResourceManager.GetString("EditTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Title.
+        ///   Looks up a localized string similar to Yadda saxlayın.
         /// </summary>
-        internal static string Title {
+        public static string Save {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
     }
