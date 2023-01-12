@@ -37,7 +37,8 @@ namespace Ogani.WebUI.AppCode.Middlewares
 
                 httpContext.Response.Cookies.Delete("lang");
                 httpContext.Response.Cookies.Append("lang", langMatch.Groups["lang"].Value,opt);
-                goto end;
+
+                return _next(httpContext);
             }
 
             if (!(httpContext.Request.Cookies.TryGetValue("lang", out lang) &&
@@ -48,9 +49,6 @@ namespace Ogani.WebUI.AppCode.Middlewares
                 $"{httpContext.Request.QueryString.Value}");
 
             return Task.CompletedTask;
-
-            end:
-            return _next(httpContext);
         }
     }
 

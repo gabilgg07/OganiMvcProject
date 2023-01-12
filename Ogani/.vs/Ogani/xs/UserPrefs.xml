@@ -2,10 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.UploadExample.WebApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.SignalRIntro FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MonoDevelop.Ide.Workbench ActiveDocument="Ogani.WebUI/AppCode/Resources/UserResource/LayoutResource.resx">
     <Files>
       <File FileName="Ogani.WebUI/Areas/Admin/Views/Roles/Details.cshtml" />

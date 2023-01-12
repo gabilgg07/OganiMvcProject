@@ -454,8 +454,8 @@
                 let result = pattern.exec(currentHref);
                 let selectedLang = $(e.currentTarget).data('lang');
                 if (result != null) {
-                    let href = `${selectedLang}${result[2]}`;
-                    window.location.href = href;
+                    let href = `/${selectedLang}${result[2]}`;
+                    window.location.href = window.location.origin + href;
                 }
             });
 
