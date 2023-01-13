@@ -59,23 +59,11 @@
     <script src="./assets/js/jquery-3.3.1.min.js"></script>
     <script>
       $(document).ready(function () {
-        let x = 0;
-        let y = 0;
-        let xIn = 0;
-        let yIn = 0;
         $(".wrapper").mousemove(function (e) {
-          // values: e.clientX, e.clientY, e.pageX, e.pageY
-
-          $(".example").text(
-            `e.offsetX: ${e.offsetX}; - e.offsetY:${e.offsetY}`
-          );
-
           if (!$(e.target).hasClass("circle")) {
-            x = e.offsetX - $(".circle").width() / 2;
-            y = e.offsetY - $(".circle").height() / 2;
             $(".circle").css({
-              top: `${y}px`,
-              left: `${x}px`,
+              top: `${e.offsetY - $(".circle").height() / 2}px`,
+              left: `${e.offsetX - $(".circle").width() / 2}px`,
             });
           }
         });
