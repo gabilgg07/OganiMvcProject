@@ -142,43 +142,42 @@
       <CustomToolNamespace>Resource</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="AppCode\Resources\AdminResource\BlogResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>BlogResource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="AppCode\Resources\AdminResource\BlogResource.en.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>BlogResource.en.Designer.cs</LastGenOutput>
+      <Generator></Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AppCode\Resources\AdminResource\BlogResource.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>BlogResource.ru.Designer.cs</LastGenOutput>
+      <Generator></Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AppCode\Resources\AdminResource\CrudResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CrudResource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="AppCode\Resources\AdminResource\CrudResource.en.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CrudResource.en.Designer.cs</LastGenOutput>
+      <Generator></Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AppCode\Resources\AdminResource\CrudResource.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CrudResource.ru.Designer.cs</LastGenOutput>
+      <Generator></Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AppCode\Resources\AdminResource\AccountResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AccountResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="AppCode\Resources\AdminResource\AccountResource.en.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AccountResource.en.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="AppCode\Resources\AdminResource\AccountResource.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AccountResource.ru.Designer.cs</LastGenOutput>
+      <Generator></Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AppCode\Resources\AdminResource\AccountResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AccountResource.resx</DependentUpon>
+    </Compile>
     <Compile Update="AppCode\Resources\UserResource\LayoutResource.Designer.cs">
       <DependentUpon>LayoutResource.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -187,30 +186,13 @@
     </Compile>
     <Compile Update="AppCode\Resources\AdminResource\BlogResource.Designer.cs">
       <DependentUpon>BlogResource.resx</DependentUpon>
-    </Compile>
-    <Compile Update="AppCode\Resources\AdminResource\BlogResource.en.Designer.cs">
-      <DependentUpon>BlogResource.en.resx</DependentUpon>
-    </Compile>
-    <Compile Update="AppCode\Resources\AdminResource\BlogResource.ru.Designer.cs">
-      <DependentUpon>BlogResource.ru.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Update="AppCode\Resources\AdminResource\CrudResource.Designer.cs">
       <DependentUpon>CrudResource.resx</DependentUpon>
-    </Compile>
-    <Compile Update="AppCode\Resources\AdminResource\CrudResource.en.Designer.cs">
-      <DependentUpon>CrudResource.en.resx</DependentUpon>
-    </Compile>
-    <Compile Update="AppCode\Resources\AdminResource\CrudResource.ru.Designer.cs">
-      <DependentUpon>CrudResource.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Update="AppCode\Resources\AdminResource\AccountResource.Designer.cs">
-      <DependentUpon>AccountResource.resx</DependentUpon>
-    </Compile>
-    <Compile Update="AppCode\Resources\AdminResource\AccountResource.en.Designer.cs">
-      <DependentUpon>AccountResource.en.resx</DependentUpon>
-    </Compile>
-    <Compile Update="AppCode\Resources\AdminResource\AccountResource.ru.Designer.cs">
-      <DependentUpon>AccountResource.ru.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
 </Project>
