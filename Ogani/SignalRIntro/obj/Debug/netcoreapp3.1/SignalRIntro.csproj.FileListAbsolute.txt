@@ -40,3 +40,4 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/SignalRIntro.pdb
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/SignalRIntro.genruntimeconfig.cache
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/SignalRIntro.csproj.CopyComplete
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/Razor/Views/Home/ChatRoom.cshtml.g.cs

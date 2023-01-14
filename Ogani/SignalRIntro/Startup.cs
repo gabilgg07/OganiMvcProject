@@ -53,7 +53,7 @@ namespace SignalRIntro
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Privacy}/{id?}");
+                    pattern: "{controller=Home}/{action=ChatRoom}/{id?}");
 
                 //endpoints.MapHub<GameHub>("/game");
                 endpoints.MapHub<ChatHub>("/chat");

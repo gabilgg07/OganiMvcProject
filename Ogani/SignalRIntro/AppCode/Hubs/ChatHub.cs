@@ -21,11 +21,20 @@ namespace SignalRIntro.AppCode.Hubs
 
             users.TryAdd(email, Context.ConnectionId);
 
+            Clients.Others.SendAsync("friendOnline", email);
+
             return base.OnConnectedAsync();
         }
 
         public override Task OnDisconnectedAsync(Exception exception)
         {
+            var email = users.FirstOrDefault(u => u.Value.Equals(Context.ConnectionId)).Key;
+
+            if (!string.IsNullOrWhiteSpace(email))
+                users.TryRemove(email, out string clientId);
+
+            Clients.Others.SendAsync("friendOffline",email);
+
             return base.OnDisconnectedAsync(exception);
         }
 
@@ -37,6 +46,15 @@ namespace SignalRIntro.AppCode.Hubs
                 Clients.Client(clientId).SendAsync("messageReceive", email, message);
             }
             return Task.CompletedTask;
+        }
+
+        public Task<string[]> GetOnlines()
+        {
+            string[] emails = users
+                .Where(u => !u.Value.Equals(Context.ConnectionId))
+                .Select(u => u.Key).ToArray();
+
+            return Task.FromResult(emails);
         }
     }
 }
