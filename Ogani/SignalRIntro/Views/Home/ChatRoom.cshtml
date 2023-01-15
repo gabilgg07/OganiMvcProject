@@ -12,31 +12,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
     <style>
-        .cursor-p{
-            cursor:pointer;
+        .cursor-p {
+            cursor: pointer;
         }
+
         .max_w-85 {
             max-width: 85%;
         }
-        #onlines li:hover {
+
+        .select-list li:hover {
             background-color: rgba(0,0,0,0.1);
         }
 
-        #onlines li.selected {
+        .select-list li.selected {
             color: #ffffff;
-            background-color: #55c555;
             font-size: 18px;
             font-weight: bold;
         }
-            #onlines li.selected:hover {
+
+        #onlines.select-list li.selected {
+            background-color: #55c555;
+        }
+
+            #onlines.select-list li.selected:hover {
                 background-color: #55c555;
             }
+
+        #groups.select-list li {
+            background-color: #ffc8c833;
+        }
+
+            #groups.select-list li:first-child {
+                background-color: white;
+            }
+
+                #groups.select-list li:first-child:hover {
+                    background-color: white;
+                }
+
+            #groups.select-list li.selected {
+                background-color: #f7942533;
+            }
+
+                #groups.select-list li.selected:hover {
+                    background-color: #f7942533;
+                }
+
         .msg-box {
             display: flex;
             justify-content: flex-end;
         }
+
         .my-msg {
             float: right;
+        }
+
+        .group-email-li {
+            display: flex;
+            justify-content: flex-end;
+            background-color: white !important;
         }
     </style>
     <title>Document</title>
@@ -46,7 +80,13 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-4">
-                <ul class="list-group" id="onlines">
+                <ul class="list-group select-list" id="onlines">
+                </ul>
+                <hr />
+                <ul class="list-group select-list" id="groups">
+                    <li class="list-group-item">
+                        <button id="addGroup" class="btn btn-outline-success w-100">+ Add Group</button>
+                    </li>
                 </ul>
             </div>
             <div class="col-7 offset-1">
@@ -66,6 +106,7 @@
                         @*<label for="emailTo" class="form-label">To: </label>
                             <input type="email" class="form-control" id="emailTo" placeholder="Enter friend email">*@
                         <h2 class="form-group" id="to"></h2>
+                        <h2 class="form-group text-danger" id="toGroup"></h2>
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message: </label>
@@ -85,16 +126,15 @@
     <script src="~/lib/microsoft-signalr/signalr.js"></script>
     <script>$(document).ready(function () {
 
-
-    let myColor = randomColor();
-
+            let myColor = randomColor();
 
             $('.chat button').click(function (e) {
                 let to = $('.chat #to').text();
+                let groupName = $('.chat #toGroup').text();
                 let message = $('.chat #message').val().trim();
 
-                if (to.length < 1) {
-                    alert('email secmemisiniz!');
+                if ($.connection == null) {
+                    alert('elaqe kesilib!');
                     return;
                 }
 
@@ -103,26 +143,24 @@
                     return;
                 }
 
-                if ($.connection == null) {
-                    alert('elaqe kesilib!');
+                if (to.length < 1 && groupName.length < 1) {
+                    alert('email ve ya qrup secmemisiniz!');
                     return;
                 }
 
-                $.connection.invoke('sendToFriend', to, message);
+                if (to.length > 0) {
+                    $.connection.invoke('sendToFriend', to, message);
+                    writeMsgOnMyPlace(message);
+                } else {
+                    $.connection.invoke('sendToGroup', groupName, message).then(r => {
+                        if (!r) {
+                            alert("Siz qrupda deyilsiniz. Zehmet olmasa qrupa daxil olun!");
+                        } else {
+                            writeMsgOnMyPlace(message);
+                        }
+                    });
+                }
 
-                let chatItem = $(`<a class="list-group-item list-group-item-action">
-                                                    <div class="d-flex w-100 justify-content-between">
-                                                        <small class="text-muted">${getTimeStr()}</small>
-                                                        <h5 class="mb-1" style="color:${myColor};">Me</h5>
-                                                    </div>
-                                                    <div class="msg-box">
-                                                        <p class="my-msg max_w-85 mb-1">${message}</p>
-                                                    </div>
-                                                </a>`);
-
-                $('div.message').append(chatItem);
-
-                $('.chat #message').val('');
             });
 
             $('#login').submit(function (e) {
@@ -155,15 +193,15 @@
                     }
 
                     let chatItem = $(`<a class="list-group-item list-group-item-action" data-email="${from}">
-                                                    <div class="d-flex w-100 justify-content-between">
-                                                        <h5 class="mb-1" style="color:${clr};">${from}</h5>
-                                                        <small class="text-muted">${getTimeStr()}</small>
-                                                    </div>
-                                                    <p class="max_w-85 mb-1">${msg}</p>
-                                                </a>`);
+                                                                <div class="d-flex w-100 justify-content-between">
+                                                                    <h5 class="mb-1" style="color:${clr};">${from}</h5>
+                                                                    <small class="text-muted">${getTimeStr()}</small>
+                                                                </div>
+                                                                <p class="max_w-85 mb-1">${msg}</p>
+                                                            </a>`);
 
                     $(chatItem).click(function (e) {
-                        selectEmail(e);
+                        selectItem(e);
                     });
 
                     $('div.message').append(chatItem);
@@ -179,6 +217,47 @@
                     $(`#onlines li[data-email='${email}']`).remove();
                 });
 
+                $.connection.on('createNewGroup', function (groupName) {
+
+                    let groupLi = $('<li/>', {
+                        class: 'list-group-item fw-bold text-danger fst-italic',
+                        text: groupName
+                    }).attr('data-group-key', groupName);
+
+                    groupLi.append(`<ul class="${groupName}_ul list-group mt-2"></ul>`);
+
+                    $(groupLi).dblclick(function (e) {
+
+                        let userEmail = prompt('Group-a daxil etmek istediyiniz istifadecinin emailini daxil edin: ');
+
+                        if (userEmail == null || userEmail.trim().length <= 0)
+                            return;
+
+                        let groupKey = $(e.currentTarget).data('group-key');
+
+                        $.connection.invoke('addToGroup', userEmail, groupKey).then(r => {
+                            if (!r) {
+                                alert("Bele bir emailde istifadeci yoxdur, ya da istifadeci artiq qrupda var!");
+                            }
+                        });
+                    });
+
+                    $(groupLi).click(function (e) {
+                        let groupKey = $(e.currentTarget).data('group-key');
+
+                        selectItem(e);
+                    });
+
+                    $('ul#groups').append(groupLi);
+                });
+
+                $.connection.on('friendAddedToGroup', function (groupName, userEmail) {
+                    let badgeClr = randomColor(true);
+                    $(`[data-group-key=${groupName}]`).find('ul').append(`<li class="list-group-item group-email-li">
+                                                                        <span class="badge rounded-pill" style="background-color:${badgeClr};">${userEmail}</span>
+                                                                        </li>`);
+                });
+
                 $.connection.start().then(function () {
                     console.log("connected");
                     $('.chat').removeClass('d-none');
@@ -191,18 +270,83 @@
                                 addToOnlineList(el);
                             });
                         });
+
+                    $.connection.invoke('GetGroups')
+                        .then(groups => {
+
+                            for (var groupName in groups) {
+                                let groupLi = $('<li/>', {
+                                    class: 'list-group-item fw-bold text-danger fst-italic',
+                                    text: groupName
+                                }).attr('data-group-key', groupName);
+
+                                groupLi.append(`<ul class="${groupName}_ul list-group mt-2"></ul>`);
+
+                                $(groupLi).dblclick(function (e) {
+
+                                    let userEmail = prompt('Group-a daxil etmek istediyiniz istifadecinin emailini daxil edin: ');
+
+                                    if (userEmail == null || userEmail.trim().length <= 0)
+                                        return;
+
+                                    let groupKey = $(e.currentTarget).data('group-key');
+
+                                    $.connection.invoke('addToGroup', userEmail, groupKey);
+                                });
+
+                                $(groupLi).click(function (e) {
+                                    let groupKey = $(e.currentTarget).data('group-key');
+
+                                    selectItem(e);
+                                });
+
+                                $('ul#groups').append(groupLi);
+
+                                for (var userEmail of groups[groupName]) {
+
+                                    let badgeClr = randomColor(true);
+
+                                    $(`[data-group-key=${groupName}]`).find('ul').append(`<li class="list-group-item group-email-li">
+                                                                        <span class="badge rounded-pill" style="background-color:${badgeClr};">${userEmail}</span>
+                                                                        </li>`);
+                                }
+                            }
+                        }).catch(function (err) {
+                            return console.error(err.toString());
+                        });
                 }).catch(function (err) {
                     return console.error(err.toString());
                 });
 
             });
 
+            $('#addGroup').click(function (e) {
+                let groupName = prompt('Group adini daxil edin: ');
 
-            function selectEmail(e) {
-                let em = $(e.currentTarget).data('email');
+                if (groupName == null || groupName.trim().length <= 0)
+                    return;
 
-                $('#to').text(em);
-                $('#onlines li').removeClass('selected');
+                groupName = groupName.replace(' ', '_');
+
+                $.connection.invoke('createGroup', groupName);
+            });
+
+            function selectItem(e) {
+                let email = $(e.currentTarget).data('email');
+                let group = $(e.currentTarget).data('group-key');
+
+                if (email == undefined && group == undefined)
+                    return;
+
+                if (email != null) {
+                    $('#toGroup').text('');
+                    $('#to').text(email);
+                } else {
+                    $('#toGroup').text(group);
+                    $('#to').text('');
+                }
+
+                $('.select-list li').removeClass('selected');
                 $(e.currentTarget).addClass('selected');
             }
 
@@ -211,7 +355,7 @@
                 let frendLi = $(`<li class="list-group-item cursor-p" data-email='${email}'>${email}</li>`);
 
                 $(frendLi).click(function (e) {
-                    selectEmail(e);
+                    selectItem(e);
                 });
 
                 $('#onlines').append(frendLi);
@@ -248,16 +392,46 @@
                 return time;
             }
 
-            function randomColor() {
+            function writeMsgOnMyPlace(message) {
+
+                let chatItem = $(`<a class="list-group-item list-group-item-action">
+                                                                <div class="d-flex w-100 justify-content-between">
+                                                                    <small class="text-muted">${getTimeStr()}</small>
+                                                                    <h5 class="mb-1" style="color:${myColor};">Me</h5>
+                                                                </div>
+                                                                <div class="msg-box">
+                                                                    <p class="my-msg max_w-85 mb-1">${message}</p>
+                                                                </div>
+                                                            </a>`);
+
+                $('div.message').append(chatItem);
+
+                $('.chat #message').val('');
+            }
+
+            function randomColor(isBadge) {
                 let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
 
                 let colorStr = '#';
-
                 for (let i = 0; i < 6; i++) {
-                    let clrItem = Math.floor(Math.random() * hex.length);
+                    let clrItem;
+                    if (isBadge && i == 2) {
+                        do {
+                            clrItem = Math.floor(Math.random() * hex.length);
 
+                            //console.log('clrItem: ',clrItem);
+                            //console.log('clrItem < 12): ',clrItem < 12);
+                            //console.log('hex[clrItem]: ',hex[clrItem]);
+                            //console.log('!(hex[clrItem] < 10): ',!(hex[clrItem] < 10));
+
+                        } while (clrItem > 11);
+                    } else {
+                        clrItem = Math.floor(Math.random() * hex.length);
+                    }
                     colorStr += hex[clrItem];
                 }
+
+                //console.log('colorStr', colorStr);
 
                 return colorStr;
             }

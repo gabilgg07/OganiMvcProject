@@ -40,8 +40,8 @@ namespace Ogani.WebUI
 
             services.AddDbContext<OganiDbContext>(cfg =>
             {
-                //cfg.UseSqlServer(Configuration.GetConnectionString("cString"));
-                cfg.UseSqlServer(Configuration.GetConnectionString("cStringWindows"));
+                cfg.UseSqlServer(Configuration.GetConnectionString("cString"));
+                //cfg.UseSqlServer(Configuration.GetConnectionString("cStringWindows"));
                 //cfg.UseMySql(Configuration.GetConnectionString("cStringMySql"));
             });
 

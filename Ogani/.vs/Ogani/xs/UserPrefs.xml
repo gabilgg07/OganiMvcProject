@@ -1,44 +1,50 @@
-﻿<Properties StartupConfiguration="{320C438B-BE71-483D-8985-3514117EA629}|Default">
-  <MonoDevelop.Ide.ItemProperties.UploadExample.WebApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
+﻿<Properties StartupConfiguration="{46952EC3-66C9-4268-9F0B-70C1EEE4F7AD}|Default">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.SignalRIntro FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.SignalRIntro PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Ogani.WebUI/AppCode/Resources/UserResource/LayoutResource.resx">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Ogani.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.UploadExample.WebApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SignalRIntro/Program.cs">
     <Files>
-      <File FileName="Ogani.WebUI/Areas/Admin/Views/Roles/Details.cshtml" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Controllers/RolesController.cs" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Controllers/AccountController.cs" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Views/Account/UserDetails.cshtml" />
-      <File FileName="Ogani.WebUI/Models/DataContext/OganiDbSeed.cs" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Controllers/AuthorsController.cs" />
-      <File FileName="Ogani.WebUI/Startup.cs" />
-      <File FileName="Ogani.WebUI/Program.cs" />
-      <File FileName="Ogani.WebUI/AppCode/Resources/UserResource/LayoutResource.resx" Line="183" Column="8" />
+      <File FileName="SignalRIntro/AppCode/Hubs/ChatHub.cs" />
+      <File FileName="SignalRIntro/Views/Home/ChatRoom.cshtml" Line="261" Column="52" />
+      <File FileName="SignalRIntro/Program.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Ogani" expanded="True">
-            <Node name="Ogani.WebUI" expanded="True">
-              <Node name="AppCode" expanded="True">
-                <Node name="Resources" expanded="True">
-                  <Node name="UserResource" expanded="True" />
-                </Node>
+            <Node name="SignalRIntro" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="Areas" expanded="True">
-                <Node name="Admin" expanded="True">
-                  <Node name="Views" expanded="True">
-                    <Node name="Roles" expanded="True" />
+              <Node name="AppCode" expanded="True">
+                <Node name="Hubs" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="lib" expanded="True">
+                  <Node name="bootstrap" expanded="True">
+                    <Node name="css" expanded="True" />
+                  </Node>
+                  <Node name="microsoft-signalr" expanded="True">
+                    <Node name="signalr.js" expanded="True" />
                   </Node>
                 </Node>
               </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Ogani.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

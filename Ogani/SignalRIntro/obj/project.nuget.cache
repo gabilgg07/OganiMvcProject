@@ -1,19 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "pFt5kdyClIaSQ44VnjGoSl8ig/P5TWKhRu8ocYYJhj1qWKCRI1Y81cd8BzMdgaiwwS3TBH4YHJhg+KEtKzVYow==",
+  "dgSpecHash": "OTqdCHc6InQXm4lv5L6vLdz5Vn/Jn+Jj2dF2XcX1P4EwkD4HKf+fVUYxVK0JbRvLunj/LT4mUedUpBksToxTlA==",
   "success": true,
-  "projectFilePath": "D:\\code\\Lessons\\Ogani project from Mac\\OganiMvcProject\\Ogani\\SignalRIntro\\SignalRIntro.csproj",
+  "projectFilePath": "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/SignalRIntro.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\GabilGG\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\GabilGG\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
-    "C:\\Users\\GabilGG\\.nuget\\packages\\microsoft.web.librarymanager.build\\2.1.175\\microsoft.web.librarymanager.build.2.1.175.nupkg.sha512",
-    "C:\\Users\\GabilGG\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
-    "C:\\Users\\GabilGG\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\GabilGG\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\GabilGG\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
-    "C:\\Users\\GabilGG\\.nuget\\packages\\system.runtime.loader\\4.3.0\\system.runtime.loader.4.3.0.nupkg.sha512",
-    "C:\\Users\\GabilGG\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
-    "C:\\Users\\GabilGG\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
+    "/Users/macbook/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/microsoft.web.librarymanager.build/2.1.175/microsoft.web.librarymanager.build.2.1.175.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/system.io/4.3.0/system.io.4.3.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/system.reflection.primitives/4.3.0/system.reflection.primitives.4.3.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/system.runtime.loader/4.3.0/system.runtime.loader.4.3.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -26,6 +26,7 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/SignalRIntro.TagHelpers.input.cache
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/SignalRIntro.TagHelpers.output.cache
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/SignalRIntro.RazorCoreGenerate.cache
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/Razor/Views/Home/ChatRoom.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
@@ -40,4 +41,3 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/SignalRIntro.pdb
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/SignalRIntro.genruntimeconfig.cache
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/SignalRIntro.csproj.CopyComplete
-/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/OganiMvcProject/Ogani/SignalRIntro/obj/Debug/netcoreapp3.1/Razor/Views/Home/ChatRoom.cshtml.g.cs
