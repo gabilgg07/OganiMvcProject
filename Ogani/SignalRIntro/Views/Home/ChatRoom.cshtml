@@ -124,7 +124,25 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/microsoft-signalr/signalr.js"></script>
-    <script>$(document).ready(function () {
+    <script>
+        var isactive = false;
+
+        $(window).focus(function () {
+            isactive = true;
+        }).blur(function () {
+            isactive = false;
+        });
+
+        function playSound() {
+            if (isactive) return;
+
+            if (window['audioMsg'] == null)
+                window['audioMsg'] = new Audio('/uploads/sounds/notify-msg.wav');
+
+            window['audioMsg'].play();
+        }
+
+        $(document).ready(function () {
 
             let myColor = randomColor();
 
@@ -205,6 +223,8 @@
                     });
 
                     $('div.message').append(chatItem);
+
+                    playSound()
                 });
 
                 $.connection.on('friendOnline', function (email) {
